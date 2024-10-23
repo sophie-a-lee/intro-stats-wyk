@@ -1,0 +1,32 @@
+---
+title: "Course title"
+author: Sophie Lee
+format: 
+  revealjs:
+    incremental: true
+    slide-number: true
+    theme: custom.scss
+    width: 1920
+    height: 1080
+knitr:
+  opts_chunk: 
+    fig.align: center
+    message: false
+    dev: png
+    dev.args: { bg: "transparent" }
+---
+
+#  {.chapter-theme}
+
+::: r-fit-text
+Chapter 1:
+
+First chapter
+:::
+
+## Slide 1
+- This is an example of a standard slide
+
+- These will appear incrementally
+
+- [This will be highlighted]{.answer}

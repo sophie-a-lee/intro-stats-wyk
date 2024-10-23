@@ -1,0 +1,4 @@
+project:
+  title: "Course title"
+  type: website
+  output-dir: docs
