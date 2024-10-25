@@ -1,0 +1,1262 @@
+[
+  {
+    "objectID": "presentation.html#what-is-statistics",
+    "href": "presentation.html#what-is-statistics",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\nStatistics = science of data\n\nCollection and storage of data\nData visualisation\nAnalysis of data\nInterpretation of results\nCommunication of results\n\n\nStatistics is the science of data. This includes the collection and storage of data, the visualisation and analysis of samples of data, and the interpretation and communication of results."
+  },
+  {
+    "objectID": "presentation.html#what-is-statistics-1",
+    "href": "presentation.html#what-is-statistics-1",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\n\n\n\n\n\nThe overall aim of statistics is to make inferences about a target population of interest based on a random sample."
+  },
+  {
+    "objectID": "presentation.html#what-is-statistics-2",
+    "href": "presentation.html#what-is-statistics-2",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\n\n\n\n\n\nThese inferences are made by applying some kind of statistical analysis to the random sample of the population and making inferences based on those results"
+  },
+  {
+    "objectID": "presentation.html#what-is-statistical-thinking",
+    "href": "presentation.html#what-is-statistical-thinking",
+    "title": "Introduction to Statistics",
+    "section": "What is statistical thinking?",
+    "text": "What is statistical thinking?\nStatistics does not require complex analysis methods\nSimplest approaches often the most effective\nStatistical thinking = data-driven critical thinking\n\nPeople tend to assume that statistics involves complex analysis methods but often, the simplest approaches can be the most effective. In this course, we will not focus on analysis methods. Instead, we will be focusing on thinking statistically.\nStatistical thinking involves describing data and complex systems in relatively simple terms whilst acknowledging uncertainty that exists. The process of statistical thinking involves critically appraising available data, identifying patterns using visualisations and summaries, and communicating results in a clear, concise manner. Statistical thinking could be thought of as data-driven critical thinking."
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking",
+    "href": "presentation.html#why-statistical-thinking",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-1",
+    "href": "presentation.html#why-statistical-thinking-1",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-2",
+    "href": "presentation.html#why-statistical-thinking-2",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-3",
+    "href": "presentation.html#why-statistical-thinking-3",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-4",
+    "href": "presentation.html#why-statistical-thinking-4",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-5",
+    "href": "presentation.html#why-statistical-thinking-5",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "presentation.html#why-statistical-thinking-6",
+    "href": "presentation.html#why-statistical-thinking-6",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nNecessary, not just in work but in personal life\nClaims by news/social media often exaggerated or skewed\nHuman brain have a tendency to catastrophise, not good at assessing risk"
+  },
+  {
+    "objectID": "presentation.html#course-content",
+    "href": "presentation.html#course-content",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nStatistical thinking\n\nFormulating a research question\nCommon biases\nMissing data"
+  },
+  {
+    "objectID": "presentation.html#course-content-1",
+    "href": "presentation.html#course-content-1",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nData exploration\n\nSummary statistics: what they are, how we choose them, and how we communicate them\nUnderstanding the sample: how to quantify differences and trends in a sample"
+  },
+  {
+    "objectID": "presentation.html#course-content-2",
+    "href": "presentation.html#course-content-2",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nInferential statistics\n\nCentral limit theorem\nHow to interpret and communicate p-values and confidence intervals\nWhere do these values come from?"
+  },
+  {
+    "objectID": "presentation.html#course-content-3",
+    "href": "presentation.html#course-content-3",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
+  },
+  {
+    "objectID": "presentation.html#research-questions",
+    "href": "presentation.html#research-questions",
+    "title": "Introduction to Statistics",
+    "section": "Research questions",
+    "text": "Research questions\nOne of the most important parts of statistical analysis\nShould be formulated before any data collection or analysis carried out\nMust be clear, answerable, and concise\nOften not formally documented but helps develop an analysis plan\n\nArguably, the most important step in carrying out statistics is to specify a clear, answerable research question. Often, research questions are not formally documented but they are key to ensuring we are using appropriate data and methods to provide the most suitable advice. A research question must be fully specified before any data are collected or any analysis plans have been decided."
+  },
+  {
+    "objectID": "presentation.html#research-questions-1",
+    "href": "presentation.html#research-questions-1",
+    "title": "Introduction to Statistics",
+    "section": "Research questions",
+    "text": "Research questions\nAll research questions must contain a target population and outcome\nOften questions contain comparison groups, these must also be fully defined\nCan be helpful to use PICO approach\n\nAlthough there are infinite research questions that statistics can be used to address, all must contain certain elements. These are a target population and an outcome of interest. If an analysis requires a comparison between groups, these must also be clearly specified in the research question. One way to ensure that a research question has been correctly specified is to use the PICO approach:"
+  },
+  {
+    "objectID": "presentation.html#pico-approach",
+    "href": "presentation.html#pico-approach",
+    "title": "Introduction to Statistics",
+    "section": "PICO approach",
+    "text": "PICO approach\nPopulation\nIntervention (group 1)\nComparison (group 2)\nOutcome"
+  },
+  {
+    "objectID": "presentation.html#example-research-question",
+    "href": "presentation.html#example-research-question",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-1",
+    "href": "presentation.html#example-research-question-1",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-2",
+    "href": "presentation.html#example-research-question-2",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-3",
+    "href": "presentation.html#example-research-question-3",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults\nPeople aged 18 or over"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-4",
+    "href": "presentation.html#example-research-question-4",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults\nPeople aged 18 or over with a BMI over 30"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-5",
+    "href": "presentation.html#example-research-question-5",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-6",
+    "href": "presentation.html#example-research-question-6",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-7",
+    "href": "presentation.html#example-research-question-7",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)"
+  },
+  {
+    "objectID": "presentation.html#example-research-question-8",
+    "href": "presentation.html#example-research-question-8",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)\nOutcome: Difference in cholesterol level"
+  },
+  {
+    "objectID": "presentation.html#biases",
+    "href": "presentation.html#biases",
+    "title": "Introduction to Statistics",
+    "section": "Biases",
+    "text": "Biases\nAlmost all data and analyses will have some kind of bias included\nImportant to consider before analysis plan decided\nCan arise at data collection, analysis, interpretation, and communication stages\n\nWhether the data we use to answer our research question is collected by ourselves or taken from a published source, it is important to consider potential biases, or errors, that may be present. Unfortunately most data collection methods are inherently flawed, this makes it especially important to be transparent about the limitations of the data and analysis we provide.\nThere are many different types of bias that can arise at different stages of an analysis. Here, I will introduce some of the most common types with examples."
+  },
+  {
+    "objectID": "presentation.html#selection-bias",
+    "href": "presentation.html#selection-bias",
+    "title": "Introduction to Statistics",
+    "section": "Selection bias",
+    "text": "Selection bias\n\n\nIndividuals more likely to be included in sample than others\nSample no longer random, cannot make inferences about target population\n\n\n\n\n\nSelection bias occurs when some data are more likely to be included in a sample than others. One of the key requirements of statistical analysis is that a sample must be random and representative of the target population in our research question. If this is not the case, we may not be able to make inferences about the target population and will not be able to answer the research question. Cherry picking individuals\nFor example, we are interested in whether one hour of yoga per day improves depressive symptoms in adults living in the UK with anxiety and depression. We ask GPs around the UK to suggest patients from their surgery that are currently being treated for anxiety and depression to take part in the study. If the doctors deliberately selected the patients they thought would benefit most from the yoga classes, i.e. those with the highest baseline depressive symptoms, this sample would not be random and the results would be impacted by selection bias."
+  },
+  {
+    "objectID": "presentation.html#recall-bias",
+    "href": "presentation.html#recall-bias",
+    "title": "Introduction to Statistics",
+    "section": "Recall bias",
+    "text": "Recall bias\n\n\nParticipants asked to recall past events or experiences\nAccuracy and completeness will differ\nNot always trustworthy\n\n\n\n\n\nRecall bias occurs when participants are asked to recall past events or experiences as part of a study which will differ in accuracy and completeness. For example, in a study investigating the impact of ultra processed food on the rates of heart disease, participants were asked to recall how many ultra processed foods they had consumed in the past week. Most participants are likely to forget some of the food they had eaten over a week, and the accuracy of this recall is likely to differ between participants."
+  },
+  {
+    "objectID": "presentation.html#confirmation-bias",
+    "href": "presentation.html#confirmation-bias",
+    "title": "Introduction to Statistics",
+    "section": "Confirmation bias",
+    "text": "Confirmation bias\n\n\nChoosing to analyse or interpret data based on pre-conceived ideas\nInherent to human brains\nIdentify potential expectations before looking at data\n\n\n\n\n\nConfirmation bias is the tendency to analyse or interpret data in a way that supports preconceived ideas. Unfortunately, confirmation bias is inherent to human nature and can be difficult to spot. It is also one of the reasons that statistical thinking, rather than simply trusting our gut instinct, is so important. The best way to counteract confirmation bias is to acknowledge any pre-conceived ideas or expectations of results before looking at data and being aware of these throughout the process."
+  },
+  {
+    "objectID": "presentation.html#missing-data",
+    "href": "presentation.html#missing-data",
+    "title": "Introduction to Statistics",
+    "section": "Missing data",
+    "text": "Missing data\n\n\nMissing data = holes in the dataset\nSomething we intended to collect but have not\nVery common, not always obvious\nPotential source of bias\n\n\n\n\n\nAnother potential source of bias comes from the existence of missing data. Missing data are observations that were intended to be collected but were not. Unfortunately they are very common in analysis, even when every effort has been made to avoid them. Examples of missing data include:"
+  },
+  {
+    "objectID": "presentation.html#examples-of-missing-data",
+    "href": "presentation.html#examples-of-missing-data",
+    "title": "Introduction to Statistics",
+    "section": "Examples of missing data",
+    "text": "Examples of missing data\n\nQuestionnaires not complete as some questions are considered too personal by participants\nBlood samples are dropped in a lab, losing the results, leaving holes in the data\nUser information collected from a mobile phone app includes location data for some but is missing for others who opted-out of sharing this data\n\n\n\nA questionnaire is sent out to households in a local authority, asked for information about household income and employment history. Some households consider these questions too personal and did not fill in the information.\nA clinical trial involves taking blood samples from participants to analyse. Some samples are dropped on the way to the lab and their results are unusable. The analysis dataset contains blank spaces where these results would be.\nMobile phone apps that collect user information often have holes in the dataset where users opt-out of data sharing"
+  },
+  {
+    "objectID": "presentation.html#missing-data-1",
+    "href": "presentation.html#missing-data-1",
+    "title": "Introduction to Statistics",
+    "section": "Missing data",
+    "text": "Missing data\nImpossible to truly know the reason for and impact of missing data\nBest way to overcome missing data is to not have any!\nImportant to consider potential biases introduced by missing data and account for them in analysis\nBe transparent when reporting missing data\n\nUnfortunately, the true reason for missingness will not be known as the data do not exist. When dealing with missing data, our main aim is to identify the most likely reasons and be transparent about the implication of this on our analysis. Failure to recognise and deal with missing data can produce invalid, often misleading results. If data are missing because of the missing data itself, or if there would be systematic differences between the observed and missing values, this means the data are no longer random, one of the main requirements of statistical inference. At a very minimum, we must be transparent about the number and type of missing data within our sample. This should be done before analysis methods are considered as sometimes they may require alternative approaches to overcome the bias introduced by missingness."
+  },
+  {
+    "objectID": "presentation.html#missing-data-and-bias",
+    "href": "presentation.html#missing-data-and-bias",
+    "title": "Introduction to Statistics",
+    "section": "Missing data and bias",
+    "text": "Missing data and bias\nIn groups, discuss a scenario where missing user information from a mobile phone app would lead to biased results, and another where the results would be unbiased.\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "presentation.html#missing-data-and-bias-1",
+    "href": "presentation.html#missing-data-and-bias-1",
+    "title": "Introduction to Statistics",
+    "section": "Missing data and bias",
+    "text": "Missing data and bias\n\nAn example of where missing data from a mobile app would introduce bias into results.\nAn example of where missing data from a mobile app would not introduce bias into results."
+  },
+  {
+    "objectID": "presentation.html#summarising-data",
+    "href": "presentation.html#summarising-data",
+    "title": "Introduction to Statistics",
+    "section": "Summarising data",
+    "text": "Summarising data\nAllows us to explore and quantify aspects of the sample\nCan not be used to answer research question unless all information on target population is collected\nChoice of summary depends on type of variable, distribution of data, and property we wish to quantify\n\nSummary statistics allow us to quantify and explore different parts of a sample of data. They can be provided alongside data visualisations introduced earlier in the course to support results and interpretations. Note that the summary statistics introduced in this section describe only the sample data so cannot be used to answer research questions fully unless all data on the target population has been collected.\nThe choice of summary statistics will depend on the type of variable(s) we wish to explore, the distribution of these variable(s) and the aspect of the data we would like to quantify. When interpreting summaries provided from analysis that has already been completed, it is important to check that the most appropriate summaries have been used and that interpretations of them will be valid."
+  },
+  {
+    "objectID": "presentation.html#summarising-categorical-variables",
+    "href": "presentation.html#summarising-categorical-variables",
+    "title": "Introduction to Statistics",
+    "section": "Summarising categorical variables",
+    "text": "Summarising categorical variables\nDescribe the distribution of observations between categories:\n\nProportion (0 → 1)\nPercentage (0 → 100%)\nRate (0 → ∞)\n\nCan use count but does not account for overall sample size\n\nTo summarise a single categorical variable, we simply need to quantify the distribution of observations lying in each group. The simplest way to do this is to count the number of observations that lie in each group, as we have seen previously displayed in frequency tables. However, a simple count can be difficult to interpret without proper context. Often, we wish to present these counts relative to the total sample that they are taken from.\nThe proportion of observations in a given group is estimated as the number in the group divided by the total sample size. This gives a value between 0 and 1. Multiplying the proportion by 100 will give the percentage in each group, taking the value between 0 and 100%. In cases where the proportion and percentage in a given group is very small, we may wish to multiply the proportions by a larger number to make values easier to interpret. These values are known as rates and are interpreted as the value per the number multiplied by. For example, if the proportion in a group was 0.0005, this could be multiplied by 10,000 to give a rate of 5 per 10,000."
+  },
+  {
+    "objectID": "presentation.html#summarising-categorical-variables-1",
+    "href": "presentation.html#summarising-categorical-variables-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising categorical variables",
+    "text": "Summarising categorical variables\nAdd in examples here"
+  },
+  {
+    "objectID": "presentation.html#summarising-numeric-variables",
+    "href": "presentation.html#summarising-numeric-variables",
+    "title": "Introduction to Statistics",
+    "section": "Summarising numeric variables",
+    "text": "Summarising numeric variables\nSummarised using the centre (average) and spread of sample\n\nChoice of summary depends on distribution of variable\n\n\n\n\n\n\n\n\n\n\n\nNumeric variables are typically summarised using the centre of the variable, also known as the average, and a measure of the spread of the variable. The most appropriate choice of summary statistics will depend on the distribution of the variable. More specifically, whether the numeric variable is normally distributed or not. The shape/distribution of a variable is typically investigated by plotting data in a histogram."
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre",
+    "href": "presentation.html#measure-of-centre",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nWhen data are normally distributed, centre is given using the mean\n\n\nRepresents the peak of a normal distribution\nSum of the sample values, divided by the sample size\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe average of a numeric variable is another way of saying the centre of its distribution. Often, people will think of the mean when trying to calculate an average, however this may not always be the case. When data are normally distributed, the mean is the central peak of the distribution. This is calculated by adding together all numbers in the sample and dividing it by the sample size."
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-1",
+    "href": "presentation.html#measure-of-centre-1",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nMeasure 10 high school students’ heights in centimetres (cm):\n142.23, 149.58, 146.06, 160.42, 174.64, 172.54, 148.67, 143.00, 173.11, 168.72"
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-2",
+    "href": "presentation.html#measure-of-centre-2",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nFind the mean height:\n142.23 + 149.58 + 146.06 + 160.42 + 174.64 + 172.54 + 148.67 + 143.00 + 173.11 + 168.72 = 1578.97cm"
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-3",
+    "href": "presentation.html#measure-of-centre-3",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nFind the mean height:\n1578.97 ÷ 10 = 157.897cm"
+  },
+  {
+    "objectID": "presentation.html#measure-of-center",
+    "href": "presentation.html#measure-of-center",
+    "title": "Introduction to Statistics",
+    "section": "Measure of center",
+    "text": "Measure of center\nWhere data are not normal, use median instead\nOrder sample from smallest to largest, select middle value\nUses less information than mean (less powerful) but always valid\n\nHowever, when the sample is not normally distributed and the peak does not lie in the middle, extreme values or a longer tail will pull the mean towards it. This means that where data are not normally distributed, the mean will not be the centre and the value will be invalid. Where this is the case, the median should be used instead. The median is calculated by ordering the numeric values from smallest to largest and selecting the middle value."
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-4",
+    "href": "presentation.html#measure-of-centre-4",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nTo find the median, first order heights smallest to largest:\n142.23, 149.58, 146.06, 160.42, 174.64, 172.54, 148.67, 143.00, 173.11, 168.72"
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-5",
+    "href": "presentation.html#measure-of-centre-5",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nTo find the median, first order heights smallest to largest:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-6",
+    "href": "presentation.html#measure-of-centre-6",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nMedian is the middle value\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64\n\n\nWe then take the middle value. As the sample size is even, the median will lie between two values - the 5th (149.58cm) and the 6th (160.42cm)."
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-7",
+    "href": "presentation.html#measure-of-centre-7",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nMedian is between 149.58cm and 162.42cm\nMiddle value: (149.58 + 162.42) ÷ 2 = 155cm"
+  },
+  {
+    "objectID": "presentation.html#measure-of-centre-8",
+    "href": "presentation.html#measure-of-centre-8",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nBefore choosing summary, use a histogram to check distribution\nWhen data are normally distributed, mean uses more of the data and gives centre of the sample\nWhen data are skewed, mean is influenced by extreme values and longer tail\nWhen data are normal, mean and median will be equal\n\nWhen data are normally distributed, the mean and median will give the same, or very similar, values. This is because both are measuring the centre. However, when the data are skewed, the mean and median will differ. We prefer to use the mean where possible as it is the more powerful measure. This means that it uses more of the data than the median and is therefore more sensitive to changes in the sample."
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread",
+    "href": "presentation.html#measure-of-spread",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nMeasures how wide or narrow a sample is\nSimplest measure is the range\nEither given as the smallest and largest values or the difference between these\n\nGenerally the measure of the centre of a numeric variable is presented with a measure of spread, or how wide/narrow the distribution is. As with the centre, the most appropriate values will depend on whether the sample is normally distributed or not.\nThe most simple measure of spread is the range of a sample. The range is either presented as the smallest and largest values from a sample or the difference between these."
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-1",
+    "href": "presentation.html#measure-of-spread-1",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 high schoolers’ heights:\n142.23, 149.58, 146.06, 160.42, 174.64, 172.54, 148.67, 143.00, 173.11, 168.72"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-2",
+    "href": "presentation.html#measure-of-spread-2",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 high schoolers’ heights:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-3",
+    "href": "presentation.html#measure-of-spread-3",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 high schoolers’ heights:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-4",
+    "href": "presentation.html#measure-of-spread-4",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nRange is either given as two values: 142.23cm ,174.64cm\nOr as the difference between these: 174.64 - 142.23 = 32.41cm"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-5",
+    "href": "presentation.html#measure-of-spread-5",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nRange only uses most extreme values, loses lots of information\nInterquartile range (IQR): the range of the middle 50%\nLower quartile: 25th percentile, 25% of sample lies below\nUpper quartile: 75th percentile, 75% of sample lies below\n\nThe issue with using the range is that it is entirely defined by the most extreme values in the sample and does not give any information about the rest of it. An alternative to this would be to give the range of the middle 50%, also known as the interquartile range (IQR). The IQR is the difference between the 75th percentile, or upper quartile, and the 25th percentile, or lower quartile."
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-6",
+    "href": "presentation.html#measure-of-spread-6",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the IQR of the 10 high schoolers’ heights:\n142.23, 149.58, 146.06, 160.42, 174.64, 172.54, 148.67, 143.00, 173.11, 168.72"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-7",
+    "href": "presentation.html#measure-of-spread-7",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-8",
+    "href": "presentation.html#measure-of-spread-8",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-9",
+    "href": "presentation.html#measure-of-spread-9",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n142.23, 143.00, 146.06, 148.67, 149.58, 160.42, 168.72, 172.54, 173.11, 174.64"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-10",
+    "href": "presentation.html#measure-of-spread-10",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nIQR is either given as 2 values: 146.06, 172.54cm\nOr as the difference between these: 172.54 - 146.06 = 26.48cm"
+  },
+  {
+    "objectID": "presentation.html#measure-of-spread-11",
+    "href": "presentation.html#measure-of-spread-11",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nIQR is still discarding most of the sample\nIf sample is normally distributed, can use the standard deviation (SD)\nAverage difference between observations and the mean\nBigger SD → wider, flatter curve\nSmaller SD → narrower, taller curve\n\nBoth the range and IQR only use 2 values from the sample. As with the median, these measures discard a lot of information from the summaries. Where the sample is normally distributed, the standard deviation (SD) can be used which measures the average distance between each observation and the mean. The larger the SD, the wider and flatter the normal curve will be; the smaller the SD, the narrower and taller the curve will be:"
+  },
+  {
+    "objectID": "presentation.html#normal-distribution",
+    "href": "presentation.html#normal-distribution",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nNormal distribution completely defined by the mean (peak) and SD (spread)\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.\nFor example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "presentation.html#normal-distribution-1",
+    "href": "presentation.html#normal-distribution-1",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nApproximately 68% of the sample will lie within 1 standard deviation of the mean\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.\nFor example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "presentation.html#normal-distribution-2",
+    "href": "presentation.html#normal-distribution-2",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nApproximately 95% of the sample will lie within 2 standard deviations of the mean\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values. For example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "presentation.html#normal-distribution-3",
+    "href": "presentation.html#normal-distribution-3",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nMean and SD can be used to check normal distribution assumption\nAdd relevant example here"
+  },
+  {
+    "objectID": "presentation.html#summarising-numeric-variables-1",
+    "href": "presentation.html#summarising-numeric-variables-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising numeric variables",
+    "text": "Summarising numeric variables\nMost appropriate summary depends on distribution (normal or not)\nIf normally distributed, use mean and SD\nIf not, these are invalid, use median and IQR\nMean and SD can be used to check normal distribution even without the full sample"
+  },
+  {
+    "objectID": "presentation.html#summarising-data-1",
+    "href": "presentation.html#summarising-data-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising data",
+    "text": "Summarising data\nProvide a more relevant exercise example, similar to the MoJ (visualisation showing both mean and median, table of summaries where mean + sd clearly not relevant)"
+  },
+  {
+    "objectID": "presentation.html#quantifying-differences-and-trends",
+    "href": "presentation.html#quantifying-differences-and-trends",
+    "title": "Introduction to Statistics",
+    "section": "Quantifying differences and trends",
+    "text": "Quantifying differences and trends\nMost appropriate choice depends on intention, type of outcome, nature of the relationship\n\nComparison of variable between groups\nInvestigating trends over time\nRelationship between numeric variables\n\n\nOften, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another."
+  },
+  {
+    "objectID": "presentation.html#comparing-categorical-outcomes",
+    "href": "presentation.html#comparing-categorical-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\nCompare summary statistics (proportions, percentages, or rates) between groups\nAbsolute difference: Subtract values\nRelative difference: Divide values\n\nWhen comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference."
+  },
+  {
+    "objectID": "presentation.html#comparing-categorical-outcomes-1",
+    "href": "presentation.html#comparing-categorical-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\nAdd more relevant example"
+  },
+  {
+    "objectID": "presentation.html#comparing-numeric-outcomes",
+    "href": "presentation.html#comparing-numeric-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nCompare measures of centre/average (mean or median) between groups\nMost appropriate depends on distribution of sample in each group\nRequires a histogram per group\n\nThe most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed."
+  },
+  {
+    "objectID": "presentation.html#comparing-numeric-outcomes-1",
+    "href": "presentation.html#comparing-numeric-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nAdd more relevant example"
+  },
+  {
+    "objectID": "presentation.html#comparing-variables-over-time",
+    "href": "presentation.html#comparing-variables-over-time",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nVisualised using line graph\nCommon comparisons: absolute difference, relative difference, or percentage change\nChoice depends on intention, interpretation differs\n\nWhen dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change."
+  },
+  {
+    "objectID": "presentation.html#comparing-variables-over-time-1",
+    "href": "presentation.html#comparing-variables-over-time-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nAdd more relevant example"
+  },
+  {
+    "objectID": "presentation.html#relationship-between-numeric-variables",
+    "href": "presentation.html#relationship-between-numeric-variables",
+    "title": "Introduction to Statistics",
+    "section": "Relationship between numeric variables",
+    "text": "Relationship between numeric variables\nScatterplot used to visualise trends\nStrength of relationship quantified using correlation coefficients\nChoice of coefficients depends on if trend is linear or not\n\nLinear trend: Pearson’s correlation coefficient\nNonlinear trend: Spearman’s correlation coefficient\n\n\nCorrelation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?\nThe Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary."
+  },
+  {
+    "objectID": "presentation.html#correlation-coefficients",
+    "href": "presentation.html#correlation-coefficients",
+    "title": "Introduction to Statistics",
+    "section": "Correlation coefficients",
+    "text": "Correlation coefficients\nTake value between -1 and 1\nCorrelation of 0 means no association\nCloser coefficient is to +1/-1, the stronger the positive/negative association is\n\nCorrelation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is."
+  },
+  {
+    "objectID": "presentation.html#section-7",
+    "href": "presentation.html#section-7",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:"
+  },
+  {
+    "objectID": "part-1-slides.html#what-is-statistics",
+    "href": "part-1-slides.html#what-is-statistics",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\n\nStatistics = science of data\n\nCollection and storage of data\nData visualisation\nAnalysis of data\nInterpretation of results\nCommunication of results\n\n\n\n\n\n\nStatistics is the science of data. This includes the collection and storage of data, the visualisation and analysis of samples of data, and the interpretation and communication of results."
+  },
+  {
+    "objectID": "part-1-slides.html#what-is-statistics-1",
+    "href": "part-1-slides.html#what-is-statistics-1",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\n\n\n\n\n\nThe overall aim of statistics is to make inferences about a target population of interest based on a random sample."
+  },
+  {
+    "objectID": "part-1-slides.html#what-is-statistics-2",
+    "href": "part-1-slides.html#what-is-statistics-2",
+    "title": "Introduction to Statistics",
+    "section": "What is statistics?",
+    "text": "What is statistics?\n\n\n\n\n\n\nThese inferences are made by applying some kind of statistical analysis to the random sample of the population and making inferences based on those results"
+  },
+  {
+    "objectID": "part-1-slides.html#what-is-statistical-thinking",
+    "href": "part-1-slides.html#what-is-statistical-thinking",
+    "title": "Introduction to Statistics",
+    "section": "What is statistical thinking?",
+    "text": "What is statistical thinking?\nStatistics does not require complex analysis methods\nSimplest approaches often the most effective\nStatistical thinking = data-driven critical thinking\n\nPeople tend to assume that statistics involves complex analysis methods but often, the simplest approaches can be the most effective. In this course, we will not focus on analysis methods. Instead, we will be focusing on thinking statistically.\nStatistical thinking involves describing data and complex systems in relatively simple terms whilst acknowledging uncertainty that exists. The process of statistical thinking involves critically appraising available data, identifying patterns using visualisations and summaries, and communicating results in a clear, concise manner. Statistical thinking could be thought of as data-driven critical thinking."
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking",
+    "href": "part-1-slides.html#why-statistical-thinking",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-1",
+    "href": "part-1-slides.html#why-statistical-thinking-1",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-2",
+    "href": "part-1-slides.html#why-statistical-thinking-2",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-3",
+    "href": "part-1-slides.html#why-statistical-thinking-3",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-4",
+    "href": "part-1-slides.html#why-statistical-thinking-4",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-5",
+    "href": "part-1-slides.html#why-statistical-thinking-5",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder"
+  },
+  {
+    "objectID": "part-1-slides.html#why-statistical-thinking-6",
+    "href": "part-1-slides.html#why-statistical-thinking-6",
+    "title": "Introduction to Statistics",
+    "section": "Why statistical thinking?",
+    "text": "Why statistical thinking?\n\n\nNecessary, not just in work but in personal life\nClaims by news/social media often exaggerated or skewed\nHuman brain have a tendency to catastrophise, not good at assessing risk"
+  },
+  {
+    "objectID": "part-1-slides.html#course-content",
+    "href": "part-1-slides.html#course-content",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nStatistical thinking\n\nFormulating a research question\nCommon biases\nMissing data"
+  },
+  {
+    "objectID": "part-1-slides.html#course-content-1",
+    "href": "part-1-slides.html#course-content-1",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nData exploration\n\nSummary statistics: what they are, how we choose them, and how we communicate them\nUnderstanding the sample: how to quantify differences and trends in a sample"
+  },
+  {
+    "objectID": "part-1-slides.html#course-content-2",
+    "href": "part-1-slides.html#course-content-2",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nInferential statistics\n\nCentral limit theorem\nHow to interpret and communicate p-values and confidence intervals\nWhere do these values come from?"
+  },
+  {
+    "objectID": "part-1-slides.html#course-content-3",
+    "href": "part-1-slides.html#course-content-3",
+    "title": "Introduction to Statistics",
+    "section": "Course content",
+    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
+  },
+  {
+    "objectID": "part-1-slides.html#research-questions",
+    "href": "part-1-slides.html#research-questions",
+    "title": "Introduction to Statistics",
+    "section": "Research questions",
+    "text": "Research questions\nOne of the most important parts of statistical analysis\nShould be formulated before any data collection or analysis carried out\nMust be clear, answerable, and concise\nOften not formally documented but helps develop an analysis plan\n\nArguably, the most important step in carrying out statistics is to specify a clear, answerable research question. Often, research questions are not formally documented but they are key to ensuring we are using appropriate data and methods to provide the most suitable advice. A research question must be fully specified before any data are collected or any analysis plans have been decided."
+  },
+  {
+    "objectID": "part-1-slides.html#research-questions-1",
+    "href": "part-1-slides.html#research-questions-1",
+    "title": "Introduction to Statistics",
+    "section": "Research questions",
+    "text": "Research questions\nAll research questions must contain a target population and an outcome\nOften questions contain comparison groups, these must also be fully defined\nCan be helpful to use PICO approach\n\nAlthough there are infinite research questions that statistics can be used to address, all must contain certain elements. These are a target population and an outcome of interest. If an analysis requires a comparison between groups, these must also be clearly specified in the research question. One way to ensure that a research question has been correctly specified is to use the PICO approach:"
+  },
+  {
+    "objectID": "part-1-slides.html#pico-approach",
+    "href": "part-1-slides.html#pico-approach",
+    "title": "Introduction to Statistics",
+    "section": "PICO approach",
+    "text": "PICO approach\nPopulation\nIntervention (group 1)\nComparison (group 2)\nOutcome"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question",
+    "href": "part-1-slides.html#example-research-question",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-1",
+    "href": "part-1-slides.html#example-research-question-1",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-2",
+    "href": "part-1-slides.html#example-research-question-2",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-3",
+    "href": "part-1-slides.html#example-research-question-3",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults\nPeople aged 18 or over"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-4",
+    "href": "part-1-slides.html#example-research-question-4",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: Obese adults\nPeople aged 18 or over with a BMI over 30"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-5",
+    "href": "part-1-slides.html#example-research-question-5",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-6",
+    "href": "part-1-slides.html#example-research-question-6",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-7",
+    "href": "part-1-slides.html#example-research-question-7",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)"
+  },
+  {
+    "objectID": "part-1-slides.html#example-research-question-8",
+    "href": "part-1-slides.html#example-research-question-8",
+    "title": "Introduction to Statistics",
+    "section": "Example research question",
+    "text": "Example research question\nDoes a plant-based diet reduce cholesterol levels in obese adults?\nPopulation: People aged 18 or over with a BMI over 30\nIntervention: Plant-based diet\nComparison: Standard diet (control group)\nOutcome: Difference in cholesterol level"
+  },
+  {
+    "objectID": "part-1-slides.html#biases",
+    "href": "part-1-slides.html#biases",
+    "title": "Introduction to Statistics",
+    "section": "Biases",
+    "text": "Biases\nAlmost all data and analyses will have some kind of bias included\nImportant to consider before analysis plan decided\nCan arise at data collection, analysis, interpretation, and communication stages\n\nWhether the data we use to answer our research question is collected by ourselves or taken from a published source, it is important to consider potential biases, or errors, that may be present. Unfortunately most data collection methods are inherently flawed, this makes it especially important to be transparent about the limitations of the data and analysis we provide.\nThere are many different types of bias that can arise at different stages of an analysis. Here, I will introduce some of the most common types with examples."
+  },
+  {
+    "objectID": "part-1-slides.html#selection-bias",
+    "href": "part-1-slides.html#selection-bias",
+    "title": "Introduction to Statistics",
+    "section": "Selection bias",
+    "text": "Selection bias\n\n\nIndividuals more likely to be included in sample than others\nSample no longer random, cannot make inferences about target population\n\n\n\n\n\nSelection bias occurs when some data are more likely to be included in a sample than others. One of the key requirements of statistical analysis is that a sample must be random and representative of the target population in our research question. If this is not the case, we may not be able to make inferences about the target population and will not be able to answer the research question. Cherry picking individuals\nFor example, we are interested in whether one hour of yoga per day improves depressive symptoms in adults living in the UK with anxiety and depression. We ask GPs around the UK to suggest patients from their surgery that are currently being treated for anxiety and depression to take part in the study. If the doctors deliberately selected the patients they thought would benefit most from the yoga classes, i.e. those with the highest baseline depressive symptoms, this sample would not be random and the results would be impacted by selection bias."
+  },
+  {
+    "objectID": "part-1-slides.html#recall-bias",
+    "href": "part-1-slides.html#recall-bias",
+    "title": "Introduction to Statistics",
+    "section": "Recall bias",
+    "text": "Recall bias\n\n\nParticipants asked to recall past events or experiences\nAccuracy and completeness will differ\nNot always trustworthy\n\n\n\n\n\nRecall bias occurs when participants are asked to recall past events or experiences as part of a study which will differ in accuracy and completeness. For example, in a study investigating the impact of ultra processed food on the rates of heart disease, participants were asked to recall how many ultra processed foods they had consumed in the past week. Most participants are likely to forget some of the food they had eaten over a week, and the accuracy of this recall is likely to differ between participants."
+  },
+  {
+    "objectID": "part-1-slides.html#confirmation-bias",
+    "href": "part-1-slides.html#confirmation-bias",
+    "title": "Introduction to Statistics",
+    "section": "Confirmation bias",
+    "text": "Confirmation bias\n\n\nChoosing to analyse or interpret data based on pre-conceived ideas\nInherent to human brains\nIdentify potential expectations before looking at data\n\n\n\n\n\nConfirmation bias is the tendency to analyse or interpret data in a way that supports preconceived ideas. Unfortunately, confirmation bias is inherent to human nature and can be difficult to spot. It is also one of the reasons that statistical thinking, rather than simply trusting our gut instinct, is so important. The best way to counteract confirmation bias is to acknowledge any pre-conceived ideas or expectations of results before looking at data and being aware of these throughout the process."
+  },
+  {
+    "objectID": "part-1-slides.html#missing-data",
+    "href": "part-1-slides.html#missing-data",
+    "title": "Introduction to Statistics",
+    "section": "Missing data",
+    "text": "Missing data\n\n\nMissing data = holes in the dataset\nSomething we intended to collect but have not\nVery common, not always obvious\nPotential source of bias\n\n\n\n\n\nAnother potential source of bias comes from the existence of missing data. Missing data are observations that were intended to be collected but were not. Unfortunately they are very common in analysis, even when every effort has been made to avoid them. Examples of missing data include:"
+  },
+  {
+    "objectID": "part-1-slides.html#examples-of-missing-data",
+    "href": "part-1-slides.html#examples-of-missing-data",
+    "title": "Introduction to Statistics",
+    "section": "Examples of missing data",
+    "text": "Examples of missing data\n\nQuestionnaires not complete as some questions are considered too personal by participants\nBlood samples are dropped in a lab, losing the results, leaving holes in the data\nUser information collected from a mobile phone app includes location data for some but is missing for others who opted-out of sharing this data\n\n\n\nA questionnaire is sent out to households in a local authority, asked for information about household income and employment history. Some households consider these questions too personal and did not fill in the information.\nA clinical trial involves taking blood samples from participants to analyse. Some samples are dropped on the way to the lab and their results are unusable. The analysis dataset contains blank spaces where these results would be.\nMobile phone apps that collect user information often have holes in the dataset where users opt-out of data sharing"
+  },
+  {
+    "objectID": "part-1-slides.html#missing-data-1",
+    "href": "part-1-slides.html#missing-data-1",
+    "title": "Introduction to Statistics",
+    "section": "Missing data",
+    "text": "Missing data\nImpossible to truly know the reason for and impact of missing data\nBest way to overcome missing data is to not have any!\nImportant to consider potential biases introduced by missing data and account for them in analysis\nBe transparent when reporting missing data\n\nUnfortunately, the true reason for missingness will not be known as the data do not exist. When dealing with missing data, our main aim is to identify the most likely reasons and be transparent about the implication of this on our analysis. Failure to recognise and deal with missing data can produce invalid, often misleading results. If data are missing because of the missing data itself, or if there would be systematic differences between the observed and missing values, this means the data are no longer random, one of the main requirements of statistical inference. At a very minimum, we must be transparent about the number and type of missing data within our sample. This should be done before analysis methods are considered as sometimes they may require alternative approaches to overcome the bias introduced by missingness."
+  },
+  {
+    "objectID": "part-1-slides.html#missing-data-and-bias",
+    "href": "part-1-slides.html#missing-data-and-bias",
+    "title": "Introduction to Statistics",
+    "section": "Missing data and bias",
+    "text": "Missing data and bias\nUser information is collected from a mobile phone app.\nThere are a number of users that do not have spatial location data as they opted out of this data collection.\nIn groups, come up with two scenarios:"
+  },
+  {
+    "objectID": "part-1-slides.html#missing-data-and-bias-1",
+    "href": "part-1-slides.html#missing-data-and-bias-1",
+    "title": "Introduction to Statistics",
+    "section": "Missing data and bias",
+    "text": "Missing data and bias\n\n\nA situation where this missing data may introduce bias into analysis results\nA situation where the sample size is reduced, but this does not lead to bias in analysis results.\n\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-data",
+    "href": "part-1-slides.html#summarising-data",
+    "title": "Introduction to Statistics",
+    "section": "Summarising data",
+    "text": "Summarising data\nAllows us to explore and quantify aspects of the sample\nCan not be used to answer research question unless all information on target population is collected\nChoice of summary depends on type of variable, distribution of data, and property we wish to quantify\n\nSummary statistics allow us to quantify and explore different parts of a sample of data. They can be provided alongside data visualisations introduced earlier in the course to support results and interpretations. Note that the summary statistics introduced in this section describe only the sample data so cannot be used to answer research questions fully unless all data on the target population has been collected.\nThe choice of summary statistics will depend on the type of variable(s) we wish to explore, the distribution of these variable(s) and the aspect of the data we would like to quantify. When interpreting summaries provided from analysis that has already been completed, it is important to check that the most appropriate summaries have been used and that interpretations of them will be valid."
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-categorical-variables",
+    "href": "part-1-slides.html#summarising-categorical-variables",
+    "title": "Introduction to Statistics",
+    "section": "Summarising categorical variables",
+    "text": "Summarising categorical variables\nDescribe the distribution of observations between categories:\n\nProportion (0 → 1)\nPercentage (0 → 100%)\nRate (0 → ∞)\n\nCan use count but does not account for overall sample size\n\nTo summarise a single categorical variable, we simply need to quantify the distribution of observations lying in each group. The simplest way to do this is to count the number of observations that lie in each group, as we have seen previously displayed in frequency tables. However, a simple count can be difficult to interpret without proper context. Often, we wish to present these counts relative to the total sample that they are taken from.\nThe proportion of observations in a given group is estimated as the number in the group divided by the total sample size. This gives a value between 0 and 1. Multiplying the proportion by 100 will give the percentage in each group, taking the value between 0 and 100%. In cases where the proportion and percentage in a given group is very small, we may wish to multiply the proportions by a larger number to make values easier to interpret. These values are known as rates and are interpreted as the value per the number multiplied by. For example, if the proportion in a group was 0.0005, this could be multiplied by 10,000 to give a rate of 5 per 10,000."
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-categorical-variables-1",
+    "href": "part-1-slides.html#summarising-categorical-variables-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising categorical variables",
+    "text": "Summarising categorical variables\nExample: the distribution of penguins between species in the sample data.\n\nTotal number of penguins in the sample: 344\nTotal number of Adelie penguins: 152\n\nProportion: 152 \\(\\div\\) 344 = 0.4419\nPercentage: 0.4419 \\(\\times\\) 100% = 44.19%\nRate: 0.4419 \\(\\times\\) 10,000 = 4419 per 10,000 penguins."
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-numeric-variables",
+    "href": "part-1-slides.html#summarising-numeric-variables",
+    "title": "Introduction to Statistics",
+    "section": "Summarising numeric variables",
+    "text": "Summarising numeric variables\nSummarised using the centre (average) and spread of sample\n\nChoice of summary depends on the distribution of variable\n\n\n\n\n\n\n\n\n\n\n\nNumeric variables are typically summarised using the centre of the variable, also known as the average, and a measure of the spread of the variable. The most appropriate choice of summary statistics will depend on the distribution of the variable. More specifically, whether the numeric variable is normally distributed or not. The shape/distribution of a variable is typically investigated by plotting data in a histogram."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre",
+    "href": "part-1-slides.html#measure-of-centre",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nWhen data are normally distributed, centre is given using the mean\n\n\nRepresents the peak of a normal distribution\nSum of the sample values, divided by the sample size\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe average of a numeric variable is another way of saying the centre of its distribution. Often, people will think of the mean when trying to calculate an average, however this may not always be the case. When data are normally distributed, the mean is the central peak of the distribution. This is calculated by adding together all numbers in the sample and dividing it by the sample size."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-1",
+    "href": "part-1-slides.html#measure-of-centre-1",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nTake a random sample of 10 penguins from our data and measure their bill length (in mm):\n45.1, 54.2, 45.5, 45.1, 44, 51.9, 37.9, 38.6, 50.7, 45.5\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-2",
+    "href": "part-1-slides.html#measure-of-centre-2",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nFind the mean bill length:\n45.1 + 54.2 + 45.5 + 45.1 + 44 + 51.9 + 37.9 + 38.6 + 50.7 + 45.5\n= 458.5mm\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-3",
+    "href": "part-1-slides.html#measure-of-centre-3",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nFind the mean bill length:\n458.5 \\(\\div\\) 10 = 45.85mm\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-center",
+    "href": "part-1-slides.html#measure-of-center",
+    "title": "Introduction to Statistics",
+    "section": "Measure of center",
+    "text": "Measure of center\nWhere data are not normal, use median instead\nOrder sample from smallest to largest, select middle value\nUses less information than mean (less powerful) but always valid\n\nHowever, when the sample is not normally distributed and the peak does not lie in the middle, extreme values or a longer tail will pull the mean towards it. This means that where data are not normally distributed, the mean will not be the centre and the value will be invalid. Where this is the case, the median should be used instead. The median is calculated by ordering the numeric values from smallest to largest and selecting the middle value."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-4",
+    "href": "part-1-slides.html#measure-of-centre-4",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n45.1, 54.2, 45.5, 45.1, 44, 51.9, 37.9, 38.6, 50.7, 45.5\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-5",
+    "href": "part-1-slides.html#measure-of-centre-5",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-6",
+    "href": "part-1-slides.html#measure-of-centre-6",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nThe median is the middle value\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst\n\n\n\nWe then take the middle value. As the sample size is even, the median will lie between two values - the 5th (149.58cm) and the 6th (160.42cm)."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-7",
+    "href": "part-1-slides.html#measure-of-centre-7",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nMedian is between 45.1mm and 45.5mm.\nMiddle value: (45.1 + 45.5) \\(\\div\\) 2 = 45.3mm\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-centre-8",
+    "href": "part-1-slides.html#measure-of-centre-8",
+    "title": "Introduction to Statistics",
+    "section": "Measure of centre",
+    "text": "Measure of centre\nBefore choosing summary, use a histogram to check distribution\nWhen data are normally distributed, mean uses more of the data and gives centre of the sample\nWhen data are skewed, mean is influenced by extreme values and longer tail\nWhen data are normal, mean and median will be equal\n\nWhen data are normally distributed, the mean and median will give the same, or very similar, values. This is because both are measuring the centre. However, when the data are skewed, the mean and median will differ. We prefer to use the mean where possible as it is the more powerful measure. This means that it uses more of the data than the median and is therefore more sensitive to changes in the sample."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread",
+    "href": "part-1-slides.html#measure-of-spread",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nMeasures how wide or narrow a sample is\nSimplest measure is the range\nEither given as the smallest and largest values or the difference between these\n\nGenerally the measure of the centre of a numeric variable is presented with a measure of spread, or how wide/narrow the distribution is. As with the centre, the most appropriate values will depend on whether the sample is normally distributed or not.\nThe most simple measure of spread is the range of a sample. The range is either presented as the smallest and largest values from a sample or the difference between these."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-1",
+    "href": "part-1-slides.html#measure-of-spread-1",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n45.1, 54.2, 45.5, 45.1, 44, 51.9, 37.9, 38.6, 50.7, 45.5\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-2",
+    "href": "part-1-slides.html#measure-of-spread-2",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-3",
+    "href": "part-1-slides.html#measure-of-spread-3",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n37.9 , 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-4",
+    "href": "part-1-slides.html#measure-of-spread-4",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nRange is either given as two values: 37.9mm, 54.2mm\nOr as the difference between these: 54.2 - 37.9 = 16.3mm\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-5",
+    "href": "part-1-slides.html#measure-of-spread-5",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nRange only uses most extreme values, loses lots of information\nInterquartile range (IQR): the range of the middle 50%\nLower quartile: 25th percentile, 25% of sample lies below\nUpper quartile: 75th percentile, 75% of sample lies below\n\nThe issue with using the range is that it is entirely defined by the most extreme values in the sample and does not give any information about the rest of it. An alternative to this would be to give the range of the middle 50%, also known as the interquartile range (IQR). The IQR is the difference between the 75th percentile, or upper quartile, and the 25th percentile, or lower quartile."
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-6",
+    "href": "part-1-slides.html#measure-of-spread-6",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the IQR of the 10 penguins’ bill lengths:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-7",
+    "href": "part-1-slides.html#measure-of-spread-7",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-8",
+    "href": "part-1-slides.html#measure-of-spread-8",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-9",
+    "href": "part-1-slides.html#measure-of-spread-9",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nFind the upper and lower quartile:\n37.9, 38.6, 44, 45.1, 45.1, 45.5, 45.5, 50.7, 51.9, 54.2\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-10",
+    "href": "part-1-slides.html#measure-of-spread-10",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nIQR is either given as 2 values: 44mm, 50.7mm\nOr as the difference between these: 50.7 - 44 = 6.7mm\n\n\n\nArtwork by @allison_horst"
+  },
+  {
+    "objectID": "part-1-slides.html#measure-of-spread-11",
+    "href": "part-1-slides.html#measure-of-spread-11",
+    "title": "Introduction to Statistics",
+    "section": "Measure of spread",
+    "text": "Measure of spread\nIQR is still discarding most of the sample\nIf sample is normally distributed, can use the standard deviation (SD)\nAverage difference between observations and the mean\nBigger SD → wider, flatter curve\nSmaller SD → narrower, taller curve\n\nBoth the range and IQR only use 2 values from the sample. As with the median, these measures discard a lot of information from the summaries. Where the sample is normally distributed, the standard deviation (SD) can be used which measures the average distance between each observation and the mean. The larger the SD, the wider and flatter the normal curve will be; the smaller the SD, the narrower and taller the curve will be:"
+  },
+  {
+    "objectID": "part-1-slides.html#normal-distribution",
+    "href": "part-1-slides.html#normal-distribution",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nNormal distribution completely defined by the mean (peak) and SD (spread)\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.\nFor example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "part-1-slides.html#normal-distribution-1",
+    "href": "part-1-slides.html#normal-distribution-1",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nApproximately 68% of the sample will lie within 1 standard deviation of the mean\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.\nFor example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "part-1-slides.html#normal-distribution-2",
+    "href": "part-1-slides.html#normal-distribution-2",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nApproximately 95% of the sample will lie within 2 standard deviations of the mean\n\n\nThe standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values. For example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:"
+  },
+  {
+    "objectID": "part-1-slides.html#normal-distribution-3",
+    "href": "part-1-slides.html#normal-distribution-3",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nMean and SD can be used to check normal distribution assumption"
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-numeric-variables-1",
+    "href": "part-1-slides.html#summarising-numeric-variables-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising numeric variables",
+    "text": "Summarising numeric variables\nMost appropriate summary depends on distribution (normal or not)\nIf normally distributed, use mean and SD\nIf not, these are invalid, use median and IQR\nMean and SD can be used to check normal distribution even without the full sample"
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-data-1",
+    "href": "part-1-slides.html#summarising-data-1",
+    "title": "Introduction to Statistics",
+    "section": "Summarising data",
+    "text": "Summarising data"
+  },
+  {
+    "objectID": "part-1-slides.html#quantifying-differences-and-trends",
+    "href": "part-1-slides.html#quantifying-differences-and-trends",
+    "title": "Introduction to Statistics",
+    "section": "Quantifying differences and trends",
+    "text": "Quantifying differences and trends\nMost appropriate choice depends on intention, type of outcome, nature of the relationship\n\nComparison of variable between groups\nInvestigating trends over time\nRelationship between numeric variables\n\n\nOften, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-categorical-outcomes",
+    "href": "part-1-slides.html#comparing-categorical-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\nCompare summary statistics (proportions, percentages, or rates) between groups\nAbsolute difference: Subtract values\nRelative difference: Divide values\n\nWhen comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-categorical-outcomes-1",
+    "href": "part-1-slides.html#comparing-categorical-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nAbsolute difference: 50% - 48.74% = 1.26%\nThe absolute difference between Adelie and Gentoo penguins is 1.26 percentage points."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-numeric-outcomes",
+    "href": "part-1-slides.html#comparing-numeric-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nCompare measures of centre/average (mean or median) between groups\nMost appropriate depends on distribution of sample in each group\nRequires a histogram per group\n\nThe most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-numeric-outcomes-1",
+    "href": "part-1-slides.html#comparing-numeric-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes"
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-variables-over-time",
+    "href": "part-1-slides.html#comparing-variables-over-time",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nVisualised using line graph\nCommon comparisons: absolute difference, relative difference, or percentage change\nChoice depends on intention, interpretation differs\n\nWhen dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-variables-over-time-1",
+    "href": "part-1-slides.html#comparing-variables-over-time-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nAbsolute difference: 1,841,000 - 1,239,000 = 602,000\nThere were 602,000 less violent crimes reported in 2020 compared to 2010\nRelative difference: 1,841,000 ÷ 1,239,000 = 1.486\nThere were 1.486 times more violent crimes reported in 2010 compared to 2020\n\nThe absolute difference is found by subtracting the number of violent crimes recorded in 2020, 1,239,000, by the number in 2010, 1,841,000. There were 602,000 ;ess violent crimes reported in 2020 compared to 2010.\nThe relative difference is found by dividing one count by the other. In this example, the relative difference (1,841,000 / 1,239,000) is 1.486. This means that there were 1.486 times more violent crimes reported in 2020 compared to 2010."
+  },
+  {
+    "objectID": "part-1-slides.html#relationship-between-numeric-variables",
+    "href": "part-1-slides.html#relationship-between-numeric-variables",
+    "title": "Introduction to Statistics",
+    "section": "Relationship between numeric variables",
+    "text": "Relationship between numeric variables\nScatterplot used to visualise trends\nStrength of relationship quantified using correlation coefficients\nChoice of coefficients depends on if trend is linear or not\n\nLinear trend: Pearson’s correlation coefficient\nNonlinear trend: Spearman’s correlation coefficient\n\n\nCorrelation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?\nThe Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary."
+  },
+  {
+    "objectID": "part-1-slides.html#correlation-coefficients",
+    "href": "part-1-slides.html#correlation-coefficients",
+    "title": "Introduction to Statistics",
+    "section": "Correlation coefficients",
+    "text": "Correlation coefficients\nTake value between -1 and 1\nCorrelation of 0 means no association\nCloser coefficient is to +1/-1, the stronger the positive/negative association is\n\nCorrelation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is."
+  },
+  {
+    "objectID": "part-1-slides.html#section-7",
+    "href": "part-1-slides.html#section-7",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 and 2020."
+  },
+  {
+    "objectID": "part-1-slides.html#missing-data-and-bias-2",
+    "href": "part-1-slides.html#missing-data-and-bias-2",
+    "title": "Introduction to Statistics",
+    "section": "Missing data and bias",
+    "text": "Missing data and bias\n\nAn example of where missing data from a mobile app would introduce bias into results.\nAn example of where missing data from a mobile app would not introduce bias into results."
+  },
+  {
+    "objectID": "part-1-slides.html#introducing-the-palmer-penguins",
+    "href": "part-1-slides.html#introducing-the-palmer-penguins",
+    "title": "Introduction to Statistics",
+    "section": "Introducing the Palmer penguins",
+    "text": "Introducing the Palmer penguins\n\nArtwork by @allison_horst\nFrom this point on, we will be using data collected on penguins that live in the Palmer peninsula in Antarctica. The data contains information about the size and shape of these penguins, their gender and the species of penguin."
+  },
+  {
+    "objectID": "part-1-slides.html#introducing-the-palmer-penguins-1",
+    "href": "part-1-slides.html#introducing-the-palmer-penguins-1",
+    "title": "Introduction to Statistics",
+    "section": "Introducing the Palmer penguins",
+    "text": "Introducing the Palmer penguins\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nChinstrap\nDream\n46.5\n17.9\n192\n3500\nfemale\n2007\n\n\nAdelie\nBiscoe\n45.6\n20.3\n191\n4600\nmale\n2009\n\n\nGentoo\nBiscoe\n45.0\n15.4\n220\n5050\nmale\n2008\n\n\nAdelie\nDream\n34.0\n17.1\n185\n3400\nfemale\n2008\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n2007\n\n\nGentoo\nBiscoe\n46.6\n14.2\n210\n4850\nfemale\n2008"
+  },
+  {
+    "objectID": "part-1-slides.html#normal-distribution-4",
+    "href": "part-1-slides.html#normal-distribution-4",
+    "title": "Introduction to Statistics",
+    "section": "Normal distribution",
+    "text": "Normal distribution\nMean and SD can be used to check normal distribution assumption\nMean SFA: 37.37\nSD SFA: 78.38\nIf the data was normally distributed, 95% of the sample would lie between 37.37 \\(\\pm\\) 2 \\(\\times\\) 78.38\n= -119.39, 194.13"
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "A mobile phone app collects user information. Some of this data are missing as users chose to opt out of location-based services.\nGive one scenario where the missing data would lead to biased analysis results.\nGive another scenario where the missing data leads to a reduced sample but could still be used to produce unbiased results."
+  },
+  {
+    "objectID": "exercises.html#exercise-1-missing-data",
+    "href": "exercises.html#exercise-1-missing-data",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "A mobile phone app collects user information. Some of this data are missing as users chose to opt out of location-based services.\nGive one scenario where the missing data would lead to biased analysis results.\nGive another scenario where the missing data leads to a reduced sample but could still be used to produce unbiased results."
+  },
+  {
+    "objectID": "exercises.html#exercise-2-summary-statistics",
+    "href": "exercises.html#exercise-2-summary-statistics",
+    "title": "Introduction to Statistics",
+    "section": "Exercise 2: Summary statistics",
+    "text": "Exercise 2: Summary statistics\n\nQuestion 1\nThe following line graphs are taken from the Criminal Courts statistics quarterly report, showing the average number of days from offense to completion for defendants at the Crown Court. Which graph is the most appropriate to display the average time and why?\n\n\n\nAverage number of days from offence to completion for defendants dealt with at the Crown Court, Q1 2014 – Q4 2023\n\n\n\n\nQuestion 2\nThe mean and standard deviation of waiting times in weeks for hearings in the Crown Court between 2020 and 2023 are given in the table below. Using this information, what can you tell about the distribution of these times?\n\n\n\n\n\nYear\nMean wait (weeks)\nSD wait (weeks)\n\n\n\n\n2020\n13.5\n10.2\n\n\n2021\n19.1\n15.6\n\n\n2022\n20.9\n13.9\n\n\n2023\n22.8\n14.7"
+  },
+  {
+    "objectID": "part-2-slides.html",
+    "href": "part-2-slides.html",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Beyond the sample\n\n\n\n\n\n\n\n\n\nAt the beginning of the course, we saw that one of the main aims of statistics is to make inferences about a target population of interest based on results of analysis applied to a random sample. These inferences require inferential statistics,\n\n\n\n\nInferential statistics make inferences about target population based on a random, representative sample\nCombine sample estimates with sample size and level of precision\nMost common inferential statistics: p-values and confidence intervals\n\nThese are estimated by combining results from the random, representative sample taken from the target population, and information about the sample size and precision of the sample estimate.\n\n\n\n\nPrecision of an estimate quantified by standard error (SE)\nBased on sample size and sample variability\nDifferent formula for each type of estimate (e.g. mean, percentage, difference between means)\n\n\\(SE(\\bar{x}) = \\frac{SD}{\\sqrt{n}}\\)\n\n\nInferential statistics require a measure of how precise a sample estimate is. Precision is quanti􀏐ied using the standard error (SE), calculated using the sample size and sample variability. The formula used to calculate a standard error depends on the type of parameter we wish to obtain from the target. For example, the standard error of a single mean (𝑆𝐸(𝑥)̄ ) is found by dividing the sample standard deviation (𝑆𝐷) by the square root of the sample size (𝑛):"
+  },
+  {
+    "objectID": "part-1-slides.html",
+    "href": "part-1-slides.html",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "What is statistics?\n\n\n\n\n\n\n\n\nCollection and storage of data\nData visualisation\nAnalysis of data\nInterpretation of results\nCommunication of results\n\n\n\n\n\n\n\nStatistics is the science of data. This includes the collection and storage of data, the visualisation and analysis of samples of data, and the interpretation and communication of results.\n\n\n\n\n\n\n\n\n\n\nThe overall aim of statistics is to make inferences about a target population of interest based on a random sample.\n\n\n\n\n\n\n\n\n\n\nThese inferences are made by applying some kind of statistical analysis to the random sample of the population and making inferences based on those results\n\n\n\n\nStatistics does not require complex analysis methods\nSimplest approaches often the most effective\nStatistical thinking = data-driven critical thinking\n\nPeople tend to assume that statistics involves complex analysis methods but often, the simplest approaches can be the most effective. In this course, we will not focus on analysis methods. Instead, we will be focusing on thinking statistically.\nStatistical thinking involves describing data and complex systems in relatively simple terms whilst acknowledging uncertainty that exists. The process of statistical thinking involves critically appraising available data, identifying patterns using visualisations and summaries, and communicating results in a clear, concise manner. Statistical thinking could be thought of as data-driven critical thinking.\n\n\n\n\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder\n\n\n\nIn 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?\n\n\nAround 9%\nAround 37%\nAround 61%\n\n\n\n\nSource: Gapminder\n\n\n\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder\n\n\n\nIn low-income countries across the world in 2022, what share of girls went to school until at least age 11?\n\n\nAround 20%\nAround 40%\nAround 60%\n\n\n\n\nSource: Gapminder\n\n\n\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder\n\n\n\nHow many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?\n\n\nAround 40%\nAround 60%\nAround 90%\n\n\n\n\nSource: Gapminder\n\n\n\n\n\nNecessary, not just in work but in personal life\nClaims by news/social media often exaggerated or skewed\nHuman brain have a tendency to catastrophise, not good at assessing risk\n\n\n\n\n\n\n\n\n\n\nStatistical thinking\n\nFormulating a research question\nCommon biases\nMissing data\n\n\n\n\n\n\n\n\n\nData exploration\n\nSummary statistics: what they are, how we choose them, and how we communicate them\nUnderstanding the sample: how to quantify differences and trends in a sample\n\n\n\n\n\n\n\n\n\nInferential statistics\n\nCentral limit theorem\nHow to interpret and communicate p-values and confidence intervals\nWhere do these values come from?\n\n\n\n\n\n\n\n\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
+  },
+  {
+    "objectID": "part-1-slides.html#section-4",
+    "href": "part-1-slides.html#section-4",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "normal_data_sd &lt;- tibble(x = rep(seq(-4, 4, length = 100), 2),\n                         y = c(dnorm(x[1:100]), dnorm(x[101:200], sd = .1)),\n                         sd_grp = c(rep(0, 100), rep(1, 100)),\n                         sd = factor(sd_grp, \n                                     labels = c(\"sd = 1\", \"sd = 0.1\")))\n\nggplot(normal_data_sd) +\n  geom_density(aes(x = x, y = y), \n               stat = \"identity\", fill = \"thistle\") +\n  labs(x = \"\", y = \"\") + \n  facet_grid(rows = vars(sd)) +\n  theme_stats_thinking() +\n  theme(strip.text = element_text(size = 12, colour = \"#ebe8e3\"),\n        strip.background = element_rect(fill = \"#1f2e32\"))"
+  },
+  {
+    "objectID": "part-1-slides.html#section-8",
+    "href": "part-1-slides.html#section-8",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 (1,841,000 and 2020 1,239,000.)"
+  },
+  {
+    "objectID": "part-1-slides.html#section-9",
+    "href": "part-1-slides.html#section-9",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:"
+  },
+  {
+    "objectID": "part-1-slides.html#section-10",
+    "href": "part-1-slides.html#section-10",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "ggplot(data = correlation_data) +\n  geom_point(aes(x = xcor1, y = ycor_neg)) +\n  labs(x = \"\", y = \"\") + \n  theme_stats_thinking()"
+  },
+  {
+    "objectID": "part-1-slides.html#section-11",
+    "href": "part-1-slides.html#section-11",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "ggplot(data = correlation_data) +\n  geom_point(aes(x = xcor1, y = y_nocor)) +\n  labs(x = \"\", y = \"\") + \n  theme_stats_thinking()"
+  },
+  {
+    "objectID": "part-1-slides.html#section-12",
+    "href": "part-1-slides.html#section-12",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "ggplot(data = correlation_data) +\n  geom_point(aes(x = xcor1, y = yspearman)) +\n  labs(x = \"\", y = \"\") + \n  theme_stats_thinking()"
+  },
+  {
+    "objectID": "part-1-slides.html#summarising-data-2",
+    "href": "part-1-slides.html#summarising-data-2",
+    "title": "Introduction to Statistics",
+    "section": "Summarising data",
+    "text": "Summarising data\n\n\n\n−+\n10:00\n\n\n\n\n\n\nYear\nMean wait (weeks)\nSD wait (weeks)\n\n\n\n\n2020\n13.5\n10.2\n\n\n2021\n19.1\n15.6\n\n\n2022\n20.9\n13.9\n\n\n2023\n22.8\n14.7\n\n\n\n\n\n\nThe first graph is taken from the Criminal Courts statistics quarterly report, showing the average number of days from offense to completion for defendants at the Crown Court. Which graph is the most appropriate to display the average time and why?\nThe table provides the mean and standard deviation of waiting times in weeks for hearings in the Crown Court between 2020 and 2023. Using this information, what can you tell about the distribution of these times?"
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-categorical-outcomes-2",
+    "href": "part-1-slides.html#comparing-categorical-outcomes-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 50% \\(\\div\\) 48.74% = 1.03\nThere were 1.03 times more female penguins in the Adelie group than the Gentoo penguin group\nNo difference would = 1"
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-categorical-outcomes-3",
+    "href": "part-1-slides.html#comparing-categorical-outcomes-3",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 48.74% \\(\\div\\) 50% = 0.97\nThere were 0.97 times the percentage of female penguins in the Gentoo group than the Adelie penguin group\nLess than 1: a reduction"
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-numeric-outcomes-2",
+    "href": "part-1-slides.html#comparing-numeric-outcomes-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nNeither the female nor the male group have a normal distribution → compare medians.\nMedian body mass of female penguins: 3650g\nMedian body mass of male penguins: 4300g\nAverage difference in body mass: -650g\nFemale penguins were 650g lighter on average compared to male penguins in this sample"
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-variables-over-time-2",
+    "href": "part-1-slides.html#comparing-variables-over-time-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nThe percentage change can also be found by converting the relative difference\nCompare relative difference to no difference: 1.486 - 1 = 0.486\nConvert the proportion change to percentage: 0.486 x 100%\n= 48.6%\nThere were 48.6% more violent crimes reported in 2010 than 2020\n\nThe percentage change can be found by comparing the relative difference to the null value of 1 (no relative difference). When comparing 2010 to 2020, the relative difference was 0.486 above 1, giving the proportion increase. This can be multiplied by 100 to give a percentage increase of 48.6%. Therefore, there were 48.6% more violent crimes reported in 2010 compared to 2020."
+  },
+  {
+    "objectID": "part-1-slides.html#comparing-variables-over-time-3",
+    "href": "part-1-slides.html#comparing-variables-over-time-3",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nPercentage reduction found in similar way\nRelative difference: 1,239,000 ÷ 1,841,000 = 0.673\nCompare to no difference: 1 - 0.673 = 0.327 (32.7%)\nThere were 32.7% fewer violent crimes reported in 2020 than 2010\n\nThe relative difference can also be found by comparing 2020 to 2010 if we want to give the relative or percentage decrease in violent crime. The relative difference (1,239,000 / 1,841,000) is 0.673, so there were 0.673 times the number of crimes reported in 2020 than 2010. This result is not intuitive, so converting the difference into a percentage decrease can make the value easier to interpret. As with an increase, we first find the difference between the relative difference and the null (1 - 0.673). This gives a proportion decrease of 0.327 or a percentage decrease of 32.7%. Therefore, there were 32.7% fewer violent crimes reported in 2020 compared to 2010."
+  },
+  {
+    "objectID": "part-2-slides.html#what-are-inferential-statistics",
+    "href": "part-2-slides.html#what-are-inferential-statistics",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "At the beginning of the course, we saw that one of the main aims of statistics is to make inferences about a target population of interest based on results of analysis applied to a random sample. These inferences require inferential statistics,"
+  },
+  {
+    "objectID": "part-2-slides.html#what-are-inferential-statistics-1",
+    "href": "part-2-slides.html#what-are-inferential-statistics-1",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Inferential statistics make inferences about target population based on a random, representative sample\nCombine sample estimates with sample size and level of precision\nMost common inferential statistics: p-values and confidence intervals\n\nThese are estimated by combining results from the random, representative sample taken from the target population, and information about the sample size and precision of the sample estimate."
+  },
+  {
+    "objectID": "part-2-slides.html#measures-of-precision",
+    "href": "part-2-slides.html#measures-of-precision",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Precision of an estimate quantified by standard error (SE)\nBased on sample size and sample variability\nDifferent formula for each type of estimate (e.g. mean, percentage, difference between means)\n\n\\(SE(\\bar{x}) = \\frac{SD}{\\sqrt{n}}\\)\n\n\nInferential statistics require a measure of how precise a sample estimate is. Precision is quanti􀏐ied using the standard error (SE), calculated using the sample size and sample variability. The formula used to calculate a standard error depends on the type of parameter we wish to obtain from the target. For example, the standard error of a single mean (𝑆𝐸(𝑥)̄ ) is found by dividing the sample standard deviation (𝑆𝐷) by the square root of the sample size (𝑛):"
+  }
+]

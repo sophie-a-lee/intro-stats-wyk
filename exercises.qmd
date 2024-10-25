@@ -1,0 +1,50 @@
+---
+title: "Introduction to Statistics"
+subtitle: "Exercises: Part 1" 
+author: Sophie Lee
+format: 
+  html:
+    theme: 
+      light: pulse
+      dark: darkly
+  pdf: 
+    documentclass: scrreprt
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce)
+
+
+```
+
+## Exercise 1: Missing data
+
+A mobile phone app collects user information. Some of this data are missing as users chose to opt out of location-based services. 
+
+Give one scenario where the missing data would lead to **biased** analysis results. 
+
+Give another scenario where the missing data leads to a reduced sample but could still be used to produce **unbiased** results.
+
+## Exercise 2: Summary statistics
+
+### Question 1
+The following line graphs are taken from the Criminal Courts statistics quarterly report, showing the average number of days from offense to completion for defendants at the Crown Court. Which graph is the most appropriate to display the average time and why?
+
+![Average number of days from offence to completion for defendants dealt with at the Crown Court, Q1 2014 – Q4 2023](img/days_completion_cc.png)
+
+### Question 2
+The mean and standard deviation of waiting times in weeks for hearings in the Crown Court between 2020 and 2023 are given in the table below. Using this information, what can you tell about the distribution of these times?
+
+```{r}
+#| label: exercise2-table
+#| echo: false
+
+
+tibble(year = 2020:2023,
+       mean_wait = c(13.5, 19.1, 20.9, 22.8),
+       sd_wait = c(10.2, 15.6, 13.9, 14.7)) %>% 
+  knitr::kable(col.names = c("Year", "Mean wait (weeks)", "SD wait (weeks)"))
+```

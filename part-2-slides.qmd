@@ -1,0 +1,82 @@
+---
+title: "Introduction to Statistics"
+subtitle: "Part 2: Inferential statistics and modelling" 
+author: Sophie Lee
+format: 
+  revealjs:
+    incremental: true
+    slide-number: true
+    theme: custom.scss
+    width: 1920
+    height: 1080
+knitr:
+  opts_chunk: 
+    fig.align: center
+    message: false
+    dev: png
+    dev.args: { bg: "transparent" }
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce)
+
+# Theme for output
+theme_stats_thinking <- function() {
+  theme_minimal() +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 15),
+        axis.line = element_line(colour = "grey30"),
+        panel.grid.major = element_line(colour = "grey50"),
+        panel.grid.minor = element_line(colour = "grey75"),
+        panel.background = element_blank(),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 12))
+}
+```
+
+#  {.chapter-theme}
+
+::: r-fit-text
+Beyond the sample
+:::
+
+## What are inferential statistics?
+
+![](img/stats_inference2.png){height="20cm" width="50cm" fig-align="center"}
+
+:::{.notes}
+At the beginning of the course, we saw that one of the main aims of statistics is to make inferences about a target population of interest based on results of analysis applied to a random sample. These inferences require inferential statistics,
+:::
+
+## What are inferential statistics?
+
+Inferential statistics make inferences about target population based on a [random, representative sample]{.answer}
+
+[Combine sample estimates with [sample size]{.answer} and [level of precision]{.answer}]{.fragment}
+
+[Most common inferential statistics: [p-values]{.answer} and [confidence intervals]{.answer}]{.fragment}
+
+:::{.notes}
+These are estimated by combining results from the random, representative sample taken from the target population, and information about the sample size and precision of the sample estimate.
+:::
+
+## Measures of precision
+
+Precision of an estimate quantified by [standard error (SE)]{.answer}
+
+[Based on sample size and sample variability]{.fragment}
+
+[Different formula for each type of estimate (e.g. mean, percentage, difference between means)]{.fragment}
+
+:::{.fragment .bigger .absolute bottom=300 left=750}
+$SE(\bar{x}) = \frac{SD}{\sqrt{n}}$
+:::
+
+:::{.notes}
+Inferential statistics require a measure of how precise a sample estimate is. Precision is quanti􀏐ied using the standard error (SE), calculated using the sample size and sample variability. The formula used to calculate a standard error depends on the type of parameter we wish to obtain from the target.
+For example, the standard error of a single mean (𝑆𝐸(𝑥)̄ ) is found by dividing the sample standard deviation (𝑆𝐷) by the square root of the sample size (𝑛):
+:::
+

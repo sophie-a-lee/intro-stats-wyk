@@ -1,0 +1,1382 @@
+---
+title: "Introduction to Statistics"
+subtitle: "Part 1: Statistical thinking, biases, and data exploration" 
+author: Sophie Lee
+format: 
+  revealjs:
+    incremental: true
+    slide-number: true
+    theme: custom.scss
+    width: 1920
+    height: 1080
+knitr:
+  opts_chunk: 
+    fig.align: center
+    message: false
+    dev: png
+    dev.args: { bg: "transparent" }
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce,
+               palmerpenguins)
+
+# Theme for output
+theme_stats_thinking <- function() {
+  theme_minimal() +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 15),
+        axis.line = element_line(colour = "grey30"),
+        panel.grid.major = element_line(colour = "grey50"),
+        panel.grid.minor = element_line(colour = "grey75"),
+        panel.background = element_blank(),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 12))
+}
+
+csp_2020 <- read_csv("data/CSP_2020.csv")
+```
+
+
+#  {.chapter-theme}
+
+::: r-fit-text
+What is statistics?
+:::
+
+## What is statistics?
+
+::: columns
+
+:::{.column width="60%"}
+##### Statistics = science of data
+
+-   Collection and storage of data
+-   Data visualisation
+-   Analysis of data
+-   Interpretation of results
+-   Communication of results
+:::
+
+:::{.column width="40%"}
+![](img/scream.jpg)
+:::
+:::
+::: notes
+Statistics is the science of data. This includes the collection and storage of data, the visualisation and analysis of samples of data, and the interpretation and communication of results.
+:::
+
+## What is statistics?
+
+![](img/stats_inference1.png){height="20cm" width="50cm" fig-align="center"}
+
+::: notes
+The overall aim of statistics is to make inferences about a target population of interest based on a random sample.
+:::
+
+## What is statistics?
+
+![](img/stats_inference2.png){height="20cm" width="50cm" fig-align="center"}
+
+::: notes
+These inferences are made by applying some kind of statistical analysis to the random sample of the population and making inferences based on those results
+:::
+
+## What is statistical thinking?
+
+[Statistics does not require complex analysis methods]{.fragment}
+
+[Simplest approaches often the most effective]{.fragment}
+
+[Statistical thinking = [data-driven critical thinking]{.answer}]{.fragment}
+
+::: notes
+People tend to assume that statistics involves complex analysis methods but often, the simplest approaches can be the most effective. In this course, we will not focus on analysis methods. Instead, we will be focusing on thinking statistically.
+
+Statistical thinking involves describing data and complex systems in relatively simple terms whilst acknowledging uncertainty that exists. The process of statistical thinking involves critically appraising available data, identifying patterns using visualisations and summaries, and communicating results in a clear, concise manner. Statistical thinking could be thought of as data-driven critical thinking.
+:::
+
+## Why statistical thinking?
+
+In 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?
+
+::: nonincremental
+a.  Around 9%
+b.  Around 37%
+c.  Around 61%
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+In 1990, 58% of the world’s population lived in low-income countries. What is the percentage today?
+
+::: nonincremental
+a.  [Around 9%]{.answer}
+b.  Around 37%
+c.  Around 61%
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+In low-income countries across the world in 2022, what share of girls went to school until at least age 11?
+
+::: nonincremental
+a.  Around 20%
+b.  Around 40%
+c.  Around 60%
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+In low-income countries across the world in 2022, what share of girls went to school until at least age 11?
+
+::: nonincremental
+a.  Around 20%
+b.  Around 40%
+c.  [Around 60%]{.answer}
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+How many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?
+
+::: nonincremental
+a.  Around 40%
+b.  Around 60%
+c.  Around 90%
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+How many babies in the UK were vaccinated against some disease in 2019 (before the Coronavirus pandemic)?
+
+::: nonincremental
+a.  Around 40%
+b.  Around 60%
+c.  [Around 90%]{.answer}
+:::
+
+::: aside
+Source: [Gapminder](https://www.gapminder.org/)
+:::
+
+## Why statistical thinking?
+
+::: columns
+
+:::{.column width="60%"}
+[Necessary, not just in work but in personal life]{.fragment fragment-index=1}
+
+[Claims by news/social media often exaggerated or skewed]{.fragment fragment-index=2}
+
+[Human brain have a tendency to catastrophise, not good at assessing risk]{.fragment fragment-index=3}
+:::
+
+:::{.column width=40% .fragment fragment-index=2}
+![](img/trump.jpg)
+:::
+:::
+
+## Course content
+
+### Part 1: Monday 28th October, 2024
+- Statistical thinking
+  - Formulating a research question
+  - Common biases
+  - Missing data
+  
+## Course content
+
+### Part 1: Monday 28th October, 2024  
+- Data exploration
+  - Summary statistics: what they are, how we choose them, and how we communicate them
+  - Understanding the sample: how to quantify differences and trends in a sample
+  
+## Course content
+
+### Part 2: Friday 1st November, 2024
+- Inferential statistics    
+  - Central limit theorem
+  - How to interpret and communicate p-values and confidence intervals
+  - Where do these values come from?
+  
+## Course content
+
+### Part 2: Friday 1st November, 2024  
+  
+- Statistical modelling
+  - What are models and why are they useful to data analytics?
+  - How to choose an appropriate model based on the research question
+  - Model outputs and their interpretations
+
+# {.chapter-theme}
+::: r-fit-text
+Research questions 
+
+and biases 
+:::
+
+## Research questions
+
+[One of the most important parts of statistical analysis]{.fragment}
+
+[Should be formulated [before]{.answer} any data collection or analysis carried out]{.fragment}
+
+[Must be [clear, answerable, and concise]{.answer}]{.fragment}
+
+[Often not formally documented but helps develop an analysis plan]{.fragment}
+
+::: notes
+Arguably, the most important step in carrying out statistics is to specify a clear, answerable research question. Often, research questions are not formally documented but they are key to ensuring we are using appropriate data and methods to provide the most suitable advice. A research question must be fully specified before any data are collected or any analysis plans have been decided.
+:::
+
+## Research questions
+
+[All research questions must contain a [target population]{.answer} and an [outcome]{.answer}]{.fragment}
+
+[Often questions contain [comparison groups]{.answer}, these must also be fully defined]{.fragment}
+
+[Can be helpful to use [PICO]{.answer} approach]{.fragment}
+
+::: notes
+Although there are infinite research questions that statistics can be used to address, all must contain certain elements. These are a target population and an outcome of interest. If an analysis requires a comparison between groups, these must also be clearly specified in the research question. One way to ensure that a research question has been correctly specified is to use the PICO approach:
+:::
+
+## PICO approach
+
+[P]{.answer}opulation
+
+[I]{.answer}ntervention (group 1)
+
+[C]{.answer}omparison (group 2)
+
+[O]{.answer}utcome
+
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in obese adults?
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in [obese adults]{.answer}?
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in [obese adults]{.answer}?
+
+[Population:]{.underline} Obese adults
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in [obese adults]{.answer}?
+
+[Population:]{.underline} Obese ~~adults~~
+
+People aged 18 or over
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in [obese adults]{.answer}?
+
+[Population:]{.underline} ~~Obese adults~~
+
+People aged 18 or over with a BMI over 30
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in obese adults?
+
+[Population:]{.underline} People aged 18 or over with a BMI over 30
+
+## Example research question
+
+Does a [plant-based diet]{.answer} reduce cholesterol levels in obese adults?
+
+[Population:]{.underline} People aged 18 or over with a BMI over 30
+
+[[Intervention:]{.underline} Plant-based diet]{.fragment}
+
+[[Comparison:]{.underline} Standard diet (control group)]{.fragment}
+
+## Example research question
+
+Does a plant-based diet reduce cholesterol levels in obese adults?
+
+[Population:]{.underline} People aged 18 or over with a BMI over 30
+
+[Intervention:]{.underline} Plant-based diet
+
+[Comparison:]{.underline} Standard diet (control group)
+
+## Example research question
+
+Does a plant-based diet reduce [cholesterol levels]{.answer} in obese adults?
+
+[Population:]{.underline} People aged 18 or over with a BMI over 30
+
+[Intervention:]{.underline} Plant-based diet
+
+[Comparison:]{.underline} Standard diet (control group)
+
+[[Outcome:]{.underline} Difference in cholesterol level]{.fragment}
+
+## Biases
+
+[Almost all data and analyses will have some kind of bias included]{.fragment}
+
+[Important to consider before analysis plan decided]{.fragment}
+
+[Can arise at data collection, analysis, interpretation, and communication stages]{.fragment}
+
+::: notes
+Whether the data we use to answer our research question is collected by ourselves or taken from a published source, it is important to consider potential biases, or errors, that may be present. Unfortunately most data collection methods are inherently flawed, this makes it especially important to be transparent about the limitations of the data and analysis we provide.
+
+There are many different types of bias that can arise at different stages of an analysis. Here, I will introduce some of the most common types with examples.
+:::
+
+## Selection bias
+
+::: columns
+::: {.column width="60%"}
+Individuals more likely to be included in sample than others
+
+[Sample no longer random, cannot make inferences about target population]{.fragment fragment-index=2}
+:::
+
+::: {.column width="40%"}
+![](img/cherry.png){.fragment fragment-index=1 .absolute top=400 right=0 height="10cm" width="20cm"}
+:::
+:::
+
+::: notes
+Selection bias occurs when some data are more likely to be included in a sample than others. One of the key requirements of statistical analysis is that a sample must be random and representative of the target population in our research question. If this is not the case, we may not be able to make inferences about the target population and will not be able to answer the research question. Cherry picking individuals
+
+For example, we are interested in whether one hour of yoga per day improves depressive symptoms in adults living in the UK with anxiety and depression. We ask GPs around the UK to suggest patients from their surgery that are currently being treated for anxiety and depression to take part in the study. If the doctors deliberately selected the patients they thought would benefit most from the yoga classes, i.e. those with the highest baseline depressive symptoms, this sample would not be random and the results would be impacted by selection bias.
+:::
+
+## Recall bias
+
+::: columns
+::: {.column width="70%"}
+Participants asked to recall past events or experiences
+
+[Accuracy and completeness will differ]{.fragment}
+
+[Not always trustworthy]{.fragment}
+:::
+
+::: {.column width="30%"}
+![](img/recall.png){height="20cm" width="15cm"}
+:::
+:::
+
+::: notes
+Recall bias occurs when participants are asked to recall past events or experiences as part of a study which will differ in accuracy and completeness. For example, in a study investigating the impact of ultra processed food on the rates of heart disease, participants were asked to recall how many ultra processed foods they had consumed in the past week. Most participants are likely to forget some of the food they had eaten over a week, and the accuracy of this recall is likely to differ between participants.
+:::
+
+## Confirmation bias
+
+::: columns
+::: {.column width="70%"}
+Choosing to analyse or interpret data based on pre-conceived ideas
+
+[Inherent to human brains]{.fragment}
+
+[Identify potential expectations before looking at data]{.fragment}
+:::
+
+::: {.column width="30%"}
+![](img/confirmation.png){width="15cm" height="15cm"}
+:::
+:::
+
+::: notes
+Confirmation bias is the tendency to analyse or interpret data in a way that supports preconceived ideas. Unfortunately, confirmation bias is inherent to human nature and can be difficult to spot. It is also one of the reasons that statistical thinking, rather than simply trusting our gut instinct, is so important. The best way to counteract confirmation bias is to acknowledge any pre-conceived ideas or expectations of results before looking at data and being aware of these throughout the process.
+:::
+
+## Missing data
+
+::: columns
+::: {.column width="70%"}
+Missing data = holes in the dataset
+
+[Something we intended to collect but have not]{.fragment}
+
+[Very common, not always obvious]{.fragment}
+
+[Potential source of bias]{.fragment}
+:::
+
+::: {.column width="30%"}
+![](img/missing.png){width="15cm" height="22cm"}
+:::
+:::
+
+::: notes
+Another potential source of bias comes from the existence of missing data. Missing data are observations that were intended to be collected but were not. Unfortunately they are very common in analysis, even when every effort has been made to avoid them. Examples of missing data include:
+:::
+
+## Examples of missing data
+
+-   Questionnaires not complete [as some questions are [considered too personal]{.answer} by participants]{.fragment}
+-   Blood samples are [dropped in a lab]{.answer}[, losing the results, leaving holes in the data]{.fragment}
+- User information collected from a mobile phone app includes location data for some but is missing for others [who [opted-out]{.answer} of sharing this data]{.fragment}
+
+::: notes
+-   A questionnaire is sent out to households in a local authority, asked for information about household income and employment history. Some households consider these questions too personal and did not fill in the information.
+-   A clinical trial involves taking blood samples from participants to analyse. Some samples are dropped on the way to the lab and their results are unusable. The analysis dataset contains blank spaces where these results would be.
+- Mobile phone apps that collect user information often have holes in the dataset where users opt-out of data sharing 
+:::
+
+## Missing data
+
+[Impossible to truly know the reason for and impact of missing data]{.fragment}
+
+[Best way to overcome missing data is to not have any!]{.fragment}
+
+[Important to consider potential biases introduced by missing data and account for them in analysis]{.fragment}
+
+[Be transparent when reporting missing data]{.fragment}
+
+::: notes
+Unfortunately, the true reason for missingness will not be known as the data do not exist. When dealing with missing data, our main aim is to identify the most likely reasons and be transparent about the implication of this on our analysis. Failure to recognise and deal with missing data can produce invalid, often misleading results. If data are missing because of the missing data itself, or if there would be systematic differences between the observed and missing values, this means the data are no longer random, one of the main requirements of statistical inference. At a very minimum, we must be transparent about the number and type of missing data within our sample. This should be done before analysis methods are considered as sometimes they may require alternative approaches to overcome the bias introduced by missingness.
+:::
+
+#  {.chapter-theme}
+
+::: r-fit-text
+Exercise 1:
+
+Missing data and bias
+:::
+
+## Missing data and bias
+
+User information is collected from a mobile phone app.
+
+[There are a number of users that do not have spatial location data as they opted out of this data collection.]{.fragment}
+
+[In groups, come up with two scenarios:]{.fragment}
+
+## Missing data and bias
+
+:::{.absolute top=200}
+1. A situation where this missing data may introduce [bias]{.answer} into analysis results
+2. A situation where the sample size is reduced, but this [does not]{.answer} lead to bias in analysis results.
+:::
+
+```{r}
+#| label: exercise1-timer
+
+countdown::countdown(minutes = 10,
+                     top = 0, font_size = "100px",
+                     color_text = "#222222", 
+                     color_background = "#fdddb6",
+                     color_border = "#9a3416",
+                     color_running_text = "#222222", 
+                     color_running_background = "#fdddb6",
+                     color_running_border = "#9a3416")
+```
+
+# {.chapter-theme}
+
+::: r-fit-text
+Summary statistics
+:::
+
+## Summarising data
+
+Allows us to explore and quantify aspects of the sample
+
+[Can not be used to answer research question unless all information on target population is collected]{.fragment}
+
+[Choice of summary depends on [type]{.answer} of variable, [distribution]{.answer} of data, and [property]{.answer} we wish to quantify]{.fragment}
+
+
+:::{.notes}
+Summary statistics allow us to quantify and explore different parts of a sample of data. They can be provided alongside data visualisations introduced earlier in the course to support results and interpretations. Note that the summary statistics introduced in this section describe only the sample data so cannot be used to answer research questions fully unless all data on the target population has been collected. 
+
+The choice of summary statistics will depend on the type of variable(s) we wish to explore, the distribution of these variable(s) and the aspect of the data we would like to quantify. When interpreting summaries provided from analysis that has already been completed, it is important to check that the most appropriate summaries have been used and that interpretations of them will be valid.
+:::
+
+## Introducing the Palmer penguins
+
+![Artwork by @allison_horst](img/penguins.png)
+
+:::{.notes}
+From this point on, we will be using data collected on penguins that live in the Palmer peninsula in Antarctica. The data contains information about the size and shape of these penguins, their gender and the species of penguin. 
+:::
+
+## Introducing the Palmer penguins
+
+```{r}
+#| label: penguin-glance
+#| echo: false
+
+slice_sample(penguins, n = 6) %>% 
+  kable()
+```
+
+
+## Summarising categorical variables
+
+Describe the distribution of observations between categories:
+
+- Proportion (0 &rarr; 1)
+- Percentage (0 &rarr; 100%)
+- Rate (0 &rarr; &infin;)
+
+[Can use count but does not account for overall sample size]{.fragment}
+
+:::{.notes}
+To summarise a single categorical variable, we simply need to quantify the distribution of observations lying in each group. The simplest way to do this is to count the number of observations that lie in each group, as we have seen previously displayed in frequency tables. However, a simple count can be difficult to interpret without proper context. Often, we wish to present these counts relative to the total sample that they are taken from.
+
+The proportion of observations in a given group is estimated as the number in the group divided by the total sample size. This gives a value between 0 and 1. Multiplying the proportion by 100 will give the percentage in each group, taking the value between 0 and 100%. In cases where the proportion and percentage in a given group is very small, we may wish to multiply the proportions by a larger number to make values easier to interpret. These values are known as rates and are interpreted as the value per the number multiplied by. For example, if the proportion in a group was 0.0005, this could be multiplied by 10,000 to give a rate of 5 per 10,000. 
+:::
+
+## Summarising categorical variables
+
+**Example:** the distribution of penguins between species in the sample data.
+
+:::{.fragment}
+**Total number of penguins in the sample:** `{r} count(penguins)`
+
+**Total number of Adelie penguins:** `{r} filter(penguins, species == "Adelie") %>% count()`
+:::
+
+[**Proportion:** `{r} filter(penguins, species == "Adelie") %>% count()` $\div$ `{r} count(penguins)` [ = `{r} round(filter(penguins, species == "Adelie") %>% count() / count(penguins), 4)`]{.fragment .answer}]{.fragment}
+
+[**Percentage:** `{r} round(filter(penguins, species == "Adelie") %>% count() / count(penguins), 4)` $\times$ 100% [ = `{r} round(filter(penguins, species == "Adelie") %>% count() / count(penguins), 4) * 100`%]{.fragment .answer}]{.fragment}
+
+[**Rate:** `{r} round(filter(penguins, species == "Adelie") %>% count() / count(penguins), 4)` $\times$ 10,000 [= `{r} round(filter(penguins, species == "Adelie") %>% count() / count(penguins), 4) * 10^4` per 10,000 penguins.]{.fragment .answer}]{.fragment}
+
+## Summarising numeric variables
+
+Summarised using the centre (average) and spread of sample
+
+:::{.fragment}
+Choice of summary depends on the [distribution]{.answer} of variable
+
+```{r}
+#|label: normal-density
+
+
+normal_data <- tibble(x = seq(-4, 4, length=100),
+                      y = dnorm(x))
+
+normal_curve <- ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  theme_void() 
+
+normal_curve
+```
+:::
+
+:::{.notes}
+Numeric variables are typically summarised using the centre of the variable, also known as the average, and a measure of the spread of the variable. The most appropriate choice of summary statistics will depend on the distribution of the variable. More specifically, whether the numeric variable is normally distributed or not. The shape/distribution of a variable is typically investigated by plotting data in a histogram.
+:::
+
+## Measure of centre
+
+When data are normally distributed, centre is given using the mean
+
+::::{.columns}
+:::{.column width="60%"}
+[Represents the peak of a normal distribution]{.fragment fragment-index=1}
+
+[Sum of the sample values, divided by the sample size]{.fragment fragment-index=2}
+:::
+:::{.column width="40%"}
+:::{.fragment fragment-index=1}
+```{r}
+ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  geom_vline(xintercept = 0) +
+  scale_x_continuous(name = "", breaks = -4:4,
+                     labels = c("", "", "", "", "Mean", 
+                                "", "", "", "")) +
+  theme_void() + 
+  theme(axis.text.x = element_text(size = 25))
+```
+:::
+:::
+::::
+
+:::{.notes}
+The average of a numeric variable is another way of saying the centre of its distribution. Often, people will think of the mean when trying to calculate an average, however this may not always be the case. 
+When data are normally distributed, the mean is the central peak of the distribution. This is calculated by adding together all numbers in the sample and dividing it by the sample size. 
+:::
+
+## Measure of centre
+
+Take a random sample of 10 penguins from our data and measure their bill length (in mm): 
+
+```{r}
+#| label: penguin-flipper-sample
+#| include: false
+
+penguin_sample <- penguins %>% 
+  filter(!is.na(bill_length_mm)) %>% 
+  slice_sample(n = 10) 
+```
+
+[`{r} penguin_sample$bill_length_mm`]{.fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of centre
+
+Find the mean bill length:
+
+[`{r} paste(penguin_sample$bill_length_mm[1:9], "+", sep = " ", collapse = " ")` `{r} penguin_sample$bill_length_mm[10]`]{.fragment} 
+
+[= `{r} sum(penguin_sample$bill_length_mm)`mm]{.answer .fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of centre
+
+Find the mean bill length:
+
+[`{r} sum(penguin_sample$bill_length_mm)` $\div$ 10]{.fragment} [= `{r} sum(penguin_sample$bill_length_mm) / 10`mm]{.fragment .answer}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of center
+
+Where data are not normal, use [median]{.answer} instead
+
+[Order sample from smallest to largest, select middle value]{.fragment}
+
+[Uses less information than mean (less [powerful]{.answer}) but always valid]{.fragment}
+
+:::{.notes}
+However, when the sample is not normally distributed and the peak does not lie in the middle, extreme values or a longer tail will pull the mean towards it. This means that where data are not normally distributed, the mean will not be the centre and the value will be invalid. Where this is the case, the median should be used instead. The median is calculated by ordering the numeric values from smallest to largest and selecting the middle value.
+:::
+
+## Measure of centre
+
+To find the median, first order bill lengths smallest to largest:
+
+[`{r} penguin_sample$bill_length_mm`]{.fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of centre
+
+To find the median, first order bill lengths smallest to largest:
+
+[`{r} sort(penguin_sample$bill_length_mm)`]{.fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of centre
+
+The median is the [middle value]{.answer}
+
+[`{r} sort(penguin_sample$bill_length_mm)[1:5]`]{.fragment .highlight-blue}, `{r} sort(penguin_sample$bill_length_mm)[6:10]`
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+:::{.notes}
+We then take the middle value. As the sample size is even, the median will lie between two values - the 5th (149.58cm) and the 6th (160.42cm). 
+:::
+
+## Measure of centre
+
+Median is between `{r} sort(penguin_sample$bill_length_mm)[5]`mm and `{r} sort(penguin_sample$bill_length_mm)[6]`mm.
+
+[Middle value: (`{r} sort(penguin_sample$bill_length_mm)[5]` + `{r} sort(penguin_sample$bill_length_mm)[6]`) $\div$ 2]{.fragment} [= `{r} (sort(penguin_sample$bill_length_mm)[5] +  sort(penguin_sample$bill_length_mm)[6]) / 2`mm]{.fragment .answer}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of centre
+
+Before choosing summary, use a histogram to check distribution
+
+[When data are normally distributed, mean uses more of the data and gives centre of the sample]{.fragment}
+
+[When data are skewed, mean is influenced by extreme values and longer tail]{.fragment}
+
+[When data are normal, mean and median will be equal]{.fragment}
+
+:::{.notes}
+When data are normally distributed, the mean and median will give the same, or very similar, values. This is because both are measuring the centre. However, when the data are skewed, the mean and median will differ. We prefer to use the mean where possible as it is the more powerful measure. This means that it uses more of the data than the median and is therefore more sensitive to changes in the sample. 
+:::
+
+## Measure of spread
+Measures how wide or narrow a sample is
+
+[Simplest measure is the [range]{.answer}]{.fragment}
+
+[Either given as the smallest and largest values or the difference between these]{.fragment}
+
+:::{.notes}
+Generally the measure of the centre of a numeric variable is presented with a measure of spread, or how wide/narrow the distribution is. As with the centre, the most appropriate values will depend on whether the sample is normally distributed or not. 
+
+The most simple measure of spread is the range of a sample. The range is either presented as the smallest and largest values from a sample or the difference between these. 
+:::
+
+## Measure of spread
+
+Find the range of the 10 penguins' bill lengths:
+
+[`{r} penguin_sample$bill_length_mm`]{.fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+Find the range of the 10 penguins' bill lengths:
+
+`{r} sort(penguin_sample$bill_length_mm)`
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+Find the range of the 10 penguins' bill lengths:
+
+[`{r} min(penguin_sample$bill_length_mm)`]{.answer} , `{r} sort(penguin_sample$bill_length_mm)[2:9]`, [`{r} max(penguin_sample$bill_length_mm)`]{.answer}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+
+## Measure of spread
+
+Range is either given as two values: [`{r} paste0(c(min(penguin_sample$bill_length_mm), max(penguin_sample$bill_length_mm)), "mm")`]{.answer}
+
+[Or as the difference between these: `{r} max(penguin_sample$bill_length_mm)` - `{r} min(penguin_sample$bill_length_mm)` =  [`{r} max(penguin_sample$bill_length_mm) -  min(penguin_sample$bill_length_mm)`mm]{.answer}]{.fragment}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+Range only uses most extreme values, loses lots of information 
+
+[Interquartile range (IQR): the range of the middle 50%]{.fragment}
+
+[**Lower quartile:** 25th percentile, 25% of sample lies below]{.fragment}
+
+[**Upper quartile:** 75th percentile, 75% of sample lies below]{.fragment}
+
+:::{.notes}
+The issue with using the range is that it is entirely defined by the most extreme values in the sample and does not give any information about the rest of it. An alternative to this would be to give the range of the middle 50%, also known as the interquartile range (IQR). The IQR is the difference between the 75th percentile, or upper quartile, and the 25th percentile, or lower quartile.
+
+:::
+
+## Measure of spread
+
+Find the IQR of the 10 penguins' bill lengths:
+
+`{r} sort(penguin_sample$bill_length_mm)`
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+Find the upper and lower quartile:
+
+[`{r} sort(penguin_sample$bill_length_mm)[1:5]`]{.fragment .highlight-blue}, `{r} sort(penguin_sample$bill_length_mm)[6:10]`
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+Find the upper and lower quartile:
+
+`{r} sort(penguin_sample$bill_length_mm)[1:2]`, [`{r} sort(penguin_sample$bill_length_mm)[3]`]{.answer}, `{r} sort(penguin_sample$bill_length_mm)[4:5]`, [`{r} sort(penguin_sample$bill_length_mm)[6:10]`]{.fragment .highlight-blue}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+
+## Measure of spread
+
+Find the upper and lower quartile:
+
+`{r} sort(penguin_sample$bill_length_mm)[1:2]`, [`{r} sort(penguin_sample$bill_length_mm)[3]`]{.answer}, `{r} sort(penguin_sample$bill_length_mm)[4:7]`, [`{r} sort(penguin_sample$bill_length_mm)[8]`]{.answer}, `{r} sort(penguin_sample$bill_length_mm)[9:10]`
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+IQR is either given as 2 values: [`{r} paste0(c(sort(penguin_sample$bill_length_mm)[3],  sort(penguin_sample$bill_length_mm)[8]), "mm")`]{.answer}
+
+[Or as the difference between these: `{r} sort(penguin_sample$bill_length_mm)[8]` - `{r} sort(penguin_sample$bill_length_mm)[3]`]{.fragment} [=  `{r} sort(penguin_sample$bill_length_mm)[8] -  sort(penguin_sample$bill_length_mm)[3]`mm]{.fragment .answer}
+
+![Artwork by @allison_horst](img/penguin_bill.png){.absolute height=500 width=750 top=700, left=500}
+
+## Measure of spread
+
+IQR is still discarding most of the sample
+
+[If sample is normally distributed, can use the [standard deviation (SD)]{.answer}]{.fragment}
+
+[Average difference between observations and the mean]{.fragment}
+
+[Bigger SD &rarr; wider, flatter curve]{.fragment}
+
+[Smaller SD &rarr; narrower, taller curve]{.fragment}
+
+:::{.notes}
+Both the range and IQR only use 2 values from the sample. As with the median, these measures discard a lot of information from the summaries. Where the sample is normally distributed, the standard deviation (SD) can be used which measures the average distance between each observation and the mean. The larger the SD, the wider and flatter the normal curve will be; the smaller the SD, the narrower and taller the curve will be:
+:::
+
+##
+
+```{r}
+#| label: normal-sd-diff
+
+
+normal_data_sd <- tibble(x = rep(seq(-4, 4, length = 100), 2),
+                         y = c(dnorm(x[1:100]), dnorm(x[101:200], sd = .1)),
+                         sd_grp = c(rep(0, 100), rep(1, 100)),
+                         sd = factor(sd_grp, 
+                                     labels = c("sd = 1", "sd = 0.1")))
+
+ggplot(normal_data_sd) +
+  geom_density(aes(x = x, y = y), 
+               stat = "identity", fill = "thistle") +
+  labs(x = "", y = "") + 
+  facet_grid(rows = vars(sd)) +
+  theme_stats_thinking() +
+  theme(strip.text = element_text(size = 12, colour = "#ebe8e3"),
+        strip.background = element_rect(fill = "#1f2e32"))
+```
+
+## Normal distribution
+
+Normal distribution completely defined by the [mean]{.answer} (peak) and [SD]{.answer} (spread)
+
+
+```{r}
+#|label: normal-with-sd
+
+
+ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  geom_vline(xintercept = -3:3, colour = "grey55") +
+  scale_x_continuous(name = "", breaks = -4:4,
+                     labels = c("", "-3sd", "-2sd", "-1sd", "Mean", 
+                                "1sd", "2sd", "3sd", "")) +
+  theme_void() +
+  theme(axis.text.x = element_text(size = 15))
+```
+
+:::{.notes}
+The standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.
+
+For example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:
+:::
+
+## Normal distribution
+
+Approximately 68% of the sample will lie within 1 standard deviation of the mean
+
+```{r}
+#| label: normal-sd-68
+
+normal_sd <- mutate(normal_data,
+                    y1 = c(rep(0, 37), y[38:63], rep(0, 37)),
+                    y2 = c(rep(0, 25), y[26:75], rep(0, 25)))
+
+ggplot(data = normal_sd) + 
+  geom_density(aes(x = x, y = y1), linewidth = 1,
+               stat = "identity", fill = "#efc3e6") +
+  geom_line(aes(x = x, y = y), linewidth = 1,
+                stat = "identity") +
+  geom_hline(yintercept = 0, linewidth = 1) +
+  scale_x_continuous(breaks = -3:3, 
+                     labels = c("", "", "-1sd", "Mean", "+1sd", 
+                                "", "")) +
+  annotate("text", x = 0, y = 0.2, label = "68%", size = 7) +
+  theme_void() +
+  theme(axis.text.x = element_text(size = 15))
+```
+
+:::{.notes}
+The standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.
+
+For example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:
+:::
+
+## Normal distribution
+
+Approximately 95% of the sample will lie within 2 standard deviations of the mean
+
+```{r}
+#| label: normal-sd-95
+
+ggplot(data = normal_sd) + 
+  geom_density(aes(x = x, y = y2), linewidth = 1,
+               stat = "identity", fill = "#efc3e6") +
+  geom_line(aes(x = x, y = y), linewidth = 1,
+                stat = "identity") +
+  geom_hline(yintercept = 0, linewidth = 1) +
+  scale_x_continuous(breaks = -3:3, 
+                     labels = c("", "-2sd", "", "Mean", "", 
+                                "+2sd", "")) +
+  annotate("text", x = 0, y = 0.2, label = "95%", size = 7) +
+  theme_void() +
+  theme(axis.text.x = element_text(size = 15))
+```
+
+:::{.notes}
+The standard deviation is only appropriate where a numeric variable has a normal distribution, otherwise this value is meaningless. If a sample is normally distributed, then the entire sample can be completely described just using the mean and standard deviation, even when the sample values are not given. As the distribution is symmetrical, the mean and standard deviation can be used to estimate ranges of values.
+ For example, it is known that approximately 68% of a sample will lie one standard deviation from the mean, approximately 95% within 2 standard deviations from the mean, and around 99.7% within 3 standard deviations:
+:::
+
+## Normal distribution
+
+Mean and SD can be used to check normal distribution assumption
+
+:::{.fragment}
+```{r}
+#| label: sfa-hist
+#| echo: false
+
+csp_2020 %>% 
+  filter(sfa_2020 != 0,
+         ons_code != "-") %>% 
+  ggplot() +
+  geom_histogram(aes(x = sfa_2020), colour = "black", fill = "grey45") +
+  labs(x = "Settlement funding assessment (£ millions)") +
+  theme_stats_thinking()
+```
+:::
+
+## Normal distribution
+
+Mean and SD can be used to check normal distribution assumption
+
+[**Mean SFA:** `{r} round(mean(csp_2020$sfa_2020), 2)`]{.fragment}
+
+[**SD SFA:** `{r} round(sd(csp_2020$sfa_2020), 2)`]{.fragment}
+
+[If the data was [normally distributed]{.answer}, 95% of the sample would lie between `{r} round(mean(csp_2020$sfa_2020), 2)` $\pm$ 2 $\times$ `{r} round(sd(csp_2020$sfa_2020), 2)`]{.fragment}
+
+[= `{r} round(mean(csp_2020$sfa_2020), 2) - (2 * round(sd(csp_2020$sfa_2020), 2))`, `{r} round(mean(csp_2020$sfa_2020), 2) + (2 * round(sd(csp_2020$sfa_2020), 2))`]{.answer .fragment}
+
+## Summarising numeric variables
+
+Most appropriate summary depends on distribution (normal or not)
+
+[If normally distributed, use [mean and SD]{.answer}]{.fragment}
+
+[If not, these are invalid, use [median and IQR]{.answer}]{.fragment}
+
+[Mean and SD can be used to check normal distribution [even without the full sample]{.answer}]{.fragment}
+
+# {.chapter-theme}
+
+::: r-fit-text
+Exercise 2:
+
+Summarising data
+:::
+
+## Summarising data
+
+![](img/days_completion_cc.png){.center}
+
+## Summarising data 
+
+```{r}
+#| label: exercise2-table
+#| echo: false
+#| 
+countdown::countdown(minutes = 10,
+                     top = 0, font_size = "100px",
+                     color_text = "#222222", 
+                     color_background = "#fdddb6",
+                     color_border = "#9a3416",
+                     color_running_text = "#222222", 
+                     color_running_background = "#fdddb6",
+                     color_running_border = "#9a3416")
+
+tibble(year = 2020:2023,
+       mean_wait = c(13.5, 19.1, 20.9, 22.8),
+       sd_wait = c(10.2, 15.6, 13.9, 14.7)) %>% 
+  kable(col.names = c("Year", "Mean wait (weeks)", "SD wait (weeks)"))
+```
+
+
+:::{.notes}
+The first graph is taken from the Criminal Courts statistics quarterly report, showing the average number of days from offense to completion for defendants at the Crown Court. Which graph is the most appropriate to display the average time and why?
+
+The table provides the mean and standard deviation of waiting times in weeks for hearings in the Crown Court between 2020 and 2023. Using this information, what can you tell about the distribution of these times?
+:::
+
+# {.chapter-theme}
+
+::: r-fit-text
+Quantifying differences and 
+
+trends in a sample.
+::: 
+
+## Quantifying differences and trends
+
+Most appropriate choice depends on [intention]{.answer}, [type]{.answer} of outcome, [nature]{.answer} of the relationship 
+
+- Comparison of variable between groups
+-	Investigating trends over time
+-	Relationship between numeric variables
+
+:::{.notes}
+Often, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another.
+:::
+
+## Comparing categorical outcomes
+
+Compare summary statistics (proportions, percentages, or rates) between groups
+
+[[Absolute difference:]{.answer} Subtract values]{.fragment}
+
+[[Relative difference:]{.answer} Divide values]{.fragment}
+
+:::{.notes}
+When comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference. 
+:::
+
+## Comparing categorical outcomes
+
+```{r}
+#| label: table-comp-pengiuns
+#| echo: false
+
+penguin_cat_comp <- penguins %>% 
+  filter(species %in% c("Adelie", "Gentoo"),
+         !is.na(sex)) %>% 
+  group_by(species, sex) %>% 
+  summarise(n_penguins = n()) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = sex,
+               values_from = n_penguins) %>% 
+  mutate(total_penguins = female + male,
+         female_perc = round((female / total_penguins) * 100, 2),
+         male_perc = round((male / total_penguins) * 100, 2),
+         female_clean = paste0(female, " (", female_perc, "%)"),
+         male_clean = paste0(male, " (", male_perc, "%)"))
+
+penguin_cat_comp %>% 
+  select(species, total_penguins, female_clean, male_clean) %>% 
+  kable(col.names = c("Species", "Total", "Female penguins", "Male penguins"),
+        align = "lrrr")
+
+```
+
+[[Absolute difference:]{.answer} `{r} paste0(penguin_cat_comp$female_perc[1], "%")` - `{r} paste0(penguin_cat_comp$female_perc[2], "%")`]{.fragment} [ = `{r} paste0(penguin_cat_comp$female_perc[1] - penguin_cat_comp$female_perc[2], "%")`]{.fragment}
+
+[The absolute difference between Adelie and Gentoo penguins is `{r} penguin_cat_comp$female_perc[1] - penguin_cat_comp$female_perc[2]` [percentage points.]{.answer}]{.fragment}
+
+## Comparing categorical outcomes
+
+```{r}
+#| label: table-comp-pengiuns2
+#| echo: false
+
+penguin_cat_comp %>% 
+  select(species, total_penguins, female_clean, male_clean) %>% 
+  kable(col.names = c("Species", "Total", "Female penguins", "Male penguins"),
+        align = "lrrr")
+
+```
+
+[[Relative difference:]{.answer}  `{r} paste0(penguin_cat_comp$female_perc[1], "%")` $\div$ `{r} paste0(penguin_cat_comp$female_perc[2], "%")`]{.fragment} [ = `{r} round(penguin_cat_comp$female_perc[1] / penguin_cat_comp$female_perc[2], 2)`]{.fragment}
+
+[There were `{r} round(penguin_cat_comp$female_perc[1] / penguin_cat_comp$female_perc[2], 2)` [times]{.answer} more female penguins in the Adelie group than the Gentoo penguin group]{.fragment}
+
+[[No difference]{.answer} would = 1]{.fragment}
+
+## Comparing categorical outcomes
+
+```{r}
+#| label: table-comp-pengiuns3
+#| echo: false
+
+penguin_cat_comp %>% 
+  select(species, total_penguins, female_clean, male_clean) %>% 
+  kable(col.names = c("Species", "Total", "Female penguins", "Male penguins"),
+        align = "lrrr")
+
+```
+
+[[Relative difference:]{.answer} `{r} paste0(penguin_cat_comp$female_perc[2], "%")` $\div$ `{r} paste0(penguin_cat_comp$female_perc[1], "%")`]{.fragment} [ = `{r} round(penguin_cat_comp$female_perc[2] / penguin_cat_comp$female_perc[1], 2)`]{.fragment}
+
+[There were `{r} round(penguin_cat_comp$female_perc[2] / penguin_cat_comp$female_perc[1], 2)` [times]{.answer} the percentage of female penguins in the Gentoo group than the Adelie penguin group]{.fragment}
+
+[Less than 1: [a reduction]{.answer}]{.fragment}
+
+## Comparing numeric outcomes
+
+Compare measures of centre/average (mean or median) between groups
+
+[Most appropriate depends on [distribution]{.answer} of sample in each group]{.fragment}
+
+[Requires a histogram [per group]{.answer}]{.fragment}
+
+:::{.notes}
+The most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed.
+:::
+
+## Comparing numeric outcomes
+
+```{r}
+#| label: histogram-body-sex
+#| echo: false
+
+penguins %>% 
+  filter(!is.na(body_mass_g), !is.na(sex)) %>% 
+  ggplot() +
+  geom_histogram(aes(x = body_mass_g), colour = "black", fill = "grey45") +
+  scale_x_continuous(breaks = seq(2500, 5500, by = 1000)) +
+  facet_wrap(vars(sex)) +
+  labs(x = "Body mass (g)", y = "Count") +
+  theme_stats_thinking() +
+  theme(strip.text = element_text(size = 15, colour = "#ebe8e3"),
+        strip.background = element_rect(fill = "#1f2e32"))
+```
+
+## Comparing numeric outcomes
+
+Neither the female nor the male group have a normal distribution [&rarr;  compare [medians]{.answer}.]{.fragment}
+
+[Median body mass of female penguins: [`{r} penguins %>% filter(sex == "female") %>% summarise(median(body_mass_g, na.rm = T))`g]{.answer}]{.fragment}
+
+[Median body mass of male penguins: [`{r} penguins %>% filter(sex == "male") %>% summarise(median(body_mass_g, na.rm = T))`g]{.answer}]{.fragment}
+
+[Average difference in body mass: [`{r} penguins %>% filter(sex == "female") %>% summarise(median(body_mass_g, na.rm = T)) - penguins %>% filter(sex == "male") %>% summarise(median(body_mass_g, na.rm = T))`g]{.answer}]{.fragment}
+
+[Female penguins were [`{r} - (penguins %>% filter(sex == "female") %>% summarise(median(body_mass_g, na.rm = T)) - penguins %>% filter(sex == "male") %>% summarise(median(body_mass_g, na.rm = T)))`g]{.answer} lighter on average compared to male penguins in this sample]{.fragment}
+
+## Comparing variables over time
+
+Visualised using line graph
+
+[Common comparisons: [absolute difference, relative difference, or percentage change]{.answer}]{.fragment}
+
+[Choice depends on intention, interpretation differs]{.fragment}
+
+:::{.notes}
+When dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change. 
+:::
+
+##
+
+```{r}
+violent_crime <- read.csv("Data/violent_crime.csv") 
+
+crime_line <- ggplot(data = violent_crime, 
+       aes(x = year, y = violent_crime)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  scale_x_continuous(breaks = 2010:2020) +
+  labs(x = "Year", y = "Number of violent crimes recorded") +
+  theme_stats_thinking() 
+
+crime_line
+```
+
+:::{.notes}
+Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020:
+This difference can be quantified by comparing the number of violent crimes recorded in 2010 and 2020.
+:::
+
+##
+
+```{r}
+#| label: crime-line-circle
+
+crime_line +
+  geom_mark_circle(aes(filter = year == 2010), fill = "#9a3416") +
+  geom_mark_circle(aes(filter = year == 2020), fill = "#9a3416")
+
+```
+
+:::{.notes}
+Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020:
+This difference can be quantified by comparing the number of violent crimes recorded in 2010 (1,841,000 and 2020 1,239,000.)
+:::
+
+## Comparing variables over time
+
+**Absolute difference:** 1,841,000 - 1,239,000 [ = 602,000]{.fragment .answer}
+
+[There were [602,000 less violent crimes]{.answer} reported in 2020 compared to 2010]{.fragment}
+
+[**Relative difference:** 1,841,000 &div; 1,239,000]{.fragment} [ = 1.486]{.fragment .answer}
+
+[There were [1.486 times more violent crimes]{.answer} reported in 2010 compared to 2020]{.fragment}
+
+:::{.notes}
+The absolute difference is found by subtracting the number of violent crimes recorded in 2020, 1,239,000, by the number in 2010, 1,841,000. There were 602,000 ;ess violent crimes reported in 2020 compared to 2010.
+
+The relative difference is found by dividing one count by the other. In this example, the relative difference (1,841,000 / 1,239,000) is 1.486. This means that there were 1.486 times more violent crimes reported in 2020 compared to 2010. 
+:::
+
+## Comparing variables over time
+
+The percentage change can also be found by converting the relative difference
+
+[**Compare relative difference to no difference:**]{.fragment} [ 1.486 - 1]{.fragment} [ = 0.486]{.fragment .answer}
+
+[**Convert the proportion change to percentage:**]{.fragment} [ 0.486 x 100%]{.fragment} 
+
+[ = 48.6%]{.fragment .answer}
+
+[There were [48.6% more violent crimes]{.answer} reported in 2010 than 2020]{.fragment}
+
+:::{.notes}
+The percentage change can be found by comparing the relative difference to the null value of 1 (no relative difference). When comparing  2010 to 2020, the relative difference was 0.486 above 1, giving the proportion increase. This can be multiplied by 100 to give a percentage increase of 48.6%. Therefore, there were 48.6% more violent crimes reported in 2010 compared to 2020.
+:::
+
+## Comparing variables over time
+
+Percentage reduction found in similar way
+
+[**Relative difference:** 1,239,000 &div; 1,841,000]{.fragment} [ = 0.673]{.fragment .answer}
+
+[**Compare to no difference:**]{.fragment} [ 1 - 0.673]{.fragment} [ = 0.327 (32.7%)]{.fragment .answer}
+
+[There were [32.7% fewer violent crimes]{.answer} reported in 2020 than 2010]{.fragment}
+
+:::{.notes}
+The relative difference can also be found by comparing 2020 to 2010 if we want to give the relative or percentage decrease in violent crime. The relative difference (1,239,000 / 1,841,000) is 0.673, so there were 0.673 times the number of crimes reported in 2020 than 2010. This result is not intuitive, so converting the difference into a percentage decrease can make the value easier to interpret. As with an increase, we first find the difference between the relative difference and the null (1 - 0.673). This gives a proportion decrease of 0.327 or a percentage decrease of 32.7%. Therefore, there were 32.7% fewer violent crimes reported in 2020 compared to 2010.
+:::
+
+## Relationship between numeric variables
+
+Scatterplot used to visualise trends
+
+[Strength of relationship quantified using [correlation coefficients]{.answer}]{.fragment}
+
+[Choice of coefficients depends on if trend is linear or not]{.fragment}
+
+- **Linear trend:** Pearson’s correlation coefficient
+- **Nonlinear trend:** Spearman’s correlation coefficient
+
+:::{.notes}
+Correlation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?
+
+The Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary.
+:::
+
+## Correlation coefficients
+
+Take value between [-1]{.answer} and [1]{.answer}
+
+[Correlation of 0 means **no association**]{.fragment}
+
+[Closer coefficient is to +1/-1, the stronger the **positive/negative association** is]{.fragment}
+
+:::{.notes}
+Correlation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is.
+:::
+
+##
+
+```{r}
+#| label: correlation-1
+
+correlation_data <- tibble(xcor1 = runif(100, 0, 15),
+                           ycor1 = xcor1 + 5,
+                           ycor_pos = xcor1 + rnorm(100),
+                           ycor_1 = -xcor1 + 25,
+                           ycor_neg = -xcor1 + rnorm(100) + 25,
+                           y_nocor = runif(100, 0, 25),
+                           yspearman = (xcor1 + rnorm(100)) ^ 2)
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = ycor1)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+
+```
+
+:::{.notes}
+A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:
+:::
+
+## 
+
+```{r}
+#| label: correlation-pos
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = ycor_pos)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+```
+
+## 
+
+```{r}
+#| label: correlation-neg1
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = ycor_1)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+```
+
+## 
+
+```{r}
+#| label: correlation-neg
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = ycor_neg)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+```
+
+## 
+
+```{r}
+#| label: correlation-nocorr
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = y_nocor)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+```
+
+## 
+
+```{r}
+#| label: correlation-spearman
+
+ggplot(data = correlation_data) +
+  geom_point(aes(x = xcor1, y = yspearman)) +
+  labs(x = "", y = "") + 
+  theme_stats_thinking()
+```
+
