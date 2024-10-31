@@ -21,7 +21,8 @@ knitr:
 #| label: setup
 #| include: false
 
-pacman::p_load(tidyverse, flextable, kableExtra, ggforce)
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce, palmerpenguins,
+               ggdag)
 
 # Theme for output
 theme_stats_thinking <- function() {
@@ -43,6 +44,23 @@ theme_stats_thinking <- function() {
 Beyond the sample
 :::
 
+## Course content
+
+### Part 2: Friday 1st November, 2024
+- Inferential statistics    
+  - Central limit theorem
+  - p-values and confidence intervals: how to interpret and communicate results
+  - Where do these values come from?
+  
+## Course content
+
+### Part 2: Friday 1st November, 2024  
+  
+- Statistical modelling
+  - What are models and why are they useful to data analytics?
+  - How to choose an appropriate model based on the research question
+  - Model outputs and their interpretations
+
 ## What are inferential statistics?
 
 ![](img/stats_inference2.png){height="20cm" width="50cm" fig-align="center"}
@@ -53,11 +71,11 @@ At the beginning of the course, we saw that one of the main aims of statistics i
 
 ## What are inferential statistics?
 
-Inferential statistics make inferences about target population based on a [random, representative sample]{.answer}
+Inferential statistics make inferences about target population based on a [random, representative]{.answer} sample.
 
-[Combine sample estimates with [sample size]{.answer} and [level of precision]{.answer}]{.fragment}
+[Combine sample estimates with [sample size]{.answer} and level of [precision]{.answer}]{.fragment}
 
-[Most common inferential statistics: [p-values]{.answer} and [confidence intervals]{.answer}]{.fragment}
+[Most common inferential statistics:]{.fragment} [[p-values]{.answer} and [confidence intervals]{.answer}]{.fragment}
 
 :::{.notes}
 These are estimated by combining results from the random, representative sample taken from the target population, and information about the sample size and precision of the sample estimate.
@@ -80,3 +98,1189 @@ Inferential statistics require a measure of how precise a sample estimate is. Pr
 For example, the standard error of a single mean (𝑆𝐸(𝑥)̄ ) is found by dividing the sample standard deviation (𝑆𝐷) by the square root of the sample size (𝑛):
 :::
 
+## Measures of precision
+
+::: columns
+:::{.column width="50%"}
+Larger SE &rarr; [less precise]{.answer}
+:::
+
+:::{.column width="50%"}
+[Smaller SE &rarr; [more precise]{.answer}]{.fragment}
+:::
+:::
+
+:::{.bigger .fragment .absolute left=750}
+$SE(\bar{x}) = \frac{SD}{\sqrt{n}}$
+:::
+
+:::{.absolute top=500}
+[For every parameter of interest:]{.fragment}
+
+- Larger sample, higher precision &rarr; [lower standard error]{.answer}
+- More variability, lower precision &rarr; [higher standard error]{.answer}
+
+[Inferential statistics work based on the [central limit theorem]{.answer}]{.fragment}
+:::
+
+:::{.notes}
+Regardless of the formula used or the parameter of interest, the larger a sample is, the more precise an estimate will be. Conversely, the more varied a sample is, the less precise an estimate is. A precise estimate is represented by a small standard error value. Standard errors are used to estimate inferential statistics (p‑values and con􀏐idence intervals) based on the central limit theorem.
+:::
+
+## Central limit theorem
+
+```{r}
+#| label: normal-curve
+
+normal_data <- tibble(x = seq(-4, 4, length=100),
+                      y = dnorm(x))
+
+normal_curve <- ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  theme_void() 
+
+normal_curve
+```
+
+## Central limit theorem
+
+```{r}
+#| label: random-samples
+
+df_arrow <- tibble(y = rep(c(.1, 0), 8),
+                   x = rep(runif(8, min = -4, max = 4), each = 2))
+
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[13], y = df_arrow$y[13], 
+                   xend = df_arrow$x[14], yend = df_arrow$y[14]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[13], y = df_arrow$y[13], 
+                   xend = df_arrow$x[14], yend = df_arrow$y[14]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[15], y = df_arrow$y[15], 
+                   xend = df_arrow$x[16], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = mean(df_arrow$x), y = df_arrow$y[15], 
+                   xend = mean(df_arrow$x), yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+#| label: sd-to-se
+
+normal_data %>% 
+  mutate(se = dnorm(x, sd = y/sqrt(16))) %>% 
+  pivot_longer(y:se,
+               names_to = "measure",
+               values_to = "values") %>% 
+  mutate(measure = factor(measure, levels = c("y", "se"),
+                          labels = c("SD", "SE"))) %>% 
+  ggplot() +
+  geom_density(aes(x = x, y = values), stat = "identity",
+               fill = "thistle") +
+  facet_grid(rows = vars(measure)) +
+  theme_stats_thinking() +
+  theme(strip.text = element_text(size = 12, colour = "#ebe8e3"),
+        strip.background = element_rect(fill = "#1f2e32"))
+
+```
+
+## Confidence intervals
+
+- A range of values the true population parameter is compatible with
+- Based on sample estimate, precision, and confidence level
+
+:::{.notes}
+A con􀏐idence interval is a range of values that the true population statistic is compatible with based on the sample estimate, precision, and some pre‑de􀏐ined level of con􀏐idence.
+The con􀏐idence level can be adjusted depending on how con􀏐ident we wish to be about the true population parameter. 
+:::
+
+##
+
+```{r}
+#| label: confidence-levels
+
+tibble(level = c("80%", "90%", "95%", "99%", "99.9%"),
+       se = c(1.282, 1.645, 1.960, 2.576, 3.291)) %>% 
+  kable(col.names = c("Confidence levels", "Number of SEs"), 
+        align = "r")
+```
+
+## Confidence intervals {.nonincremental}
+
+- A range of values the true population parameter is compatible with
+- Based on sample estimate, precision, and confidence level
+
+:::{.fragment}
+- Based on central limit theorem, can capture ranges we would expect a percentage of parameter estimates to lie:
+:::
+
+:::{.fragment .bigger .absolute left=750}
+$\bar{x} \pm 1.96 \times SE(\bar{x})$
+:::
+
+:::{.notes}
+The con􀏐idence interval is created assuming the central limit theorem. As the hypothetical repeated estimates are assumed to follow a normal distribution, we can use the sample estimate of the parameter and the standard error to obtain ranges within which we would expect a certain percentage of parameter estimates to lie.
+:::
+
+##
+
+```{r}
+#| label: conf-int-95
+
+normal_sd <- mutate(normal_data,
+                    y1 = c(rep(0, 37), y[38:63], rep(0, 37)),
+                    y2 = c(rep(0, 25), y[26:75], rep(0, 25)))
+
+conf_int95 <- ggplot(data = normal_sd) + 
+  geom_density(aes(x = x, y = y2), linewidth = 1,
+               stat = "identity", fill = "#efc3e6") +
+  geom_line(aes(x = x, y = y), linewidth = 1,
+                stat = "identity") +
+  geom_hline(yintercept = 0, linewidth = 1) +
+  scale_x_continuous(breaks = -3:3, 
+                     labels = c("-3se", "-2se", "-1se", "Sample \nestimate",
+                                "+1se", "+2se", "+3se")) +
+  annotate("text", x = 0, y = 0.2, label = "95%", size = 7) +
+  theme_void() +
+  theme(axis.text.x = element_text(size = 15))
+
+conf_int95
+```
+
+## Confidence interval example
+Let's compare the body mass of our penguins between sexes.
+
+:::{.fragment}
+First, we want to check the distribution of these samples:
+
+```{r}
+#| label: penguin-sex-comp
+#| out-width: "1000px"
+#| out-height: "600px"
+
+penguins_sex_comp <- penguins %>% 
+  filter(species != "Gentoo",
+         !is.na(sex)) 
+
+penguin_sex_hist <- ggplot(data = penguins_sex_comp) +
+  geom_histogram(aes(x = body_mass_g, fill = sex), 
+                 colour = "black", alpha = .75, bins = 20) +
+  scale_fill_brewer(name = "Sex", palette = "Dark2") +
+  labs(x = "Body mass (g)", y = "Count") +
+  theme_stats_thinking()
+
+penguin_sex_hist
+```
+:::
+
+## Confidence interval example
+```{r}
+#| label: penguin-diff-values
+
+penguins_diff <- penguins_sex_comp %>% 
+  group_by(sex) %>% 
+  summarise(mean_mass = mean(body_mass_g),
+            sd_mass = sd(body_mass_g),
+            n_pengs = n()) %>% 
+  ungroup() %>% 
+  mutate(se_cont = (sd_mass / n_pengs)^2)
+
+mean_sex_diff <- penguins_diff[penguins_diff$sex == "male", "mean_mass"] - 
+                  penguins_diff[penguins_diff$sex == "female", "mean_mass"]
+
+se_sex_diff <- sqrt(penguins_diff[penguins_diff$sex == "male", "se_cont"] + 
+                     penguins_diff[penguins_diff$sex == "female", "se_cont"])
+```
+
+
+Both groups appear to be normally distributed, so we can compare the [means]{.answer}.
+
+[Mean body mass of male penguins: [`{r} round(penguins_diff[penguins_diff$sex == "male", ]$mean_mass, 2)`g]{.answer .fragment}]{.fragment}
+
+[Mean body mass of female penguins: [`{r} round(penguins_diff[penguins_diff$sex == "female", ]$mean_mass, 2)`g]{.answer .fragment}]{.fragment}
+
+[Difference in the means (of the sample): `{r} round(penguins_diff[penguins_diff$sex == "male", ]$mean_mass, 2)`g - `{r} round(penguins_diff[penguins_diff$sex == "female", ]$mean_mass, 2)`g]{.fragment}
+
+[= `{r} round(mean_sex_diff, 2)`g]{.answer .fragment}
+
+## Confidence interval example
+Difference in the means (of the sample): `{r} round(mean_sex_diff, 2)`g
+
+[Standard error of the mean difference]{.fragment}[ = `{r} round(se_sex_diff, 2)`g]{.answer .fragment}
+
+[95% confidence interval: `{r} round(mean_sex_diff, 2)` $\pm$ 1.96 $\times$ `{r} round(se_sex_diff, 2)`]{.fragment} 
+
+[ = `{r} paste0(c(round(mean_sex_diff - (1.96 * se_sex_diff), 2), round(mean_sex_diff + (1.96 * se_sex_diff), 2)), "g")`]{.fragment .answer}
+
+[**But what does that mean??**]{.fragment}
+
+## Confidence interval example
+95% confidence interval: `{r} paste0(c(round(mean_sex_diff - (1.96 * se_sex_diff), 2), round(mean_sex_diff + (1.96 * se_sex_diff), 2)), "g")`
+
+[We are [95% confident]{.answer} that male penguins were between `{r} round(mean_sex_diff - (1.96 * se_sex_diff), 2)`g and `{r} round(mean_sex_diff + (1.96 * se_sex_diff), 2)`g heavier than female penguins on average.]{.fragment}
+
+[Note that this confidence interval only contains [positive]{.answer} values.]{.answer .fragment}
+
+## p-values
+
+- Probability of obtaining a result as extreme or more extreme as the sample if the null hypothesis is true
+- Null hypothesis (H0): no difference/association
+
+:::{.notes}
+Another commonly used inferential statistic is the p‑value. A p‑value is the probability of obtaining a sample estimate as extreme, or more extreme, than the current if some null hypothesis (H0) were true.
+The null hypothesis is usually ‘no difference’ or ‘no association’, depending on the value being tested.
+:::
+
+## p-values
+
+```{r}
+#| label: random-se1
+
+normal_curve +
+  geom_segment(aes(x = -.3, y = .1, 
+                   xend = -.3, yend = 0),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+:::{.notes}
+If we consider the normal distribution of repeated sample estimates, the p‑value is estimated by assuming the null hypothesis is true (and is therefore the peak of the distribution) and measuring how far the sample value is from this relative to the spread of the distribution (the standard error).
+The closer the sample estimate is to the null hypothesis, the more likely it was to occur if the null hypothesis were true, and the higher the p‑value
+:::
+
+## p-values
+
+```{r}
+#| label: random-se2
+
+normal_curve +
+  scale_x_continuous(breaks = -3:3, labels = c("-3se", "-2se", "-1se",
+                                               "Population \nmean", "+1se",
+                                               "+2se", "+3se")) + 
+  geom_segment(aes(x = 3.8, y = .1, 
+                   xend = 3.8, yend = 0),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+:::{.notes}
+The further away from the null hypothesis, the less likely it would be to occur and the lower the p‑value.
+:::
+
+## p-values 
+
+:::{.nonincremental}
+- Probability of obtaining a result as extreme or more extreme as the sample if the null hypothesis is true
+- Null hypothesis (H0): no difference/association
+:::
+
+:::{.incremental}
+- Low p-value: less evidence to support the null hypothesis
+  - Very low p-value is known as [statistically significant]{.answer}
+:::
+
+## Statistical significance
+
+Often significance is defined by arbitrary cut-off [(usually 0.05)]{.fragment}
+
+[**Be careful with these arbitrary definitions, it is not how probability behaves!**]{.fragment}
+
+[p < 0.05 is significant]{.fragment} [ at the 5% level]{.fragment .answer}
+
+[We never [accept]{.answer} or [reject]{.answer} a null hypothesis]{.fragment}
+
+:::{.notes}
+Results are often referred to as statistically signi􀏐icant if a p‑value falls below a certain threshold. 
+This threshold is often set to 0.05, or a 5% chance that an estimate as extreme as the one obtained would occur if the null hypothesis were true.
+Although arbitrary cut‑offs may be useful in some situations, for example where a decision needs to be taken based on the results, this is not how probability behaves. In reality, there is very little difference between a p‑value of 0.049 (4.9% chance) and 0.051 (a 5.1% chance). Therefore, it is not advised to report ‘accepting’ or ‘rejecting’ a null hypothesis, despite how commonplace this is in some literature.
+:::
+
+## p-values example
+
+```{r}
+#| label: hist-again
+#| out-height: "600px"
+#| out-width: "1000px"
+
+
+penguin_sex_hist
+```
+
+## p-values example
+As we are comparing groups, our null hypothesis is that there is [no difference]{.answer} in the target population.
+
+[Sample mean difference: [`{r} round(mean_sex_diff, 2)`g]{.answer}]{.fragment}
+
+[Standard error of the difference: [`{r} round(se_sex_diff, 2)`g]{.answer}]{.fragment}
+
+[p-values assume that the null hypothesis is true]{.fragment}
+
+## p-value example
+
+```{r}
+#| label: pvalue-normal-h0
+
+tibble(x = seq(-5, 5, by = .1),
+       y = dnorm(x)) %>% 
+  ggplot() +
+  geom_density(aes(x = x, y = y), fill = "thistle", stat = "identity") +
+  scale_x_continuous(name = "Difference in mean body mass",
+                     breaks = c(-4, -2, 0, 2, 4),
+                     labels = c("-4se", "-2se", "0g", "+2se", "+4se")) +
+  theme_void() +
+  theme(axis.title = element_text(size = 15),
+        axis.text = element_text(size = 12))
+```
+
+## p-value example
+The observed sample mean difference is (`{r} round(mean_sex_diff, 2)` - 0 $\div$ `{r} round(se_sex_diff, 2)`) = [`{r} round(mean_sex_diff / se_sex_diff, 2)` standard errors]{.answer} away from the null hypothesis.
+
+[This is so far that we can't even see it on our histogram!]{.fragment}
+
+[The probability of this happening [if the null were true]{.answer} is VERY VERY small ([p < 0.00000000001]{.answer})]{.fragment}.
+
+[In this case, we would say this difference is [highly significant]{.answer}]{.fragment}
+
+## Relationship between p-values and confidence intervals
+
+Confidence intervals and p-values are based on the same information and so agree with one another
+
+[If a p-value is [above 0.05]{.answer}, the sample estimate is [less than 1.96 SEs away]{.answer}. This means it will be [within the 95% confidence interval]{.answer}]{.fragment}
+
+[If the null hypothesis is [outside the 99% confidence interval]{.answer}, it is [over 2.576 SEs away]{.answer} from the sample estimate so [p < 0.01]{.answer}]{.fragment}
+
+##
+
+```{r}
+conf_int95
+```
+
+##
+
+```{r}
+conf_int95 +
+  geom_segment(x = 0.9, xend = 0.9, y = .1, yend = 0,
+               arrow = arrow(length = unit(.3, "cm")),
+               colour = "#9a3416", lwd = 2)
+```
+
+##
+
+```{r}
+conf_int95 +
+  geom_segment(x = -4.2, xend = -4.2, y = .1, yend = 0,
+               arrow = arrow(length = unit(.3, "cm")),
+               colour = "#9a3416", lwd = 2)
+```
+
+# {.chapter-theme}
+
+::: r-fit-text
+Exercise 3:
+
+Inferential statistics
+:::
+
+##
+
+![](img/only_connect_table.png){fig-align="center"}
+
+## 
+
+```{r}
+#| label: exercise3-counter
+#| echo: false
+
+
+countdown::countdown(minutes = 10,
+                     top = 0, font_size = "100px",
+                     color_text = "#222222", 
+                     color_background = "#fdddb6",
+                     color_border = "#9a3416",
+                     color_running_text = "#222222", 
+                     color_running_background = "#fdddb6",
+                     color_running_border = "#9a3416")
+```
+![](img/only_connect_figs.png){fig-align="center"}
+
+
+#  {.chapter-theme}
+
+::: r-fit-text
+Statistical modelling
+:::
+
+## Inferential statistics
+Now we know how to [interpret]{.answer} and [communicate]{.answer} inferential statistics...[how do we calculate them?]{.fragment}
+
+[Almost all parameters that we can estimate from a sample can be presented with inferential statistics.]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- Mean
+- Proportion/percentage
+- Correlation coefficients
+:::
+:::{.column wideth="50%"}
+- Difference in means
+- Difference in proportions
+- [Model coefficients]{.answer}
+:::
+:::
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+[Statistical models explain these processes using a [mathematical equation:]{.answer}]{.fragment}
+
+[$g$(Y) = $\alpha$ + $\beta_1X_1$ + $\dots$ + $\beta_nX_n$]{.fragment}
+
+[Model equations generally consist of]{.fragment} 
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$([Y]{.answer}) = $\alpha$ + $\beta_1X_1$ + $\dots$ + $\beta_nX_n$
+
+Model equations generally consist of [outcome(s)]{.answer},
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$(Y) = $\alpha$ + $\beta_1$[$X_1$]{.answer} + $\dots$ + $\beta_n$[$X_n$]{.answer}
+
+Model equations generally consist of outcome(s), [predictor(s)]{.answer} 
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$(Y) = [$\alpha$]{.answer} + [$\beta_1$]{.answer}$X_1$ + $\dots$ + [$\beta_n$]{.answer}$X_n$
+
+Model equations generally consist of outcome(s), predictor(s) and [coefficients]{.answer}
+
+## Statistical vs machine learning models
+::: columns
+:::{.column width="60%"}
+Machine learning models (MLM) are very powerful when making [predictions]{.answer}.
+
+[However, the way they get these predictions is often shrouded in mystery]{.fragment fragment-index=1}
+
+[Models are not [interpretable]{.answer}]{.fragment fragment-index=2}
+:::
+:::{.column width="40%" .fragment fragment-index=1}
+![](img/mystery.png)
+:::
+:::
+
+## Statistical vs machine learning models
+::: columns
+:::{.column width="60%"}
+Statistical models are based on [probabilistic assumptions]{.answer} 
+
+[Makes them stricter but [interpretable]{.answer}]{.fragment}
+
+[Statistical models are better at [explaining]{.answer} and [understanding]{.answer} processes]{.fragment}
+:::
+:::{.column width="40%"}
+![](img/boxing.jpg)
+:::
+:::
+
+## Regression models
+Common statistical model are [regression models]{.answer}.
+
+[Also known as [linear models,]{.answer .fragment} [generalised linear models]{.answer .fragment} [or GLMs]{.answer .fragment}]{.fragment}
+
+[Choice of regression type depends on the [type]{.answer} of outcome variable(s).]{.fragment}
+
+[All aim to fit a linear equation to a [transformation]{.answer} of the outcome ($g(Y)$)]{.fragment}
+
+## Regression models
+```{r}
+#| label: regression-type-table
+
+tibble(outcome_type = c("Continuous", "Count/rate", "Binary", "Ordinal",
+                        "Nominal"),
+       reg_type = c("Linear", "Poisson", "Logistic", "Ordinal logistic",
+                    "Multinomial"),
+       transformation = c("Identity", "Log", rep("Logit", 3))) %>% 
+  kable(col.names = c("Outcome type", "Regression", "Transformation"))
+```
+
+## Linear regression
+The simplest statistical modelling approach is a linear model.
+
+[This is because coefficient estimates are related to the outcome itself:]{.fragment}
+
+[$Y = \alpha + \beta_1X_1 + \dots$]{.fragment}
+
+[When $X_1$ is the only predictor and a continuous variable, linear regression fits a straight line to the data]{.fragment}
+
+## Linear regression
+Let's fit a model to explore the relationship between penguin's body mass and flipper length.
+
+```{r}
+#| label: linear-reg-scatter
+
+body_flipper_hist <- ggplot(data = na.omit(penguins)) + 
+  geom_point(aes(x = flipper_length_mm, y = body_mass_g)) +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)") +
+  theme_stats_thinking()
+
+body_flipper_hist
+```
+
+## Linear regression
+Let's fit a model to explore the relationship between penguin's body mass and flipper length.
+
+[Here, the outcome is [body mass]{.answer} and the predictor is [flipper length]{.answer}:]{.fragment}
+
+[Body mass = $\alpha$ + $\beta \times$ flipper length]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- $\alpha$ = intercept
+- Predicted outcome where predictors = 0
+:::
+:::{.column width="50%"}
+- $\beta$ = slope
+- Expected change in outcome for a unit increase in predictor
+:::
+:::
+
+## Linear regression
+```{r}
+#| label: simple-lin-reg
+
+lm_flipper <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
+```
+
+
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+
+```{r}
+#| label: simple-reg-output
+
+lm_flipper_output <- broom::tidy(lm_flipper, conf.int = TRUE) %>% 
+  mutate(across(where(is.numeric), ~round(., 2)), 
+         term2 = c("Intercept", "Flipper length"),
+         conf.int = paste0("[", conf.low, ", ", conf.high, "]"),
+         pvalue = ifelse(p.value == 0, "<0.001", p.value)) 
+
+
+lm_flipper_output %>% 
+  select(term2, estimate, conf.int, pvalue) %>% 
+  flextable() %>% 
+  set_header_labels(term2 = "", 
+                    estimate = "Coefficient estimates", 
+                    conf.int = "95% confidence \ninterval",
+                    pvalue = "p-value") %>% 
+  bold(part = "header") %>% 
+  bg(part = "all", bg = "#fdddb6") %>% 
+  color(part = "all", color = "#222222") %>% 
+  fontsize(size = 60, part = "header") %>% 
+  fontsize(size = 48, part = "body") %>% 
+  autofit() %>% 
+  line_spacing(space = 1.2, part = "body") %>% 
+  align(j = 2:4, align = "right", part = "all") %>% 
+  width(j = 1, width = 2, unit = "cm") %>% 
+  width(j = 2, width = 3, unit = "cm") %>% 
+  width(j = 4, width = 5, unit = "cm") 
+```
+
+## Linear regression
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+
+```{r}
+#| label: line-of-best-fit
+
+body_flipper_hist +
+  geom_abline(intercept = coef(lm_flipper)[1],
+              slope = coef(lm_flipper)[2], colour = "#9a3416", lwd = 2)
+```
+
+## Linear regression
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+ 
+ - Intercept = `{r} round(coef(lm_flipper)[1], 2)`
+ 
+ [Penguins with flipper length of 0mm had a predicted body mass of [`{r} round(coef(lm_flipper)[1], 2)`g]{.answer}]{.fragment}
+
+- Slope = `{r} round(coef(lm_flipper)[2], 2)`
+
+[For every unit increase in flipper length (1mm), body mass was expected to increase by [`{r} round(coef(lm_flipper)[2], 2)`g]{.answer}]{.fragment}
+
+## Linear regression
+Confidence intervals give a range of values the coefficients are [compatible with.]{.answer}
+
+[In this sample, the average increase in body mass for every 1mm increase in flipper length was [`{r} round(coef(lm_flipper)[2], 2)`g]{.answer}]{.fragment}
+
+[But at the [population level]{.answer}, we are 95% confident that this increase could lie between [`{r} lm_flipper_output$conf.low[2]`g]{.answer} and [`{r} lm_flipper_output$conf.high[2]`g]{.answer}]{.fragment}
+
+## Linear regression
+p-values test the null hypothesis of [no association]{.answer}: $\beta$ = 0
+
+[These p-values are both too small to be printed in their entirety, therefore the coefficients are [statistically significant]{.answer}]{.fragment}
+
+[For intercept, this has no real use.]{.fragment} 
+
+[For the slope, we have shown a [significant association]{.answer} between flipper length and body mass]{.fragment}
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+[Confounders = background variables that are related to both the outcome and predictor variable(s)]{.fragment}
+
+[Confounders can [create]{.answer} false associations or [hide]{.answer} true associations if not properly accounted for]{.fragment}
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+```{r}
+#| label: confounder1
+
+coords_dag <- list(x = c(cancer = 2,
+                         smoking = 1,
+                         coffee = 0),
+                   y = c(cancer = 0,
+                         smoking = 1,
+                         coffee = 0))
+
+dagify(cancer ~ coffee,
+       outcome = "cancer",
+       exposure = "coffee",
+       labels = c("cancer" = "Lung cancer", 
+                  "coffee" = "Coffee"),
+       coords = coords_dag) %>% 
+  ggdag(text = FALSE, use_labels = "label") +
+  theme_dag()
+```
+
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+
+```{r}
+#| label: confounder2
+
+confounder_triangle(x = "Coffee", y = "Lung cancer", z = "Smoking") %>%
+  ggdag(text = FALSE, use_labels = "label") +
+  theme_dag()
+```
+
+## Multiple regression
+Let's extend the previous model to account for the sex of penguins:
+
+```{r}
+#| label: flipper-sex-hist
+
+ggplot(data = na.omit(penguins)) +
+  geom_point(aes(x = flipper_length_mm, y = body_mass_g,
+                 colour = sex)) + 
+  scale_colour_brewer(name = "Sex", palette = "Dark2") +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)") +
+  theme_stats_thinking()
+```
+
+## Multiple regression
+Let's extend the previous model to account for the sex of penguins:
+
+[Body mass = $\alpha$ + $\beta_1 \times$ flipper length + $\beta_2 \times$ male]{.fragment}
+
+[Categorical variables are added as [dummy variables]{.answer}]{.fragment}
+
+::: columns
+:::{.column width="50%" .fragment}
+[male = 1]{.answer} if sex = male 
+:::
+:::{.column width="50%" .fragment}
+[male = 0]{.answer} if sex = female
+:::
+:::
+
+```{r}
+#| label: lm-flipper-sex
+#| out-width: "1800px"
+
+lm_flipper_sex <- lm(body_mass_g ~ flipper_length_mm + sex,
+                     data = penguins)
+
+lm_flipper_sex_tidy <- broom::tidy(lm_flipper_sex, conf.int = TRUE) %>% 
+  mutate(across(where(is.numeric), ~round(., 2)),
+         term2 = c("Intercept", "Flipper length", "Male"),
+         conf.int = paste0("[", conf.low, ", ", conf.high, "]"),
+         pval = ifelse(p.value == 0, "<0.001", p.value))
+```
+
+## Multiple regression
+Body mass = `{r} lm_flipper_sex_tidy$estimate[1]` + `{r} lm_flipper_sex_tidy$estimate[2]` $\times$ flipper length + `{r} lm_flipper_sex_tidy$estimate[3]` $\times$ male
+
+```{r}
+#| label: multiple-reg-table
+
+lm_flipper_sex_tidy %>% 
+  select(term2, estimate, conf.int, pval) %>% 
+  flextable() %>% 
+  set_header_labels(term2 = "", 
+                    estimate = "Coefficient estimates", 
+                    conf.int = "95% confidence \ninterval",
+                    pval = "p-value") %>% 
+  bold(part = "header") %>% 
+  bg(part = "all", bg = "#fdddb6") %>% 
+  color(part = "all", color = "#222222") %>% 
+  fontsize(size = 60, part = "header") %>% 
+  fontsize(size = 48, part = "body") %>% 
+  autofit() %>% 
+  line_spacing(space = 1.6, part = "body") %>% 
+  align(j = 2:4, align = "right", part = "all") %>% 
+  width(j = 1, width = 2, unit = "cm") %>% 
+  width(j = 2, width = 3, unit = "cm") %>% 
+  width(j = 4, width = 5, unit = "cm") 
+  
+```
+
+## Multiple regression
+Body mass = `{r} lm_flipper_sex_tidy$estimate[1]` + `{r} lm_flipper_sex_tidy$estimate[2]` $\times$ flipper length + `{r} lm_flipper_sex_tidy$estimate[3]` $\times$ male
+
+[Coefficients now represent expected change in outcome for unit increase in predictor [after adjusting for other predictors]{.answer .fragment}]{.fragment}
+
+[There is a [significant positive]{.answer} association between flipper length and body mass]{.fragment} [after adjusting for differences between sexes]{.fragment}
+
+## Model evaluation
+There are going to be many potential models to answer our research question...[how do we choose the best one??]{.fragment}
+
+- Consider the [intention]{.answer} of the model
+- Use [common sense]{.answer} and prior knowledge
+- Aim to find the most [parsimonious]{.answer}
+
+## Model evaluation
+Model evaluation can involve comparisons of model fitting statistics.
+
+[[R-squared]{.answer} value: proportion of the outcome explained by the model]{.fragment}
+
+[[Adjusted R-squared]{.answer} penalises the R-squared value based on the number of predictors included in the model]{.fragment}
+
+
+
+## Model evaluation
+Adjusted R-squared value for flipper-only model: [`{r} round(summary(lm_flipper)$adj.r.squared, 2)`]{.answer .fragment}
+
+[Adjusted R-squared value for flipper + sex model: [`{r} round(summary(lm_flipper_sex)$adj.r.squared, 2)`]{.answer .fragment}]{.fragment}
+
+[Adding sex still increased the adjusted R-squared value, indicating its addition was [worthwhile]{.answer}]{.fragment}
+
+## Model evaluation
+[Prediction metrics]{.answer} are another family of useful model evaluation tools
+
+[They compare the observed outcome with the fitted model predictions.]{.fragment}
+
+- RMSE: root mean squared error [$\sqrt{\frac{1}{n}\sum{(y_i - \hat{y}_i)^2}}$]{.fragment}
+- MAE: mean absolute error [$\frac{1}{n}\sum|y_i - \hat{y}_i|$]{.fragment}
+
+[Useful as they provide a measure of fit [in context]{.answer}]{.fragment}
+
+## Model evaluation
+```{r}
+#| label: prediction-metrics
+
+tibble(Model = c("Flipper only", "Flipper + sex"),
+       RMSE = c(Metrics::rmse(lm_flipper$model$body_mass_g,
+                              predict(lm_flipper)),
+                Metrics::rmse(lm_flipper_sex$model$body_mass_g,
+                              predict(lm_flipper_sex))),
+       MAE = c(Metrics::mae(lm_flipper$model$body_mass_g,
+                            predict(lm_flipper)),
+               Metrics::mae(lm_flipper_sex$model$body_mass_g,
+                            predict(lm_flipper_sex)))) %>% 
+  mutate(across(where(is.numeric), ~round(., 2))) %>% 
+  kable()
+```
+
+[Adding sex into the model [reduced]{.answer} performance metrics. This means  it [improved]{.answer} prediction.]{.fragment}
+
+[If both prediction errors are large (in context of the problem), consider trying to improve them in some way]{.fragment}
+
+## Model diagnostics
+Linear regression is a [parametric]{.answer} method[: it has assumptions that must be checked]{.fragment}
+
+- **L**inearity: [can present the outcome as a linear combination of predictors]{.fragment}
+- **I**ndependent predictors: [no multicollinearity present]{.fragment}
+- **N**ormally distributed residuals
+- **E**qual variance of residuals [AKA homoskedasticity]{.fragment}
+
+## Model diagnistics
+Predictors must be [independent]{.answer} of one another.
+
+[Correlation can be accounted for to some degree, and dependency can exist between > 2 variables]{.fragment}
+
+[[Variance inflation factor]{.answer} (VIF): Measure of multicollinearity]{.fragment}
+
+[$VIF_i = \frac{1}{1 - R_i^2}$ for each predictor]{.fragment}
+
+## Model diagnostics
+VIF = 10 &rarr; $R^2 = 0.9$[: 90% of the variation in that predictor is explained by other predictors]{.fragment}
+
+[Multicollinearity leads to unstable coefficient estimates and invalid inferential statistics]{.fragment}
+
+[When there is evidence of multicollinearity (VIF > 5-ish), [remove the offending variable(s)!]{.answer}]{.fragment}
+
+## Model diagnostics
+Residuals = model error terms: [observed outcome - predicted outcome]{.fragment}
+
+[Used to check final three assumptions:]{.fragment}
+
+- Linearity: plot residuals against each predictor
+- Normal distribution: plot a histogram of residuals
+- Equal variance: plot residuals against the predicted outcome
+
+## Model diagnostics
+Linearity: check residual vs. predictor plots for patterns
+
+```{r}
+#| label: resid-flipper-plot
+
+penguin_resid <- lm_flipper_sex$model %>% 
+  mutate(residual = resid(lm_flipper_sex),
+         prediction = predict(lm_flipper_sex))
+
+ggplot(data = penguin_resid) +
+  geom_point(aes(x = flipper_length_mm, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Flipper length (mm)", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Model diagnostics
+Linearity: check residual vs. predictor plots for patterns
+
+```{r}
+#| label: resid-sex-plot
+
+ggplot(data = penguin_resid) +
+  geom_jitter(aes(x = sex, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Sex", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Model diagnostics
+Normally distribution residuals
+
+```{r}
+#| label: residual-hist
+
+ggplot(data = penguin_resid) +
+  geom_histogram(aes(x = residual)) +
+  geom_vline(xintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Residuals") +
+  theme_stats_thinking()
+```
+
+
+## Model diagnostics
+Homoskedasticity: check residual vs. prediction plots for patterns
+
+```{r}
+#| label: resid-pred-plot
+
+ggplot(data = penguin_resid) +
+  geom_point(aes(x = prediction, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Predicted body mass (g)", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Generalised linear models
+When the outcome variable is not continuous, another regression model must be chosen. 
+
+[Estimated coefficients relate to a [transformed]{.answer} version of the outcome.]{.fragment}
+
+[For example, a fitted poisson model (of counts) looks like this:]{.fragment}
+
+[$log(Y) = \alpha + \beta_1X_1 + \beta_2X_2 + \dots$]{.fragment}
+
+[Coefficients ($\alpha$, $\beta_1$, $\beta_2$) relate to the [log]{.answer} of the outcome.]{.fragment}
+
+## Generalised linear models
+To interpret coefficients, they must be [back-transformed]{.answer} to relate to the original outcome.
+
+[For example, in the poisson case, we apply the [exponential function]{.answer} (the opposite of the log) to the equation]{.fragment}
+
+[This makes interpretation of other regression models slightly more difficult [but not impossible!]{.answer}]{.fragment}
+
+## Generalised linear models
+Statistical models are based on probabilistic assumptions.
+
+[These assumptions must be true for results for be valid]{.fragment .answer}
+
+[Different regression types have different assumptions but all share these two:]{.fragment}
+
+[1. Observations must be [independent]{.answer} of one another]{.fragment}
+
+[2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a [linear equation]{.answer}]{.fragment}
+
+## Beyond GLMs
+When either of these assumptions are not valid, we must consider [other models]{.answer}
+
+[[Mixed models]{.answer} (or GLMM, multilevel models, random effect models) account for dependency structures in data:]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- Spatial data
+- Temporal data
+:::
+:::{.column width="50%"}
+- Data on clusters (e.g. households)
+:::
+:::
+
+## Beyond GLMs
+When either of these assumptions are not valid, we must consider [other models]{.answer}
+
+[[Additive models]{.answer} (GAMs) are useful when modelling non-linear relationships]{.fragment}
+
+[Allow smooth functions of predictors, [$s(X)$]{.answer}, to be entered into a model:]{.fragment}
+
+[g(Y) = $\alpha + \beta_1X_1 + \dots + s(X_j)$]{.fragment}
+
+# {.chapter-theme}
+
+::: r-fit-text
+Final thoughts
+:::
+
+## Final thoughts
+- Statistics is a [huge]{.answer} topic 
+
+- Do not underestimate planning stage: research questions, biases and exploratory work
+
+- Complex analysis [can not]{.answer} overcome bad data
+
+- Do not make inferential statements about sample estimates and do not make [causal]{.answer} statements unless performing causal analysis
+
+## Final thoughts
+- Choose analysis methods based on the [research question]{.answer} rather than the available data
+
+- Models should be built to address this question and using common sense/background knowledge [not based on p-values]{.answer}
+
+- If a method requires assumptions to be met, check these [before]{.answer} communicating results
+
+## Final thoughts
+- Many [free]{.answer} statistical software packages available
+
+- [R]{.answer} is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources
+
+- [Python]{.answer} is a favourite of data scientists and has a rapidly growing community
+
+- [Excel]{.answer} will do basic stats but is limited and prone to issues!
+
+# {.chapter-theme}
+
+
+:::r-fit-text
+Thank you for listening!
+:::

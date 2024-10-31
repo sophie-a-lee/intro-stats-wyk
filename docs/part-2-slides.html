@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.553">
+
+  <meta name="author" content="Sophie Lee">
+  <title>Introduction to Statistics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+
+  <script src="site_libs/countdown-0.4.0/countdown.js"></script>
+
+  <link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+  <script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
+
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Introduction to Statistics</h1>
+  <p class="subtitle">Part 2: Inferential statistics and modelling</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Sophie Lee 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="section" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Beyond the sample</p>
+</div>
+</section>
+<section id="course-content" class="slide level2">
+<h2>Course content</h2>
+<h3 id="part-2-friday-1st-november-2024">Part 2: Friday 1st November, 2024</h3>
+<ul>
+<li class="fragment">Inferential statistics
+<ul>
+<li class="fragment">Central limit theorem</li>
+<li class="fragment">p-values and confidence intervals: how to interpret and communicate results</li>
+<li class="fragment">Where do these values come from?</li>
+</ul></li>
+</ul>
+</section>
+<section id="course-content-1" class="slide level2">
+<h2>Course content</h2>
+<h3 id="part-2-friday-1st-november-2024-1">Part 2: Friday 1st November, 2024</h3>
+<ul>
+<li class="fragment">Statistical modelling
+<ul>
+<li class="fragment">What are models and why are they useful to data analytics?</li>
+<li class="fragment">How to choose an appropriate model based on the research question</li>
+<li class="fragment">Model outputs and their interpretations</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-are-inferential-statistics" class="slide level2">
+<h2>What are inferential statistics?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/stats_inference2.png" class="quarto-figure quarto-figure-center" style="width:50cm;height:20cm"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>At the beginning of the course, we saw that one of the main aims of statistics is to make inferences about a target population of interest based on results of analysis applied to a random sample. These inferences require inferential statistics,</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-are-inferential-statistics-1" class="slide level2">
+<h2>What are inferential statistics?</h2>
+<p>Inferential statistics make inferences about target population based on a <span class="answer">random, representative</span> sample.</p>
+<p><span class="fragment">Combine sample estimates with <span class="answer">sample size</span> and level of <span class="answer">precision</span></span></p>
+<p><span class="fragment">Most common inferential statistics:</span> <span class="fragment"><span class="answer">p-values</span> and <span class="answer">confidence intervals</span></span></p>
+<aside class="notes">
+<p>These are estimated by combining results from the random, representative sample taken from the target population, and information about the sample size and precision of the sample estimate.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="measures-of-precision" class="slide level2">
+<h2>Measures of precision</h2>
+<p>Precision of an estimate quantified by <span class="answer">standard error (SE)</span></p>
+<p><span class="fragment">Based on sample size and sample variability</span></p>
+<p><span class="fragment">Different formula for each type of estimate (e.g.&nbsp;mean, percentage, difference between means)</span></p>
+<div class="fragment bigger absolute" style="left: 750px; bottom: 300px; ">
+<p><span class="math inline">\(SE(\bar{x}) = \frac{SD}{\sqrt{n}}\)</span></p>
+</div>
+<aside class="notes">
+<p>Inferential statistics require a measure of how precise a sample estimate is. Precision is quanti􀏐ied using the standard error (SE), calculated using the sample size and sample variability. The formula used to calculate a standard error depends on the type of parameter we wish to obtain from the target. For example, the standard error of a single mean (𝑆𝐸(𝑥)̄ ) is found by dividing the sample standard deviation (𝑆𝐷) by the square root of the sample size (𝑛):</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="measures-of-precision-1" class="slide level2">
+<h2>Measures of precision</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Larger SE → <span class="answer">less precise</span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="fragment">Smaller SE → <span class="answer">more precise</span></span></p>
+</div>
+</div>
+<div class="bigger fragment absolute" style="left: 750px; ">
+<p><span class="math inline">\(SE(\bar{x}) = \frac{SD}{\sqrt{n}}\)</span></p>
+</div>
+<div class="absolute" style="top: 500px; ">
+<p><span class="fragment">For every parameter of interest:</span></p>
+<ul>
+<li class="fragment">Larger sample, higher precision → <span class="answer">lower standard error</span></li>
+<li class="fragment">More variability, lower precision → <span class="answer">higher standard error</span></li>
+</ul>
+<p><span class="fragment">Inferential statistics work based on the <span class="answer">central limit theorem</span></span></p>
+</div>
+<aside class="notes">
+<p>Regardless of the formula used or the parameter of interest, the larger a sample is, the more precise an estimate will be. Conversely, the more varied a sample is, the less precise an estimate is. A precise estimate is represented by a small standard error value. Standard errors are used to estimate inferential statistics (p‑values and con􀏐idence intervals) based on the central limit theorem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="central-limit-theorem" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/normal-curve-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-1" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/random-samples-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-2" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-3" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-4" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-5" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-6" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-7" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-8" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-9" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="central-limit-theorem-10" class="slide level2">
+<h2>Central limit theorem</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/sd-to-se-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="confidence-intervals" class="slide level2">
+<h2>Confidence intervals</h2>
+<ul>
+<li class="fragment">A range of values the true population parameter is compatible with</li>
+<li class="fragment">Based on sample estimate, precision, and confidence level</li>
+</ul>
+<aside class="notes">
+<p>A con􀏐idence interval is a range of values that the true population statistic is compatible with based on the sample estimate, precision, and some pre‑de􀏐ined level of con􀏐idence. The con􀏐idence level can be adjusted depending on how con􀏐ident we wish to be about the true population parameter.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Confidence levels</th>
+<th style="text-align: right;">Number of SEs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">80%</td>
+<td style="text-align: right;">1.282</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">90%</td>
+<td style="text-align: right;">1.645</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">95%</td>
+<td style="text-align: right;">1.960</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">99%</td>
+<td style="text-align: right;">2.576</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">99.9%</td>
+<td style="text-align: right;">3.291</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="confidence-intervals-1" class="slide level2 nonincremental">
+<h2>Confidence intervals</h2>
+<ul>
+<li class="fragment">A range of values the true population parameter is compatible with</li>
+<li class="fragment">Based on sample estimate, precision, and confidence level</li>
+</ul>
+<div class="fragment">
+<ul>
+<li class="fragment">Based on central limit theorem, can capture ranges we would expect a percentage of parameter estimates to lie:</li>
+</ul>
+</div>
+<div class="fragment bigger absolute" style="left: 750px; ">
+<p><span class="math inline">\(\bar{x} \pm 1.96 \times SE(\bar{x})\)</span></p>
+</div>
+<aside class="notes">
+<p>The con􀏐idence interval is created assuming the central limit theorem. As the hypothetical repeated estimates are assumed to follow a normal distribution, we can use the sample estimate of the parameter and the standard error to obtain ranges within which we would expect a certain percentage of parameter estimates to lie.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/conf-int-95-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="confidence-interval-example" class="slide level2">
+<h2>Confidence interval example</h2>
+<p>Let’s compare the body mass of our penguins between sexes.</p>
+<div class="fragment">
+<p>First, we want to check the distribution of these samples:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="part-2-slides_files/figure-revealjs/penguin-sex-comp-1.png" class="quarto-figure quarto-figure-center" width="1000" height="600"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="confidence-interval-example-1" class="slide level2">
+<h2>Confidence interval example</h2>
+<p>Both groups appear to be normally distributed, so we can compare the <span class="answer">means</span>.</p>
+<p><span class="fragment">Mean body mass of male penguins: <span class="answer fragment">4010.28g</span></span></p>
+<p><span class="fragment">Mean body mass of female penguins: <span class="answer fragment">3419.16g</span></span></p>
+<p><span class="fragment">Difference in the means (of the sample): 4010.28g - 3419.16g</span></p>
+<p><span class="answer fragment">= 591.12g</span></p>
+</section>
+<section id="confidence-interval-example-2" class="slide level2">
+<h2>Confidence interval example</h2>
+<p>Difference in the means (of the sample): 591.12g</p>
+<p><span class="fragment">Standard error of the mean difference</span><span class="answer fragment">= 4.23g</span></p>
+<p><span class="fragment">95% confidence interval: 591.12 <span class="math inline">\(\pm\)</span> 1.96 <span class="math inline">\(\times\)</span> 4.23</span></p>
+<p><span class="fragment answer">= 582.83g, 599.42g</span></p>
+<p><span class="fragment"><strong>But what does that mean??</strong></span></p>
+</section>
+<section id="confidence-interval-example-3" class="slide level2">
+<h2>Confidence interval example</h2>
+<p>95% confidence interval: 582.83g, 599.42g</p>
+<p><span class="fragment">We are <span class="answer">95% confident</span> that male penguins were between 582.83g and 599.42g heavier than female penguins on average.</span></p>
+<p><span class="answer fragment">Note that this confidence interval only contains <span class="answer">positive</span> values.</span></p>
+</section>
+<section id="p-values" class="slide level2">
+<h2>p-values</h2>
+<ul>
+<li class="fragment">Probability of obtaining a result as extreme or more extreme as the sample if the null hypothesis is true</li>
+<li class="fragment">Null hypothesis (H0): no difference/association</li>
+</ul>
+<aside class="notes">
+<p>Another commonly used inferential statistic is the p‑value. A p‑value is the probability of obtaining a sample estimate as extreme, or more extreme, than the current if some null hypothesis (H0) were true. The null hypothesis is usually ‘no difference’ or ‘no association’, depending on the value being tested.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="p-values-1" class="slide level2">
+<h2>p-values</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/random-se1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p>If we consider the normal distribution of repeated sample estimates, the p‑value is estimated by assuming the null hypothesis is true (and is therefore the peak of the distribution) and measuring how far the sample value is from this relative to the spread of the distribution (the standard error). The closer the sample estimate is to the null hypothesis, the more likely it was to occur if the null hypothesis were true, and the higher the p‑value</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="p-values-2" class="slide level2">
+<h2>p-values</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/random-se2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p>The further away from the null hypothesis, the less likely it would be to occur and the lower the p‑value.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="p-values-3" class="slide level2">
+<h2>p-values</h2>
+<div>
+<ul>
+<li>Probability of obtaining a result as extreme or more extreme as the sample if the null hypothesis is true</li>
+<li>Null hypothesis (H0): no difference/association</li>
+</ul>
+</div>
+<div>
+<ul>
+<li class="fragment">Low p-value: less evidence to support the null hypothesis
+<ul>
+<li class="fragment">Very low p-value is known as <span class="answer">statistically significant</span></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="statistical-significance" class="slide level2">
+<h2>Statistical significance</h2>
+<p>Often significance is defined by arbitrary cut-off <span class="fragment">(usually 0.05)</span></p>
+<p><span class="fragment"><strong>Be careful with these arbitrary definitions, it is not how probability behaves!</strong></span></p>
+<p><span class="fragment">p &lt; 0.05 is significant</span> <span class="fragment answer">at the 5% level</span></p>
+<p><span class="fragment">We never <span class="answer">accept</span> or <span class="answer">reject</span> a null hypothesis</span></p>
+<aside class="notes">
+<p>Results are often referred to as statistically signi􀏐icant if a p‑value falls below a certain threshold. This threshold is often set to 0.05, or a 5% chance that an estimate as extreme as the one obtained would occur if the null hypothesis were true. Although arbitrary cut‑offs may be useful in some situations, for example where a decision needs to be taken based on the results, this is not how probability behaves. In reality, there is very little difference between a p‑value of 0.049 (4.9% chance) and 0.051 (a 5.1% chance). Therefore, it is not advised to report ‘accepting’ or ‘rejecting’ a null hypothesis, despite how commonplace this is in some literature.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="p-values-example" class="slide level2">
+<h2>p-values example</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="part-2-slides_files/figure-revealjs/hist-again-1.png" class="quarto-figure quarto-figure-center" width="1000" height="600"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="p-values-example-1" class="slide level2">
+<h2>p-values example</h2>
+<p>As we are comparing groups, our null hypothesis is that there is <span class="answer">no difference</span> in the target population.</p>
+<p><span class="fragment">Sample mean difference: <span class="answer">591.12g</span></span></p>
+<p><span class="fragment">Standard error of the difference: <span class="answer">4.23g</span></span></p>
+<p><span class="fragment">p-values assume that the null hypothesis is true</span></p>
+</section>
+<section id="p-value-example" class="slide level2">
+<h2>p-value example</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/pvalue-normal-h0-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="p-value-example-1" class="slide level2">
+<h2>p-value example</h2>
+<p>The observed sample mean difference is (591.12 - 0 <span class="math inline">\(\div\)</span> 4.23) = <span class="answer">139.68 standard errors</span> away from the null hypothesis.</p>
+<p><span class="fragment">This is so far that we can’t even see it on our histogram!</span></p>
+<p><span class="fragment">The probability of this happening <span class="answer">if the null were true</span> is VERY VERY small (<span class="answer">p &lt; 0.00000000001</span>)</span>.</p>
+<p><span class="fragment">In this case, we would say this difference is <span class="answer">highly significant</span></span></p>
+</section>
+<section id="relationship-between-p-values-and-confidence-intervals" class="slide level2">
+<h2>Relationship between p-values and confidence intervals</h2>
+<p>Confidence intervals and p-values are based on the same information and so agree with one another</p>
+<p><span class="fragment">If a p-value is <span class="answer">above 0.05</span>, the sample estimate is <span class="answer">less than 1.96 SEs away</span>. This means it will be <span class="answer">within the 95% confidence interval</span></span></p>
+<p><span class="fragment">If the null hypothesis is <span class="answer">outside the 99% confidence interval</span>, it is <span class="answer">over 2.576 SEs away</span> from the sample estimate so <span class="answer">p &lt; 0.01</span></span></p>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<section>
+<section id="section-6" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Exercise 3:</p>
+<p>Inferential statistics</p>
+</div>
+</section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+
+<img data-src="img/only_connect_table.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="countdown" id="timer_36ce9176" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:100px;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+
+<img data-src="img/only_connect_figs.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="section-9" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Statistical modelling</p>
+</div>
+</section>
+<section id="inferential-statistics" class="slide level2">
+<h2>Inferential statistics</h2>
+<p>Now we know how to <span class="answer">interpret</span> and <span class="answer">communicate</span> inferential statistics…<span class="fragment">how do we calculate them?</span></p>
+<p><span class="fragment">Almost all parameters that we can estimate from a sample can be presented with inferential statistics.</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Mean</li>
+<li class="fragment">Proportion/percentage</li>
+<li class="fragment">Correlation coefficients</li>
+</ul>
+</div><div class="column" data-wideth="50%">
+<ul>
+<li class="fragment">Difference in means</li>
+<li class="fragment">Difference in proportions</li>
+<li class="fragment"><span class="answer">Model coefficients</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="statistical-models" class="slide level2">
+<h2>Statistical models</h2>
+<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
+<p><span class="fragment">Statistical models explain these processes using a <span class="answer">mathematical equation:</span></span></p>
+<p><span class="fragment"><span class="math inline">\(g\)</span>(Y) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_nX_n\)</span></span></p>
+<p><span class="fragment">Model equations generally consist of</span></p>
+</section>
+<section id="statistical-models-1" class="slide level2">
+<h2>Statistical models</h2>
+<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
+<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
+<p><span class="math inline">\(g\)</span>(<span class="answer">Y</span>) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_nX_n\)</span></p>
+<p>Model equations generally consist of <span class="answer">outcome(s)</span>,</p>
+</section>
+<section id="statistical-models-2" class="slide level2">
+<h2>Statistical models</h2>
+<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
+<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
+<p><span class="math inline">\(g\)</span>(Y) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1\)</span><span class="answer"><span class="math inline">\(X_1\)</span></span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_n\)</span><span class="answer"><span class="math inline">\(X_n\)</span></span></p>
+<p>Model equations generally consist of outcome(s), <span class="answer">predictor(s)</span></p>
+</section>
+<section id="statistical-models-3" class="slide level2">
+<h2>Statistical models</h2>
+<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
+<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
+<p><span class="math inline">\(g\)</span>(Y) = <span class="answer"><span class="math inline">\(\alpha\)</span></span> + <span class="answer"><span class="math inline">\(\beta_1\)</span></span><span class="math inline">\(X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="answer"><span class="math inline">\(\beta_n\)</span></span><span class="math inline">\(X_n\)</span></p>
+<p>Model equations generally consist of outcome(s), predictor(s) and <span class="answer">coefficients</span></p>
+</section>
+<section id="statistical-vs-machine-learning-models" class="slide level2">
+<h2>Statistical vs machine learning models</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Machine learning models (MLM) are very powerful when making <span class="answer">predictions</span>.</p>
+<p><span class="fragment" data-fragment-index="1">However, the way they get these predictions is often shrouded in mystery</span></p>
+<p><span class="fragment" data-fragment-index="2">Models are not <span class="answer">interpretable</span></span></p>
+</div><div class="column fragment" data-fragment-index="1" style="width:40%;">
+<p><img data-src="img/mystery.png"></p>
+</div>
+</div>
+</section>
+<section id="statistical-vs-machine-learning-models-1" class="slide level2">
+<h2>Statistical vs machine learning models</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>Statistical models are based on <span class="answer">probabilistic assumptions</span></p>
+<p><span class="fragment">Makes them stricter but <span class="answer">interpretable</span></span></p>
+<p><span class="fragment">Statistical models are better at <span class="answer">explaining</span> and <span class="answer">understanding</span> processes</span></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="img/boxing.jpg"></p>
+</div>
+</div>
+</section>
+<section id="regression-models" class="slide level2">
+<h2>Regression models</h2>
+<p>Common statistical model are <span class="answer">regression models</span>.</p>
+<p><span class="fragment">Also known as <span class="answer fragment">linear models,</span> <span class="answer fragment">generalised linear models</span> <span class="answer fragment">or GLMs</span></span></p>
+<p><span class="fragment">Choice of regression type depends on the <span class="answer">type</span> of outcome variable(s).</span></p>
+<p><span class="fragment">All aim to fit a linear equation to a <span class="answer">transformation</span> of the outcome (<span class="math inline">\(g(Y)\)</span>)</span></p>
+</section>
+<section id="regression-models-1" class="slide level2">
+<h2>Regression models</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Outcome type</th>
+<th style="text-align: left;">Regression</th>
+<th style="text-align: left;">Transformation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Continuous</td>
+<td style="text-align: left;">Linear</td>
+<td style="text-align: left;">Identity</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Count/rate</td>
+<td style="text-align: left;">Poisson</td>
+<td style="text-align: left;">Log</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Binary</td>
+<td style="text-align: left;">Logistic</td>
+<td style="text-align: left;">Logit</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ordinal</td>
+<td style="text-align: left;">Ordinal logistic</td>
+<td style="text-align: left;">Logit</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nominal</td>
+<td style="text-align: left;">Multinomial</td>
+<td style="text-align: left;">Logit</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="linear-regression" class="slide level2">
+<h2>Linear regression</h2>
+<p>The simplest statistical modelling approach is a linear model.</p>
+<p><span class="fragment">This is because coefficient estimates are related to the outcome itself:</span></p>
+<p><span class="fragment"><span class="math inline">\(Y = \alpha + \beta_1X_1 + \dots\)</span></span></p>
+<p><span class="fragment">When <span class="math inline">\(X_1\)</span> is the only predictor and a continuous variable, linear regression fits a straight line to the data</span></p>
+</section>
+<section id="linear-regression-1" class="slide level2">
+<h2>Linear regression</h2>
+<p>Let’s fit a model to explore the relationship between penguin’s body mass and flipper length.</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/linear-reg-scatter-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="linear-regression-2" class="slide level2">
+<h2>Linear regression</h2>
+<p>Let’s fit a model to explore the relationship between penguin’s body mass and flipper length.</p>
+<p><span class="fragment">Here, the outcome is <span class="answer">body mass</span> and the predictor is <span class="answer">flipper length</span>:</span></p>
+<p><span class="fragment">Body mass = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta \times\)</span> flipper length</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span class="math inline">\(\alpha\)</span> = intercept</li>
+<li class="fragment">Predicted outcome where predictors = 0</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment"><span class="math inline">\(\beta\)</span> = slope</li>
+<li class="fragment">Expected change in outcome for a unit increase in predictor</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="linear-regression-3" class="slide level2">
+<h2>Linear regression</h2>
+<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-3499b948{}.cl-346c0aac{font-family:'Arial';font-size:60pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-346c0ae8{font-family:'Arial';font-size:48pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-348b10d2{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-348b10e6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-348b10fa{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.2;background-color:transparent;}.cl-348b10fb{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.2;background-color:transparent;}.cl-348b9e26{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e30{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e44{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e45{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e4e{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e4f{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e58{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e59{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e62{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e6c{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e6d{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-348b9e76{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-3499b948"><thead><tr style="overflow-wrap:break-word;"><th class="cl-348b9e26"><p class="cl-348b10d2"><span class="cl-346c0aac"></span></p></th><th class="cl-348b9e30"><p class="cl-348b10e6"><span class="cl-346c0aac">Coefficient estimates</span></p></th><th class="cl-348b9e44"><p class="cl-348b10e6"><span class="cl-346c0aac">95% confidence </span><br><span class="cl-346c0aac">interval</span></p></th><th class="cl-348b9e45"><p class="cl-348b10e6"><span class="cl-346c0aac">p-value</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-348b9e4e"><p class="cl-348b10fa"><span class="cl-346c0ae8">Intercept</span></p></td><td class="cl-348b9e4f"><p class="cl-348b10fb"><span class="cl-346c0ae8">-5,780.83</span></p></td><td class="cl-348b9e58"><p class="cl-348b10fb"><span class="cl-346c0ae8">[-6382.36, -5179.3]</span></p></td><td class="cl-348b9e59"><p class="cl-348b10fb"><span class="cl-346c0ae8">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-348b9e62"><p class="cl-348b10fa"><span class="cl-346c0ae8">Flipper length</span></p></td><td class="cl-348b9e6c"><p class="cl-348b10fb"><span class="cl-346c0ae8">49.69</span></p></td><td class="cl-348b9e6d"><p class="cl-348b10fb"><span class="cl-346c0ae8">[46.7, 52.67]</span></p></td><td class="cl-348b9e76"><p class="cl-348b10fb"><span class="cl-346c0ae8">&lt;0.001</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
+<section id="linear-regression-4" class="slide level2">
+<h2>Linear regression</h2>
+<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/line-of-best-fit-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="linear-regression-5" class="slide level2">
+<h2>Linear regression</h2>
+<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
+<ul>
+<li class="fragment">Intercept = -5780.83</li>
+</ul>
+<p><span class="fragment">Penguins with flipper length of 0mm had a predicted body mass of <span class="answer">-5780.83g</span></span></p>
+<ul>
+<li class="fragment">Slope = 49.69</li>
+</ul>
+<p><span class="fragment">For every unit increase in flipper length (1mm), body mass was expected to increase by <span class="answer">49.69g</span></span></p>
+</section>
+<section id="linear-regression-6" class="slide level2">
+<h2>Linear regression</h2>
+<p>Confidence intervals give a range of values the coefficients are <span class="answer">compatible with.</span></p>
+<p><span class="fragment">In this sample, the average increase in body mass for every 1mm increase in flipper length was <span class="answer">49.69g</span></span></p>
+<p><span class="fragment">But at the <span class="answer">population level</span>, we are 95% confident that this increase could lie between <span class="answer">46.7g</span> and <span class="answer">52.67g</span></span></p>
+</section>
+<section id="linear-regression-7" class="slide level2">
+<h2>Linear regression</h2>
+<p>p-values test the null hypothesis of <span class="answer">no association</span>: <span class="math inline">\(\beta\)</span> = 0</p>
+<p><span class="fragment">These p-values are both too small to be printed in their entirety, therefore the coefficients are <span class="answer">statistically significant</span></span></p>
+<p><span class="fragment">For intercept, this has no real use.</span></p>
+<p><span class="fragment">For the slope, we have shown a <span class="answer">significant association</span> between flipper length and body mass</span></p>
+</section>
+<section id="multiple-regression" class="slide level2">
+<h2>Multiple regression</h2>
+<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
+<p><span class="fragment">Confounders = background variables that are related to both the outcome and predictor variable(s)</span></p>
+<p><span class="fragment">Confounders can <span class="answer">create</span> false associations or <span class="answer">hide</span> true associations if not properly accounted for</span></p>
+</section>
+<section id="multiple-regression-1" class="slide level2">
+<h2>Multiple regression</h2>
+<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
+
+<img data-src="part-2-slides_files/figure-revealjs/confounder1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multiple-regression-2" class="slide level2">
+<h2>Multiple regression</h2>
+<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
+
+<img data-src="part-2-slides_files/figure-revealjs/confounder2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multiple-regression-3" class="slide level2">
+<h2>Multiple regression</h2>
+<p>Let’s extend the previous model to account for the sex of penguins:</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/flipper-sex-hist-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="multiple-regression-4" class="slide level2">
+<h2>Multiple regression</h2>
+<p>Let’s extend the previous model to account for the sex of penguins:</p>
+<p><span class="fragment">Body mass = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1 \times\)</span> flipper length + <span class="math inline">\(\beta_2 \times\)</span> male</span></p>
+<p><span class="fragment">Categorical variables are added as <span class="answer">dummy variables</span></span></p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<p><span class="answer">male = 1</span> if sex = male</p>
+</div><div class="column fragment" style="width:50%;">
+<p><span class="answer">male = 0</span> if sex = female</p>
+</div>
+</div>
+</section>
+<section id="multiple-regression-5" class="slide level2">
+<h2>Multiple regression</h2>
+<p>Body mass = -5410.3 + 46.98 <span class="math inline">\(\times\)</span> flipper length + 347.85 <span class="math inline">\(\times\)</span> male</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-36922dca{}.cl-367d98ba{font-family:'Arial';font-size:60pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-367d98ce{font-family:'Arial';font-size:48pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-36854a24{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-36854a38{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-36854a42{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.6;background-color:transparent;}.cl-36854a43{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.6;background-color:transparent;}.cl-36858750{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858764{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858765{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3685876e{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858778{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858782{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3685878c{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3685878d{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858796{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587a0{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587a1{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587aa{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587b4{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587b5{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-368587be{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-36858818{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-36922dca"><thead><tr style="overflow-wrap:break-word;"><th class="cl-36858750"><p class="cl-36854a24"><span class="cl-367d98ba"></span></p></th><th class="cl-36858764"><p class="cl-36854a38"><span class="cl-367d98ba">Coefficient estimates</span></p></th><th class="cl-36858765"><p class="cl-36854a38"><span class="cl-367d98ba">95% confidence </span><br><span class="cl-367d98ba">interval</span></p></th><th class="cl-3685876e"><p class="cl-36854a38"><span class="cl-367d98ba">p-value</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-36858778"><p class="cl-36854a42"><span class="cl-367d98ce">Intercept</span></p></td><td class="cl-36858782"><p class="cl-36854a43"><span class="cl-367d98ce">-5,410.30</span></p></td><td class="cl-3685878c"><p class="cl-36854a43"><span class="cl-367d98ce">[-5972.52, -4848.09]</span></p></td><td class="cl-3685878d"><p class="cl-36854a43"><span class="cl-367d98ce">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-36858796"><p class="cl-36854a42"><span class="cl-367d98ce">Flipper length</span></p></td><td class="cl-368587a0"><p class="cl-36854a43"><span class="cl-367d98ce">46.98</span></p></td><td class="cl-368587a1"><p class="cl-36854a43"><span class="cl-367d98ce">[44.15, 49.82]</span></p></td><td class="cl-368587aa"><p class="cl-36854a43"><span class="cl-367d98ce">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-368587b4"><p class="cl-36854a42"><span class="cl-367d98ce">Male</span></p></td><td class="cl-368587b5"><p class="cl-36854a43"><span class="cl-367d98ce">347.85</span></p></td><td class="cl-368587be"><p class="cl-36854a43"><span class="cl-367d98ce">[268.49, 427.21]</span></p></td><td class="cl-36858818"><p class="cl-36854a43"><span class="cl-367d98ce">&lt;0.001</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</section>
+<section id="multiple-regression-6" class="slide level2">
+<h2>Multiple regression</h2>
+<p>Body mass = -5410.3 + 46.98 <span class="math inline">\(\times\)</span> flipper length + 347.85 <span class="math inline">\(\times\)</span> male</p>
+<p><span class="fragment">Coefficients now represent expected change in outcome for unit increase in predictor <span class="answer fragment">after adjusting for other predictors</span></span></p>
+<p><span class="fragment">There is a <span class="answer">significant positive</span> association between flipper length and body mass</span> <span class="fragment">after adjusting for differences between sexes</span></p>
+</section>
+<section id="model-evaluation" class="slide level2">
+<h2>Model evaluation</h2>
+<p>There are going to be many potential models to answer our research question…<span class="fragment">how do we choose the best one??</span></p>
+<ul>
+<li class="fragment">Consider the <span class="answer">intention</span> of the model</li>
+<li class="fragment">Use <span class="answer">common sense</span> and prior knowledge</li>
+<li class="fragment">Aim to find the most <span class="answer">parsimonious</span></li>
+</ul>
+</section>
+<section id="model-evaluation-1" class="slide level2">
+<h2>Model evaluation</h2>
+<p>Model evaluation can involve comparisons of model fitting statistics.</p>
+<p><span class="fragment"><span class="answer">R-squared</span> value: proportion of the outcome explained by the model</span></p>
+<p><span class="fragment"><span class="answer">Adjusted R-squared</span> penalises the R-squared value based on the number of predictors included in the model</span></p>
+</section>
+<section id="model-evaluation-2" class="slide level2">
+<h2>Model evaluation</h2>
+<p>Adjusted R-squared value for flipper-only model: <span class="answer fragment">0.76</span></p>
+<p><span class="fragment">Adjusted R-squared value for flipper + sex model: <span class="answer fragment">0.8</span></span></p>
+<p><span class="fragment">Adding sex still increased the adjusted R-squared value, indicating its addition was <span class="answer">worthwhile</span></span></p>
+</section>
+<section id="model-evaluation-3" class="slide level2">
+<h2>Model evaluation</h2>
+<p><span class="answer">Prediction metrics</span> are another family of useful model evaluation tools</p>
+<p><span class="fragment">They compare the observed outcome with the fitted model predictions.</span></p>
+<ul>
+<li class="fragment">RMSE: root mean squared error <span class="fragment"><span class="math inline">\(\sqrt{\frac{1}{n}\sum{(y_i - \hat{y}_i)^2}}\)</span></span></li>
+<li class="fragment">MAE: mean absolute error <span class="fragment"><span class="math inline">\(\frac{1}{n}\sum|y_i - \hat{y}_i|\)</span></span></li>
+</ul>
+<p><span class="fragment">Useful as they provide a measure of fit <span class="answer">in context</span></span></p>
+</section>
+<section id="model-evaluation-4" class="slide level2">
+<h2>Model evaluation</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">RMSE</th>
+<th style="text-align: right;">MAE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Flipper only</td>
+<td style="text-align: right;">393.12</td>
+<td style="text-align: right;">313.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Flipper + sex</td>
+<td style="text-align: right;">354.28</td>
+<td style="text-align: right;">283.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span class="fragment">Adding sex into the model <span class="answer">reduced</span> performance metrics. This means it <span class="answer">improved</span> prediction.</span></p>
+<p><span class="fragment">If both prediction errors are large (in context of the problem), consider trying to improve them in some way</span></p>
+</section>
+<section id="model-diagnostics" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Linear regression is a <span class="answer">parametric</span> method<span class="fragment">: it has assumptions that must be checked</span></p>
+<ul>
+<li class="fragment"><strong>L</strong>inearity: <span class="fragment">can present the outcome as a linear combination of predictors</span></li>
+<li class="fragment"><strong>I</strong>ndependent predictors: <span class="fragment">no multicollinearity present</span></li>
+<li class="fragment"><strong>N</strong>ormally distributed residuals</li>
+<li class="fragment"><strong>E</strong>qual variance of residuals <span class="fragment">AKA homoskedasticity</span></li>
+</ul>
+</section>
+<section id="model-diagnistics" class="slide level2">
+<h2>Model diagnistics</h2>
+<p>Predictors must be <span class="answer">independent</span> of one another.</p>
+<p><span class="fragment">Correlation can be accounted for to some degree, and dependency can exist between &gt; 2 variables</span></p>
+<p><span class="fragment"><span class="answer">Variance inflation factor</span> (VIF): Measure of multicollinearity</span></p>
+<p><span class="fragment"><span class="math inline">\(VIF_i = \frac{1}{1 - R_i^2}\)</span> for each predictor</span></p>
+</section>
+<section id="model-diagnostics-1" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>VIF = 10 → <span class="math inline">\(R^2 = 0.9\)</span><span class="fragment">: 90% of the variation in that predictor is explained by other predictors</span></p>
+<p><span class="fragment">Multicollinearity leads to unstable coefficient estimates and invalid inferential statistics</span></p>
+<p><span class="fragment">When there is evidence of multicollinearity (VIF &gt; 5-ish), <span class="answer">remove the offending variable(s)!</span></span></p>
+</section>
+<section id="model-diagnostics-2" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Residuals = model error terms: <span class="fragment">observed outcome - predicted outcome</span></p>
+<p><span class="fragment">Used to check final three assumptions:</span></p>
+<ul>
+<li class="fragment">Linearity: plot residuals against each predictor</li>
+<li class="fragment">Normal distribution: plot a histogram of residuals</li>
+<li class="fragment">Equal variance: plot residuals against the predicted outcome</li>
+</ul>
+</section>
+<section id="model-diagnostics-3" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Linearity: check residual vs.&nbsp;predictor plots for patterns</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/resid-flipper-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="model-diagnostics-4" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Linearity: check residual vs.&nbsp;predictor plots for patterns</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/resid-sex-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="model-diagnostics-5" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Normally distribution residuals</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/residual-hist-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="model-diagnostics-6" class="slide level2">
+<h2>Model diagnostics</h2>
+<p>Homoskedasticity: check residual vs.&nbsp;prediction plots for patterns</p>
+
+<img data-src="part-2-slides_files/figure-revealjs/resid-pred-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="generalised-linear-models" class="slide level2">
+<h2>Generalised linear models</h2>
+<p>When the outcome variable is not continuous, another regression model must be chosen.</p>
+<p><span class="fragment">Estimated coefficients relate to a <span class="answer">transformed</span> version of the outcome.</span></p>
+<p><span class="fragment">For example, a fitted poisson model (of counts) looks like this:</span></p>
+<p><span class="fragment"><span class="math inline">\(log(Y) = \alpha + \beta_1X_1 + \beta_2X_2 + \dots\)</span></span></p>
+<p><span class="fragment">Coefficients (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>) relate to the <span class="answer">log</span> of the outcome.</span></p>
+</section>
+<section id="generalised-linear-models-1" class="slide level2">
+<h2>Generalised linear models</h2>
+<p>To interpret coefficients, they must be <span class="answer">back-transformed</span> to relate to the original outcome.</p>
+<p><span class="fragment">For example, in the poisson case, we apply the <span class="answer">exponential function</span> (the opposite of the log) to the equation</span></p>
+<p><span class="fragment">This makes interpretation of other regression models slightly more difficult <span class="answer">but not impossible!</span></span></p>
+</section>
+<section id="generalised-linear-models-2" class="slide level2">
+<h2>Generalised linear models</h2>
+<p>Statistical models are based on probabilistic assumptions.</p>
+<p><span class="fragment answer">These assumptions must be true for results for be valid</span></p>
+<p><span class="fragment">Different regression types have different assumptions but all share these two:</span></p>
+<p><span class="fragment">1. Observations must be <span class="answer">independent</span> of one another</span></p>
+<p><span class="fragment">2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a <span class="answer">linear equation</span></span></p>
+</section>
+<section id="beyond-glms" class="slide level2">
+<h2>Beyond GLMs</h2>
+<p>When either of these assumptions are not valid, we must consider <span class="answer">other models</span></p>
+<p><span class="fragment"><span class="answer">Mixed models</span> (or GLMM, multilevel models, random effect models) account for dependency structures in data:</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Spatial data</li>
+<li class="fragment">Temporal data</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li class="fragment">Data on clusters (e.g.&nbsp;households)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="beyond-glms-1" class="slide level2">
+<h2>Beyond GLMs</h2>
+<p>When either of these assumptions are not valid, we must consider <span class="answer">other models</span></p>
+<p><span class="fragment"><span class="answer">Additive models</span> (GAMs) are useful when modelling non-linear relationships</span></p>
+<p><span class="fragment">Allow smooth functions of predictors, <span class="answer"><span class="math inline">\(s(X)\)</span></span>, to be entered into a model:</span></p>
+<p><span class="fragment">g(Y) = <span class="math inline">\(\alpha + \beta_1X_1 + \dots + s(X_j)\)</span></span></p>
+</section></section>
+<section>
+<section id="section-10" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Final thoughts</p>
+</div>
+</section>
+<section id="final-thoughts" class="slide level2">
+<h2>Final thoughts</h2>
+<ul>
+<li class="fragment"><p>Statistics is a <span class="answer">huge</span> topic</p></li>
+<li class="fragment"><p>Do not underestimate planning stage: research questions, biases and exploratory work</p></li>
+<li class="fragment"><p>Complex analysis <span class="answer">can not</span> overcome bad data</p></li>
+<li class="fragment"><p>Do not make inferential statements about sample estimates and do not make <span class="answer">causal</span> statements unless performing causal analysis</p></li>
+</ul>
+</section>
+<section id="final-thoughts-1" class="slide level2">
+<h2>Final thoughts</h2>
+<ul>
+<li class="fragment"><p>Choose analysis methods based on the <span class="answer">research question</span> rather than the available data</p></li>
+<li class="fragment"><p>Models should be built to address this question and using common sense/background knowledge <span class="answer">not based on p-values</span></p></li>
+<li class="fragment"><p>If a method requires assumptions to be met, check these <span class="answer">before</span> communicating results</p></li>
+</ul>
+</section>
+<section id="final-thoughts-2" class="slide level2">
+<h2>Final thoughts</h2>
+<ul>
+<li class="fragment"><p>Many <span class="answer">free</span> statistical software packages available</p></li>
+<li class="fragment"><p><span class="answer">R</span> is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources</p></li>
+<li class="fragment"><p><span class="answer">Python</span> is a favourite of data scientists and has a rapidly growing community</p></li>
+<li class="fragment"><p><span class="answer">Excel</span> will do basic stats but is limited and prone to issues!</p></li>
+</ul>
+</section></section>
+<section id="section-11" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Thank you for listening!</p>
+</div>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
