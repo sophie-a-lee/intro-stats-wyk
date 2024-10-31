@@ -1209,5 +1209,26 @@
     "title": "Introduction to Statistics",
     "section": "",
     "text": "A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Statistics and software resources",
+    "section": "",
+    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
+  },
+  {
+    "objectID": "resources.html#statistics-with-r",
+    "href": "resources.html#statistics-with-r",
+    "title": "Statistics and software resources",
+    "section": "",
+    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
+  },
+  {
+    "objectID": "resources.html#statistics-with-python",
+    "href": "resources.html#statistics-with-python",
+    "title": "Statistics and software resources",
+    "section": "Statistics with Python",
+    "text": "Statistics with Python\nPython is fast becoming one of the most popular coding language and a go-to for data science. Python tends to be used more for machine learning than statistics, but can do everything we covered in the module. It is also a freely available software and has a growing number of free resources available to help learn.\n\nPython for Data Analysis: Comprehensive ebook introducing the python language\nPython for data science: Python’s answer to R4DS, introduction to coding in python\n\n\nDatacamp courses\n\nIntroduction to statistics with python\nExploratory data analysis with python\nIntroduction to data science with python\nHypothesis testing in python\nIntroduction to regression with python\nIntroduction to linear models with python\nGLMs with python"
   }
 ]

@@ -1,0 +1,49 @@
+---
+title: "Statistics and software resources"
+author: Sophie Lee
+format: 
+  html:
+    theme: 
+      light: pulse
+      dark: darkly
+  pdf: 
+    documentclass: scrreprt
+---
+
+## Statistics with R
+R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.
+
+Here are a list of free resources that are available when getting to grips with R:
+
+- [R for data science](https://r4ds.hadley.nz/): comprehensive introduction to R for data analysis, including worked examples and exercises for more practice
+- [R for the rest of us](https://book.rfortherestofus.com/): A stats-free introduction to R coding (they also have tons of useful tips posted on their [blog](https://rfortherestofus.com/blog))
+- [Introduction to R with Tidyverse](https://sophie-a-lee.github.io/Introduction_R_Tidyverse_course/): materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data
+- [Regressions with R](https://sophie-a-lee.github.io/regression_course/): materials from my Regressions with R short course with worked examples of linear and poisson regression
+
+### Datacamp courses
+Some Datacamp courses covering R and statistics:
+
+- [Introduction to Statistics with R](https://www.datacamp.com/courses/introduction-to-statistics-in-r)
+- [Introduction to regressions in R](https://www.datacamp.com/courses/introduction-to-regression-in-r)
+- [Hypothesis testing in R](https://www.datacamp.com/courses/hypothesis-testing-in-r)
+- [GLMs in R](https://www.datacamp.com/courses/generalized-linear-models-in-r)
+- [Intermediate regression in R](https://www.datacamp.com/courses/hypothesis-testing-in-r)
+- [Hierarchical and mixed models in R](https://www.datacamp.com/courses/generalized-linear-models-in-r): Where observations are not independent
+- [GAMs in R](https://www.datacamp.com/courses/nonlinear-modeling-with-generalized-additive-models-gams-in-r): For modelling nonlinear relationships
+
+
+
+## Statistics with Python
+Python is fast becoming one of the most popular coding language and a go-to for data science. Python tends to be used more for machine learning than statistics, but can do everything we covered in the module. It is also a freely available software and has a growing number of free resources available to help learn.
+
+- [Python for Data Analysis](https://wesmckinney.com/book/): Comprehensive ebook introducing the python language 
+- [Python for data science](https://aeturrell.github.io/python4DS/welcome.html): Python's answer to R4DS, introduction to coding in python
+
+### Datacamp courses
+- [Introduction to statistics with python](https://www.datacamp.com/courses/introduction-to-statistics-in-python)
+- [Exploratory data analysis with python](https://www.datacamp.com/courses/exploratory-data-analysis-in-python)
+- [Introduction to data science with python](https://www.datacamp.com/courses/introduction-to-data-science-in-python)
+- [Hypothesis testing in python](https://www.datacamp.com/courses/hypothesis-testing-in-python)
+- [Introduction to regression with python](https://www.datacamp.com/courses/introduction-to-regression-with-statsmodels-in-python)
+- [Introduction to linear models with python](https://datacamp.com/courses/introduction-to-linear-modeling-in-python)
+- [GLMs with python](https://www.datacamp.com/courses/generalized-linear-models-in-python)
