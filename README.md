@@ -1,2 +1,3 @@
-# course_slide_template
-A template for Reveal.js slides
+# Introduction to Statistics
+
+Materials created for the Intro to Stats seminar delivered as part of [WYK](https://www.wykdigital.com/)'s Data Analytics course. 
