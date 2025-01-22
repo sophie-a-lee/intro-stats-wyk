@@ -1,17 +1,143 @@
 [
   {
-    "objectID": "part-2-slides.html#course-content",
-    "href": "part-2-slides.html#course-content",
-    "title": "Introduction to Statistics",
-    "section": "Course content",
-    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nInferential statistics\n\nCentral limit theorem\np-values and confidence intervals: how to interpret and communicate results\nWhere do these values come from?"
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Statistics and software resources",
+    "section": "",
+    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
   },
   {
-    "objectID": "part-2-slides.html#course-content-1",
-    "href": "part-2-slides.html#course-content-1",
+    "objectID": "resources.html#statistics-with-r",
+    "href": "resources.html#statistics-with-r",
+    "title": "Statistics and software resources",
+    "section": "",
+    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
+  },
+  {
+    "objectID": "resources.html#statistics-with-python",
+    "href": "resources.html#statistics-with-python",
+    "title": "Statistics and software resources",
+    "section": "Statistics with Python",
+    "text": "Statistics with Python\nPython is fast becoming one of the most popular coding language and a go-to for data science. Python tends to be used more for machine learning than statistics, but can do everything we covered in the module. It is also a freely available software and has a growing number of free resources available to help learn.\n\nPython for Data Analysis: Comprehensive ebook introducing the python language\nPython for data science: Python’s answer to R4DS, introduction to coding in python\n\n\nDatacamp courses\n\nIntroduction to statistics with python\nExploratory data analysis with python\nIntroduction to data science with python\nHypothesis testing in python\nIntroduction to regression with python\nIntroduction to linear models with python\nGLMs with python"
+  },
+  {
+    "objectID": "part-2-slides.html#quantifying-differences-and-trends",
+    "href": "part-2-slides.html#quantifying-differences-and-trends",
     "title": "Introduction to Statistics",
-    "section": "Course content",
-    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
+    "section": "Quantifying differences and trends",
+    "text": "Quantifying differences and trends\nMost appropriate choice depends on intention, type of outcome, nature of the relationship\n\nComparison of variable between groups\nInvestigating trends over time\nRelationship between numeric variables\n\n\nOften, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-categorical-outcomes",
+    "href": "part-2-slides.html#comparing-categorical-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\nCompare summary statistics (proportions, percentages, or rates) between groups\nAbsolute difference: Subtract values\nRelative difference: Divide values\n\nWhen comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-categorical-outcomes-1",
+    "href": "part-2-slides.html#comparing-categorical-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nAbsolute difference: 50% - 48.74% = 1.26%\nThe absolute difference between Adelie and Gentoo penguins is 1.26 percentage points."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-categorical-outcomes-2",
+    "href": "part-2-slides.html#comparing-categorical-outcomes-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 50% \\(\\div\\) 48.74% = 1.03\nThere were 1.03 times more female penguins in the Adelie group than the Gentoo penguin group\nNo difference would = 1"
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-categorical-outcomes-3",
+    "href": "part-2-slides.html#comparing-categorical-outcomes-3",
+    "title": "Introduction to Statistics",
+    "section": "Comparing categorical outcomes",
+    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 48.74% \\(\\div\\) 50% = 0.97\nThere were 0.97 times the percentage of female penguins in the Gentoo group than the Adelie penguin group\nLess than 1: a reduction"
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-numeric-outcomes",
+    "href": "part-2-slides.html#comparing-numeric-outcomes",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nCompare measures of centre/average (mean or median) between groups\nMost appropriate depends on distribution of sample in each group\nRequires a histogram per group\n\nThe most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-numeric-outcomes-1",
+    "href": "part-2-slides.html#comparing-numeric-outcomes-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes"
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-numeric-outcomes-2",
+    "href": "part-2-slides.html#comparing-numeric-outcomes-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing numeric outcomes",
+    "text": "Comparing numeric outcomes\nNeither the female nor the male group have a normal distribution → compare medians.\nMedian body mass of female penguins: 3650g\nMedian body mass of male penguins: 4300g\nAverage difference in body mass: -650g\nFemale penguins were 650g lighter on average compared to male penguins in this sample"
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-variables-over-time",
+    "href": "part-2-slides.html#comparing-variables-over-time",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nVisualised using line graph\nCommon comparisons: absolute difference, relative difference, or percentage change\nChoice depends on intention, interpretation differs\n\nWhen dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change."
+  },
+  {
+    "objectID": "part-2-slides.html#section-2",
+    "href": "part-2-slides.html#section-2",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 and 2020."
+  },
+  {
+    "objectID": "part-2-slides.html#section-3",
+    "href": "part-2-slides.html#section-3",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 (1,841,000 and 2020 1,239,000.)"
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-variables-over-time-1",
+    "href": "part-2-slides.html#comparing-variables-over-time-1",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nAbsolute difference: 1,841,000 - 1,239,000 = 602,000\nThere were 602,000 less violent crimes reported in 2020 compared to 2010\nRelative difference: 1,841,000 ÷ 1,239,000 = 1.486\nThere were 1.486 times more violent crimes reported in 2010 compared to 2020\n\nThe absolute difference is found by subtracting the number of violent crimes recorded in 2020, 1,239,000, by the number in 2010, 1,841,000. There were 602,000 ;ess violent crimes reported in 2020 compared to 2010.\nThe relative difference is found by dividing one count by the other. In this example, the relative difference (1,841,000 / 1,239,000) is 1.486. This means that there were 1.486 times more violent crimes reported in 2020 compared to 2010."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-variables-over-time-2",
+    "href": "part-2-slides.html#comparing-variables-over-time-2",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nThe percentage change can also be found by converting the relative difference\nCompare relative difference to no difference: 1.486 - 1 = 0.486\nConvert the proportion change to percentage: 0.486 x 100%\n= 48.6%\nThere were 48.6% more violent crimes reported in 2010 than 2020\n\nThe percentage change can be found by comparing the relative difference to the null value of 1 (no relative difference). When comparing 2010 to 2020, the relative difference was 0.486 above 1, giving the proportion increase. This can be multiplied by 100 to give a percentage increase of 48.6%. Therefore, there were 48.6% more violent crimes reported in 2010 compared to 2020."
+  },
+  {
+    "objectID": "part-2-slides.html#comparing-variables-over-time-3",
+    "href": "part-2-slides.html#comparing-variables-over-time-3",
+    "title": "Introduction to Statistics",
+    "section": "Comparing variables over time",
+    "text": "Comparing variables over time\nPercentage reduction found in similar way\nRelative difference: 1,239,000 ÷ 1,841,000 = 0.673\nCompare to no difference: 1 - 0.673 = 0.327 (32.7%)\nThere were 32.7% fewer violent crimes reported in 2020 than 2010\n\nThe relative difference can also be found by comparing 2020 to 2010 if we want to give the relative or percentage decrease in violent crime. The relative difference (1,239,000 / 1,841,000) is 0.673, so there were 0.673 times the number of crimes reported in 2020 than 2010. This result is not intuitive, so converting the difference into a percentage decrease can make the value easier to interpret. As with an increase, we first find the difference between the relative difference and the null (1 - 0.673). This gives a proportion decrease of 0.327 or a percentage decrease of 32.7%. Therefore, there were 32.7% fewer violent crimes reported in 2020 compared to 2010."
+  },
+  {
+    "objectID": "part-2-slides.html#relationship-between-numeric-variables",
+    "href": "part-2-slides.html#relationship-between-numeric-variables",
+    "title": "Introduction to Statistics",
+    "section": "Relationship between numeric variables",
+    "text": "Relationship between numeric variables\nScatterplot used to visualise trends\nStrength of relationship quantified using correlation coefficients\nChoice of coefficients depends on if trend is linear or not\n\nLinear trend: Pearson’s correlation coefficient\nNonlinear trend: Spearman’s correlation coefficient\n\n\nCorrelation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?\nThe Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary."
+  },
+  {
+    "objectID": "part-2-slides.html#correlation-coefficients",
+    "href": "part-2-slides.html#correlation-coefficients",
+    "title": "Introduction to Statistics",
+    "section": "Correlation coefficients",
+    "text": "Correlation coefficients\nTake value between -1 and 1\nCorrelation of 0 means no association\nCloser coefficient is to +1/-1, the stronger the positive/negative association is\n\nCorrelation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is."
+  },
+  {
+    "objectID": "part-2-slides.html#section-4",
+    "href": "part-2-slides.html#section-4",
+    "title": "Introduction to Statistics",
+    "section": "",
+    "text": "A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:"
   },
   {
     "objectID": "part-2-slides.html#what-are-inferential-statistics",
@@ -119,6 +245,41 @@
     "text": "Central limit theorem"
   },
   {
+    "objectID": "part-2-slides.html#central-limit-theorem-11",
+    "href": "part-2-slides.html#central-limit-theorem-11",
+    "title": "Introduction to Statistics",
+    "section": "Central limit theorem",
+    "text": "Central limit theorem"
+  },
+  {
+    "objectID": "part-2-slides.html#central-limit-theorem-12",
+    "href": "part-2-slides.html#central-limit-theorem-12",
+    "title": "Introduction to Statistics",
+    "section": "Central limit theorem",
+    "text": "Central limit theorem"
+  },
+  {
+    "objectID": "part-2-slides.html#central-limit-theorem-13",
+    "href": "part-2-slides.html#central-limit-theorem-13",
+    "title": "Introduction to Statistics",
+    "section": "Central limit theorem",
+    "text": "Central limit theorem"
+  },
+  {
+    "objectID": "part-2-slides.html#central-limit-theorem-14",
+    "href": "part-2-slides.html#central-limit-theorem-14",
+    "title": "Introduction to Statistics",
+    "section": "Central limit theorem",
+    "text": "Central limit theorem"
+  },
+  {
+    "objectID": "part-2-slides.html#central-limit-theorem-15",
+    "href": "part-2-slides.html#central-limit-theorem-15",
+    "title": "Introduction to Statistics",
+    "section": "Central limit theorem",
+    "text": "Central limit theorem"
+  },
+  {
     "objectID": "part-2-slides.html#confidence-intervals",
     "href": "part-2-slides.html#confidence-intervals",
     "title": "Introduction to Statistics",
@@ -126,8 +287,8 @@
     "text": "Confidence intervals\n\nA range of values the true population parameter is compatible with\nBased on sample estimate, precision, and confidence level\n\n\nA con􀏐idence interval is a range of values that the true population statistic is compatible with based on the sample estimate, precision, and some pre‑de􀏐ined level of con􀏐idence. The con􀏐idence level can be adjusted depending on how con􀏐ident we wish to be about the true population parameter."
   },
   {
-    "objectID": "part-2-slides.html#section-1",
-    "href": "part-2-slides.html#section-1",
+    "objectID": "part-2-slides.html#section-11",
+    "href": "part-2-slides.html#section-11",
     "title": "Introduction to Statistics",
     "section": "",
     "text": "Confidence levels\nNumber of SEs\n\n\n\n\n80%\n1.282\n\n\n90%\n1.645\n\n\n95%\n1.960\n\n\n99%\n2.576\n\n\n99.9%\n3.291"
@@ -238,326 +399,11 @@
     "text": "Relationship between p-values and confidence intervals\nConfidence intervals and p-values are based on the same information and so agree with one another\nIf a p-value is above 0.05, the sample estimate is less than 1.96 SEs away. This means it will be within the 95% confidence interval\nIf the null hypothesis is outside the 99% confidence interval, it is over 2.576 SEs away from the sample estimate so p &lt; 0.01"
   },
   {
-    "objectID": "part-2-slides.html#section-8",
-    "href": "part-2-slides.html#section-8",
+    "objectID": "part-2-slides.html#section-18",
+    "href": "part-2-slides.html#section-18",
     "title": "Introduction to Statistics",
     "section": "",
     "text": "−+\n10:00"
-  },
-  {
-    "objectID": "part-2-slides.html#inferential-statistics",
-    "href": "part-2-slides.html#inferential-statistics",
-    "title": "Introduction to Statistics",
-    "section": "Inferential statistics",
-    "text": "Inferential statistics\nNow we know how to interpret and communicate inferential statistics…how do we calculate them?\nAlmost all parameters that we can estimate from a sample can be presented with inferential statistics.\n\n\n\nMean\nProportion/percentage\nCorrelation coefficients\n\n\n\nDifference in means\nDifference in proportions\nModel coefficients"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-models",
-    "href": "part-2-slides.html#statistical-models",
-    "title": "Introduction to Statistics",
-    "section": "Statistical models",
-    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1X_1\\) + \\(\\dots\\) + \\(\\beta_nX_n\\)\nModel equations generally consist of"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-models-1",
-    "href": "part-2-slides.html#statistical-models-1",
-    "title": "Introduction to Statistics",
-    "section": "Statistical models",
-    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1X_1\\) + \\(\\dots\\) + \\(\\beta_nX_n\\)\nModel equations generally consist of outcome(s),"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-models-2",
-    "href": "part-2-slides.html#statistical-models-2",
-    "title": "Introduction to Statistics",
-    "section": "Statistical models",
-    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1\\)\\(X_1\\) + \\(\\dots\\) + \\(\\beta_n\\)\\(X_n\\)\nModel equations generally consist of outcome(s), predictor(s)"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-models-3",
-    "href": "part-2-slides.html#statistical-models-3",
-    "title": "Introduction to Statistics",
-    "section": "Statistical models",
-    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1\\)\\(X_1\\) + \\(\\dots\\) + \\(\\beta_n\\)\\(X_n\\)\nModel equations generally consist of outcome(s), predictor(s) and coefficients"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-vs-machine-learning-models",
-    "href": "part-2-slides.html#statistical-vs-machine-learning-models",
-    "title": "Introduction to Statistics",
-    "section": "Statistical vs machine learning models",
-    "text": "Statistical vs machine learning models\n\n\nMachine learning models (MLM) are very powerful when making predictions.\nHowever, the way they get these predictions is often shrouded in mystery\nModels are not interpretable"
-  },
-  {
-    "objectID": "part-2-slides.html#statistical-vs-machine-learning-models-1",
-    "href": "part-2-slides.html#statistical-vs-machine-learning-models-1",
-    "title": "Introduction to Statistics",
-    "section": "Statistical vs machine learning models",
-    "text": "Statistical vs machine learning models\n\n\nStatistical models are based on probabilistic assumptions\nMakes them stricter but interpretable\nStatistical models are better at explaining and understanding processes"
-  },
-  {
-    "objectID": "part-2-slides.html#regression-models",
-    "href": "part-2-slides.html#regression-models",
-    "title": "Introduction to Statistics",
-    "section": "Regression models",
-    "text": "Regression models\nCommon statistical model are regression models.\nAlso known as linear models, generalised linear models or GLMs\nChoice of regression type depends on the type of outcome variable(s).\nAll aim to fit a linear equation to a transformation of the outcome (\\(g(Y)\\))"
-  },
-  {
-    "objectID": "part-2-slides.html#regression-models-1",
-    "href": "part-2-slides.html#regression-models-1",
-    "title": "Introduction to Statistics",
-    "section": "Regression models",
-    "text": "Regression models\n\n\n\n\n\nOutcome type\nRegression\nTransformation\n\n\n\n\nContinuous\nLinear\nIdentity\n\n\nCount/rate\nPoisson\nLog\n\n\nBinary\nLogistic\nLogit\n\n\nOrdinal\nOrdinal logistic\nLogit\n\n\nNominal\nMultinomial\nLogit"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression",
-    "href": "part-2-slides.html#linear-regression",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nThe simplest statistical modelling approach is a linear model.\nThis is because coefficient estimates are related to the outcome itself:\n\\(Y = \\alpha + \\beta_1X_1 + \\dots\\)\nWhen \\(X_1\\) is the only predictor and a continuous variable, linear regression fits a straight line to the data"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-1",
-    "href": "part-2-slides.html#linear-regression-1",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nLet’s fit a model to explore the relationship between penguin’s body mass and flipper length."
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-2",
-    "href": "part-2-slides.html#linear-regression-2",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nLet’s fit a model to explore the relationship between penguin’s body mass and flipper length.\nHere, the outcome is body mass and the predictor is flipper length:\nBody mass = \\(\\alpha\\) + \\(\\beta \\times\\) flipper length\n\n\n\n\\(\\alpha\\) = intercept\nPredicted outcome where predictors = 0\n\n\n\n\\(\\beta\\) = slope\nExpected change in outcome for a unit increase in predictor"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-3",
-    "href": "part-2-slides.html#linear-regression-3",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length\n\n\nCoefficient estimates95% confidence intervalp-valueIntercept-5,780.83[-6382.36, -5179.3]&lt;0.001Flipper length49.69[46.7, 52.67]&lt;0.001"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-4",
-    "href": "part-2-slides.html#linear-regression-4",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-5",
-    "href": "part-2-slides.html#linear-regression-5",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length\n\nIntercept = -5780.83\n\nPenguins with flipper length of 0mm had a predicted body mass of -5780.83g\n\nSlope = 49.69\n\nFor every unit increase in flipper length (1mm), body mass was expected to increase by 49.69g"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-6",
-    "href": "part-2-slides.html#linear-regression-6",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\nConfidence intervals give a range of values the coefficients are compatible with.\nIn this sample, the average increase in body mass for every 1mm increase in flipper length was 49.69g\nBut at the population level, we are 95% confident that this increase could lie between 46.7g and 52.67g"
-  },
-  {
-    "objectID": "part-2-slides.html#linear-regression-7",
-    "href": "part-2-slides.html#linear-regression-7",
-    "title": "Introduction to Statistics",
-    "section": "Linear regression",
-    "text": "Linear regression\np-values test the null hypothesis of no association: \\(\\beta\\) = 0\nThese p-values are both too small to be printed in their entirety, therefore the coefficients are statistically significant\nFor intercept, this has no real use.\nFor the slope, we have shown a significant association between flipper length and body mass"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression",
-    "href": "part-2-slides.html#multiple-regression",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders\nConfounders = background variables that are related to both the outcome and predictor variable(s)\nConfounders can create false associations or hide true associations if not properly accounted for"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-1",
-    "href": "part-2-slides.html#multiple-regression-1",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-2",
-    "href": "part-2-slides.html#multiple-regression-2",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-3",
-    "href": "part-2-slides.html#multiple-regression-3",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nLet’s extend the previous model to account for the sex of penguins:"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-4",
-    "href": "part-2-slides.html#multiple-regression-4",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nLet’s extend the previous model to account for the sex of penguins:\nBody mass = \\(\\alpha\\) + \\(\\beta_1 \\times\\) flipper length + \\(\\beta_2 \\times\\) male\nCategorical variables are added as dummy variables\n\n\nmale = 1 if sex = male\n\nmale = 0 if sex = female"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-5",
-    "href": "part-2-slides.html#multiple-regression-5",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nBody mass = -5410.3 + 46.98 \\(\\times\\) flipper length + 347.85 \\(\\times\\) male\n\n\nCoefficient estimates95% confidence intervalp-valueIntercept-5,410.30[-5972.52, -4848.09]&lt;0.001Flipper length46.98[44.15, 49.82]&lt;0.001Male347.85[268.49, 427.21]&lt;0.001"
-  },
-  {
-    "objectID": "part-2-slides.html#multiple-regression-6",
-    "href": "part-2-slides.html#multiple-regression-6",
-    "title": "Introduction to Statistics",
-    "section": "Multiple regression",
-    "text": "Multiple regression\nBody mass = -5410.3 + 46.98 \\(\\times\\) flipper length + 347.85 \\(\\times\\) male\nCoefficients now represent expected change in outcome for unit increase in predictor after adjusting for other predictors\nThere is a significant positive association between flipper length and body mass after adjusting for differences between sexes"
-  },
-  {
-    "objectID": "part-2-slides.html#model-evaluation",
-    "href": "part-2-slides.html#model-evaluation",
-    "title": "Introduction to Statistics",
-    "section": "Model evaluation",
-    "text": "Model evaluation\nThere are going to be many potential models to answer our research question…how do we choose the best one??\n\nConsider the intention of the model\nUse common sense and prior knowledge\nAim to find the most parsimonious"
-  },
-  {
-    "objectID": "part-2-slides.html#model-evaluation-1",
-    "href": "part-2-slides.html#model-evaluation-1",
-    "title": "Introduction to Statistics",
-    "section": "Model evaluation",
-    "text": "Model evaluation\nModel evaluation can involve comparisons of model fitting statistics.\nR-squared value: proportion of the outcome explained by the model\nAdjusted R-squared penalises the R-squared value based on the number of predictors included in the model"
-  },
-  {
-    "objectID": "part-2-slides.html#model-evaluation-2",
-    "href": "part-2-slides.html#model-evaluation-2",
-    "title": "Introduction to Statistics",
-    "section": "Model evaluation",
-    "text": "Model evaluation\nAdjusted R-squared value for flipper-only model: 0.76\nAdjusted R-squared value for flipper + sex model: 0.8\nAdding sex still increased the adjusted R-squared value, indicating its addition was worthwhile"
-  },
-  {
-    "objectID": "part-2-slides.html#model-evaluation-3",
-    "href": "part-2-slides.html#model-evaluation-3",
-    "title": "Introduction to Statistics",
-    "section": "Model evaluation",
-    "text": "Model evaluation\nPrediction metrics are another family of useful model evaluation tools\nThey compare the observed outcome with the fitted model predictions.\n\nRMSE: root mean squared error \\(\\sqrt{\\frac{1}{n}\\sum{(y_i - \\hat{y}_i)^2}}\\)\nMAE: mean absolute error \\(\\frac{1}{n}\\sum|y_i - \\hat{y}_i|\\)\n\nUseful as they provide a measure of fit in context"
-  },
-  {
-    "objectID": "part-2-slides.html#model-evaluation-4",
-    "href": "part-2-slides.html#model-evaluation-4",
-    "title": "Introduction to Statistics",
-    "section": "Model evaluation",
-    "text": "Model evaluation\n\n\n\n\n\nModel\nRMSE\nMAE\n\n\n\n\nFlipper only\n393.12\n313.00\n\n\nFlipper + sex\n354.28\n283.25\n\n\n\n\n\nAdding sex into the model reduced performance metrics. This means it improved prediction.\nIf both prediction errors are large (in context of the problem), consider trying to improve them in some way"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics",
-    "href": "part-2-slides.html#model-diagnostics",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nLinear regression is a parametric method: it has assumptions that must be checked\n\nLinearity: can present the outcome as a linear combination of predictors\nIndependent predictors: no multicollinearity present\nNormally distributed residuals\nEqual variance of residuals AKA homoskedasticity"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnistics",
-    "href": "part-2-slides.html#model-diagnistics",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnistics",
-    "text": "Model diagnistics\nPredictors must be independent of one another.\nCorrelation can be accounted for to some degree, and dependency can exist between &gt; 2 variables\nVariance inflation factor (VIF): Measure of multicollinearity\n\\(VIF_i = \\frac{1}{1 - R_i^2}\\) for each predictor"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-1",
-    "href": "part-2-slides.html#model-diagnostics-1",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nVIF = 10 → \\(R^2 = 0.9\\): 90% of the variation in that predictor is explained by other predictors\nMulticollinearity leads to unstable coefficient estimates and invalid inferential statistics\nWhen there is evidence of multicollinearity (VIF &gt; 5-ish), remove the offending variable(s)!"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-2",
-    "href": "part-2-slides.html#model-diagnostics-2",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nResiduals = model error terms: observed outcome - predicted outcome\nUsed to check final three assumptions:\n\nLinearity: plot residuals against each predictor\nNormal distribution: plot a histogram of residuals\nEqual variance: plot residuals against the predicted outcome"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-3",
-    "href": "part-2-slides.html#model-diagnostics-3",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nLinearity: check residual vs. predictor plots for patterns"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-4",
-    "href": "part-2-slides.html#model-diagnostics-4",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nLinearity: check residual vs. predictor plots for patterns"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-5",
-    "href": "part-2-slides.html#model-diagnostics-5",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nNormally distribution residuals"
-  },
-  {
-    "objectID": "part-2-slides.html#model-diagnostics-6",
-    "href": "part-2-slides.html#model-diagnostics-6",
-    "title": "Introduction to Statistics",
-    "section": "Model diagnostics",
-    "text": "Model diagnostics\nHomoskedasticity: check residual vs. prediction plots for patterns"
-  },
-  {
-    "objectID": "part-2-slides.html#generalised-linear-models",
-    "href": "part-2-slides.html#generalised-linear-models",
-    "title": "Introduction to Statistics",
-    "section": "Generalised linear models",
-    "text": "Generalised linear models\nWhen the outcome variable is not continuous, another regression model must be chosen.\nEstimated coefficients relate to a transformed version of the outcome.\nFor example, a fitted poisson model (of counts) looks like this:\n\\(log(Y) = \\alpha + \\beta_1X_1 + \\beta_2X_2 + \\dots\\)\nCoefficients (\\(\\alpha\\), \\(\\beta_1\\), \\(\\beta_2\\)) relate to the log of the outcome."
-  },
-  {
-    "objectID": "part-2-slides.html#generalised-linear-models-1",
-    "href": "part-2-slides.html#generalised-linear-models-1",
-    "title": "Introduction to Statistics",
-    "section": "Generalised linear models",
-    "text": "Generalised linear models\nTo interpret coefficients, they must be back-transformed to relate to the original outcome.\nFor example, in the poisson case, we apply the exponential function (the opposite of the log) to the equation\nThis makes interpretation of other regression models slightly more difficult but not impossible!"
-  },
-  {
-    "objectID": "part-2-slides.html#generalised-linear-models-2",
-    "href": "part-2-slides.html#generalised-linear-models-2",
-    "title": "Introduction to Statistics",
-    "section": "Generalised linear models",
-    "text": "Generalised linear models\nStatistical models are based on probabilistic assumptions.\nThese assumptions must be true for results for be valid\nDifferent regression types have different assumptions but all share these two:\n1. Observations must be independent of one another\n2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a linear equation"
-  },
-  {
-    "objectID": "part-2-slides.html#beyond-glms",
-    "href": "part-2-slides.html#beyond-glms",
-    "title": "Introduction to Statistics",
-    "section": "Beyond GLMs",
-    "text": "Beyond GLMs\nWhen either of these assumptions are not valid, we must consider other models\nMixed models (or GLMM, multilevel models, random effect models) account for dependency structures in data:\n\n\n\nSpatial data\nTemporal data\n\n\n\nData on clusters (e.g. households)"
-  },
-  {
-    "objectID": "part-2-slides.html#beyond-glms-1",
-    "href": "part-2-slides.html#beyond-glms-1",
-    "title": "Introduction to Statistics",
-    "section": "Beyond GLMs",
-    "text": "Beyond GLMs\nWhen either of these assumptions are not valid, we must consider other models\nAdditive models (GAMs) are useful when modelling non-linear relationships\nAllow smooth functions of predictors, \\(s(X)\\), to be entered into a model:\ng(Y) = \\(\\alpha + \\beta_1X_1 + \\dots + s(X_j)\\)"
-  },
-  {
-    "objectID": "part-2-slides.html#final-thoughts",
-    "href": "part-2-slides.html#final-thoughts",
-    "title": "Introduction to Statistics",
-    "section": "Final thoughts",
-    "text": "Final thoughts\n\nStatistics is a huge topic\nDo not underestimate planning stage: research questions, biases and exploratory work\nComplex analysis can not overcome bad data\nDo not make inferential statements about sample estimates and do not make causal statements unless performing causal analysis"
-  },
-  {
-    "objectID": "part-2-slides.html#final-thoughts-1",
-    "href": "part-2-slides.html#final-thoughts-1",
-    "title": "Introduction to Statistics",
-    "section": "Final thoughts",
-    "text": "Final thoughts\n\nChoose analysis methods based on the research question rather than the available data\nModels should be built to address this question and using common sense/background knowledge not based on p-values\nIf a method requires assumptions to be met, check these before communicating results"
-  },
-  {
-    "objectID": "part-2-slides.html#final-thoughts-2",
-    "href": "part-2-slides.html#final-thoughts-2",
-    "title": "Introduction to Statistics",
-    "section": "Final thoughts",
-    "text": "Final thoughts\n\nMany free statistical software packages available\nR is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources\nPython is a favourite of data scientists and has a rapidly growing community\nExcel will do basic stats but is limited and prone to issues!"
   },
   {
     "objectID": "exercises.html",
@@ -586,6 +432,13 @@
     "title": "Introduction to Statistics",
     "section": "Exercise 3: Inferential statistics",
     "text": "Exercise 3: Inferential statistics\nThe output below is taken from an analysis that compared reoffending behaviour of 249 men participating with the Keyworking programme from Only Connect (OC) with those receiving standard support. More information about the findings of this report and the intervention itself can be found on the report webpage.\nComment on the way in which these results have been presented. Are the results clear? What has been done well? Is there anything you think could be improved? Do the results shown appear to be valid (from the information we are given)?"
+  },
+  {
+    "objectID": "exercises.html#exercise-4",
+    "href": "exercises.html#exercise-4",
+    "title": "Introduction to Statistics",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nBelow are outputs from 4 models aiming to answer the research question: was body mass of penguins related to flipper length.\nUsing model comparisons and checking the diagnostic tests, which model would you choose to use to answer this question and what would your answer be?\n\nlm_flipper &lt;- lm(body_mass_g ~ flipper_length_mm, data = penguins)\nlm_flipper_sex &lt;- lm(body_mass_g ~ flipper_length_mm + sex, data = penguins)\nlm_flipper_sex_bill &lt;- lm(body_mass_g ~ flipper_length_mm + sex + bill_depth_mm, data = penguins)\nlm_bill_sex&lt;- lm(body_mass_g ~ sex + bill_depth_mm, data = penguins)\n\nmodel_output &lt;- function(model){\n  broom::tidy(model, conf.int = T) %&gt;% \n    mutate(across(is.numeric, ~round(., 2)),\n           con.int = paste0(\"[\", conf.low, \", \", conf.high, \"]\"),\n           pvalue = ifelse(p.value == 0, \"&lt;0.01\", p.value)) %&gt;% \n    select(term, estimate, con.int, pvalue) %&gt;% \n    kable(col.names = c(\"\", \"Coefficient\", \"95% CI\", \"p\"))\n}\n\nmodels &lt;- list(lm_flipper, lm_flipper_sex, lm_flipper_sex_bill, lm_bill_sex)\n\nmap(models, model_output)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `across(is.numeric, ~round(., 2))`.\nCaused by warning:\n! Use of bare predicate functions was deprecated in tidyselect 1.1.0.\nℹ Please use wrap predicates in `where()` instead.\n  # Was:\n  data %&gt;% select(is.numeric)\n\n  # Now:\n  data %&gt;% select(where(is.numeric))\n\n\n[[1]]\n\n\n|                  | Coefficient|95% CI              |p     |\n|:-----------------|-----------:|:-------------------|:-----|\n|(Intercept)       |    -5780.83|[-6382.36, -5179.3] |&lt;0.01 |\n|flipper_length_mm |       49.69|[46.7, 52.67]       |&lt;0.01 |\n\n[[2]]\n\n\n|                  | Coefficient|95% CI               |p     |\n|:-----------------|-----------:|:--------------------|:-----|\n|(Intercept)       |    -5410.30|[-5972.52, -4848.09] |&lt;0.01 |\n|flipper_length_mm |       46.98|[44.15, 49.82]       |&lt;0.01 |\n|sexmale           |      347.85|[268.49, 427.21]     |&lt;0.01 |\n\n[[3]]\n\n\n|                  | Coefficient|95% CI               |p     |\n|:-----------------|-----------:|:--------------------|:-----|\n|(Intercept)       |    -2246.83|[-3476.89, -1016.77] |&lt;0.01 |\n|flipper_length_mm |       38.19|[34.09, 42.29]       |&lt;0.01 |\n|sexmale           |      538.08|[437.14, 639.02]     |&lt;0.01 |\n|bill_depth_mm     |      -86.95|[-117.35, -56.54]    |&lt;0.01 |\n\n[[4]]\n\n\n|              | Coefficient|95% CI             |p     |\n|:-------------|-----------:|:------------------|:-----|\n|(Intercept)   |     8779.10|[8304.42, 9253.79] |&lt;0.01 |\n|sexmale       |     1122.13|[1009.87, 1234.4]  |&lt;0.01 |\n|bill_depth_mm |     -299.34|[-327.89, -270.8]  |&lt;0.01 |\n\nevaluations &lt;- function(model) {\n  tibble(terms = attr(model$model, \"term.labels\"),\n         adj.r = summary(model)$adj.r.squared,\n         rmse = rmse(model$model$body_mass_g, predict(model)),\n         mae = mae(model$model$body_mass_g, predict(model))) %&gt;% \n    kable()\n}\nmap(models, evaluations)\n\n[[1]]\n\n\n|     adj.r|     rmse|      mae|\n|---------:|--------:|--------:|\n| 0.7582837| 393.1236| 313.0018|\n\n[[2]]\n\n\n|     adj.r|     rmse|     mae|\n|---------:|--------:|-------:|\n| 0.8046607| 354.2762| 283.245|\n\n[[3]]\n\n\n|     adj.r|     rmse|      mae|\n|---------:|--------:|--------:|\n| 0.8212593| 338.3763| 276.4011|\n\n[[4]]\n\n\n|     adj.r|     rmse|      mae|\n|---------:|--------:|--------:|\n| 0.6399402| 480.9883| 383.8665|"
   },
   {
     "objectID": "part-1-slides.html#what-is-statistics",
@@ -669,28 +522,28 @@
     "href": "part-1-slides.html#course-content",
     "title": "Introduction to Statistics",
     "section": "Course content",
-    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nStatistical thinking\n\nFormulating a research question\nCommon biases\nMissing data"
+    "text": "Course content\nPart 1: Tuesday 21st January, 2025\n\nStatistical thinking\n\nFormulating a research question\nCommon biases\nMissing data"
   },
   {
     "objectID": "part-1-slides.html#course-content-1",
     "href": "part-1-slides.html#course-content-1",
     "title": "Introduction to Statistics",
     "section": "Course content",
-    "text": "Course content\nPart 1: Monday 28th October, 2024\n\nData exploration\n\nSummary statistics: what they are, how we choose them, and how we communicate them\nUnderstanding the sample: how to quantify differences and trends in a sample"
+    "text": "Course content\nPart 1: Tuesday 21st January, 2025\n\nData exploration\n\nSummary statistics: what they are, how we choose them, and how we communicate them"
   },
   {
     "objectID": "part-1-slides.html#course-content-2",
     "href": "part-1-slides.html#course-content-2",
     "title": "Introduction to Statistics",
     "section": "Course content",
-    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nInferential statistics\n\nCentral limit theorem\nHow to interpret and communicate p-values and confidence intervals\nWhere do these values come from?"
+    "text": "Course content\nPart 2: Thursday 23rd January, 2025\n\nData exploration\n\nUnderstanding the sample: how to quantify differences and trends in a sample\n\nInferential statistics\n\nCentral limit theorem\nHow to interpret and communicate p-values and confidence intervals"
   },
   {
     "objectID": "part-1-slides.html#course-content-3",
     "href": "part-1-slides.html#course-content-3",
     "title": "Introduction to Statistics",
     "section": "Course content",
-    "text": "Course content\nPart 2: Friday 1st November, 2024\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
+    "text": "Course content\nPart 3: Tuesday 28th January 2025\n\nStatistical modelling\n\nWhat are models and why are they useful to data analytics?\nHow to choose an appropriate model based on the research question\nModel outputs and their interpretations"
   },
   {
     "objectID": "part-1-slides.html#research-questions",
@@ -858,7 +711,7 @@
     "href": "part-1-slides.html#introducing-the-palmer-penguins-1",
     "title": "Introduction to Statistics",
     "section": "Introducing the Palmer penguins",
-    "text": "Introducing the Palmer penguins\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nGentoo\nBiscoe\n45.8\n14.6\n210\n4200\nfemale\n2007\n\n\nAdelie\nBiscoe\n41.0\n20.0\n203\n4725\nmale\n2009\n\n\nAdelie\nDream\n36.4\n17.0\n195\n3325\nfemale\n2007\n\n\nAdelie\nDream\n39.0\n18.7\n185\n3650\nmale\n2009\n\n\nGentoo\nBiscoe\n45.1\n14.5\n215\n5000\nfemale\n2007\n\n\nAdelie\nDream\n39.6\n18.8\n190\n4600\nmale\n2007"
+    "text": "Introducing the Palmer penguins\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nChinstrap\nDream\n45.5\n17.0\n196\n3500\nfemale\n2008\n\n\nGentoo\nBiscoe\n50.5\n15.2\n216\n5000\nfemale\n2009\n\n\nGentoo\nBiscoe\n46.6\n14.2\n210\n4850\nfemale\n2008\n\n\nAdelie\nTorgersen\n41.1\n17.6\n182\n3200\nfemale\n2007\n\n\nChinstrap\nDream\n49.5\n19.0\n200\n3800\nmale\n2008\n\n\nAdelie\nTorgersen\n36.2\n17.2\n187\n3150\nfemale\n2009"
   },
   {
     "objectID": "part-1-slides.html#summarising-categorical-variables",
@@ -893,21 +746,21 @@
     "href": "part-1-slides.html#measure-of-centre-1",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nTake a random sample of 10 penguins from our data and measure their bill length (in mm):\n42.9, 50.1, 39.6, 48.6, 55.1, 46.6, 50.7, 33.5, 49, 46.5\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nTake a random sample of 10 penguins from our data and measure their bill length (in mm):\n40.3, 38.8, 35.5, 42, 39.8, 46.1, 38.6, 46.7, 40.9, 38.6\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-2",
     "href": "part-1-slides.html#measure-of-centre-2",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nFind the mean bill length:\n42.9 + 50.1 + 39.6 + 48.6 + 55.1 + 46.6 + 50.7 + 33.5 + 49 + 46.5\n= 462.6mm\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nFind the mean bill length:\n40.3 + 38.8 + 35.5 + 42 + 39.8 + 46.1 + 38.6 + 46.7 + 40.9 + 38.6\n= 407.3mm\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-3",
     "href": "part-1-slides.html#measure-of-centre-3",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nFind the mean bill length:\n462.6 \\(\\div\\) 10 = 46.26mm\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nFind the mean bill length:\n407.3 \\(\\div\\) 10 = 40.73mm\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-center",
@@ -921,28 +774,28 @@
     "href": "part-1-slides.html#measure-of-centre-4",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n42.9, 50.1, 39.6, 48.6, 55.1, 46.6, 50.7, 33.5, 49, 46.5\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n40.3, 38.8, 35.5, 42, 39.8, 46.1, 38.6, 46.7, 40.9, 38.6\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-5",
     "href": "part-1-slides.html#measure-of-centre-5",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nTo find the median, first order bill lengths smallest to largest:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-6",
     "href": "part-1-slides.html#measure-of-centre-6",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nThe median is the middle value\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst\n\n\n\nWe then take the middle value. As the sample size is even, the median will lie between two values - the 5th (149.58cm) and the 6th (160.42cm)."
+    "text": "Measure of centre\nThe median is the middle value\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst\n\n\n\nWe then take the middle value. As the sample size is even, the median will lie between two values - the 5th (149.58cm) and the 6th (160.42cm)."
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-7",
     "href": "part-1-slides.html#measure-of-centre-7",
     "title": "Introduction to Statistics",
     "section": "Measure of centre",
-    "text": "Measure of centre\nMedian is between 46.6mm and 48.6mm.\nMiddle value: (46.6 + 48.6) \\(\\div\\) 2 = 47.6mm\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of centre\nMedian is between 39.8mm and 40.3mm.\nMiddle value: (39.8 + 40.3) \\(\\div\\) 2 = 40.05mm\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-centre-8",
@@ -963,28 +816,28 @@
     "href": "part-1-slides.html#measure-of-spread-1",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n42.9, 50.1, 39.6, 48.6, 55.1, 46.6, 50.7, 33.5, 49, 46.5\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n40.3, 38.8, 35.5, 42, 39.8, 46.1, 38.6, 46.7, 40.9, 38.6\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-2",
     "href": "part-1-slides.html#measure-of-spread-2",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-3",
     "href": "part-1-slides.html#measure-of-spread-3",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n33.5 , 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the range of the 10 penguins’ bill lengths:\n35.5 , 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-4",
     "href": "part-1-slides.html#measure-of-spread-4",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nRange is either given as two values: 33.5mm, 55.1mm\nOr as the difference between these: 55.1 - 33.5 = 21.6mm\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nRange is either given as two values: 35.5mm, 46.7mm\nOr as the difference between these: 46.7 - 35.5 = 11.2mm\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-5",
@@ -998,35 +851,35 @@
     "href": "part-1-slides.html#measure-of-spread-6",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the IQR of the 10 penguins’ bill lengths:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the IQR of the 10 penguins’ bill lengths:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-7",
     "href": "part-1-slides.html#measure-of-spread-7",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the upper and lower quartile:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the upper and lower quartile:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-8",
     "href": "part-1-slides.html#measure-of-spread-8",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the upper and lower quartile:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the upper and lower quartile:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-9",
     "href": "part-1-slides.html#measure-of-spread-9",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nFind the upper and lower quartile:\n33.5, 39.6, 42.9, 46.5, 46.6, 48.6, 49, 50.1, 50.7, 55.1\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nFind the upper and lower quartile:\n35.5, 38.6, 38.6, 38.8, 39.8, 40.3, 40.9, 42, 46.1, 46.7\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-10",
     "href": "part-1-slides.html#measure-of-spread-10",
     "title": "Introduction to Statistics",
     "section": "Measure of spread",
-    "text": "Measure of spread\nIQR is either given as 2 values: 42.9mm, 50.1mm\nOr as the difference between these: 50.1 - 42.9 = 7.2mm\n\n\n\nArtwork by @allison_horst"
+    "text": "Measure of spread\nIQR is either given as 2 values: 38.6mm, 42mm\nOr as the difference between these: 42 - 38.6 = 3.4mm\n\n\n\nArtwork by @allison_horst"
   },
   {
     "objectID": "part-1-slides.html#measure-of-spread-11",
@@ -1092,178 +945,318 @@
     "text": "Summarising data\n\n\n\n−+\n10:00\n\n\n\n\n\n\nYear\nMean wait (weeks)\nSD wait (weeks)\n\n\n\n\n2020\n13.5\n10.2\n\n\n2021\n19.1\n15.6\n\n\n2022\n20.9\n13.9\n\n\n2023\n22.8\n14.7\n\n\n\n\n\n\nThe first graph is taken from the Criminal Courts statistics quarterly report, showing the average number of days from offense to completion for defendants at the Crown Court. Which graph is the most appropriate to display the average time and why?\nThe table provides the mean and standard deviation of waiting times in weeks for hearings in the Crown Court between 2020 and 2023. Using this information, what can you tell about the distribution of these times?"
   },
   {
-    "objectID": "part-1-slides.html#quantifying-differences-and-trends",
-    "href": "part-1-slides.html#quantifying-differences-and-trends",
+    "objectID": "part-3-slides.html#inferential-statistics",
+    "href": "part-3-slides.html#inferential-statistics",
     "title": "Introduction to Statistics",
-    "section": "Quantifying differences and trends",
-    "text": "Quantifying differences and trends\nMost appropriate choice depends on intention, type of outcome, nature of the relationship\n\nComparison of variable between groups\nInvestigating trends over time\nRelationship between numeric variables\n\n\nOften, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another."
+    "section": "Inferential statistics",
+    "text": "Inferential statistics\nNow we know how to interpret and communicate inferential statistics…how do we calculate them?\nAlmost all parameters that we can estimate from a sample can be presented with inferential statistics.\n\n\n\nMean\nProportion/percentage\nCorrelation coefficients\n\n\n\nDifference in means\nDifference in proportions\nModel coefficients"
   },
   {
-    "objectID": "part-1-slides.html#comparing-categorical-outcomes",
-    "href": "part-1-slides.html#comparing-categorical-outcomes",
+    "objectID": "part-3-slides.html#statistical-models",
+    "href": "part-3-slides.html#statistical-models",
     "title": "Introduction to Statistics",
-    "section": "Comparing categorical outcomes",
-    "text": "Comparing categorical outcomes\nCompare summary statistics (proportions, percentages, or rates) between groups\nAbsolute difference: Subtract values\nRelative difference: Divide values\n\nWhen comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference."
+    "section": "Statistical models",
+    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1X_1\\) + \\(\\dots\\) + \\(\\beta_nX_n\\)\nModel equations generally consist of"
   },
   {
-    "objectID": "part-1-slides.html#comparing-categorical-outcomes-1",
-    "href": "part-1-slides.html#comparing-categorical-outcomes-1",
+    "objectID": "part-3-slides.html#statistical-models-1",
+    "href": "part-3-slides.html#statistical-models-1",
     "title": "Introduction to Statistics",
-    "section": "Comparing categorical outcomes",
-    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nAbsolute difference: 50% - 48.74% = 1.26%\nThe absolute difference between Adelie and Gentoo penguins is 1.26 percentage points."
+    "section": "Statistical models",
+    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1X_1\\) + \\(\\dots\\) + \\(\\beta_nX_n\\)\nModel equations generally consist of outcome(s),"
   },
   {
-    "objectID": "part-1-slides.html#comparing-categorical-outcomes-2",
-    "href": "part-1-slides.html#comparing-categorical-outcomes-2",
+    "objectID": "part-3-slides.html#statistical-models-2",
+    "href": "part-3-slides.html#statistical-models-2",
     "title": "Introduction to Statistics",
-    "section": "Comparing categorical outcomes",
-    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 50% \\(\\div\\) 48.74% = 1.03\nThere were 1.03 times more female penguins in the Adelie group than the Gentoo penguin group\nNo difference would = 1"
+    "section": "Statistical models",
+    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1\\)\\(X_1\\) + \\(\\dots\\) + \\(\\beta_n\\)\\(X_n\\)\nModel equations generally consist of outcome(s), predictor(s)"
   },
   {
-    "objectID": "part-1-slides.html#comparing-categorical-outcomes-3",
-    "href": "part-1-slides.html#comparing-categorical-outcomes-3",
+    "objectID": "part-3-slides.html#statistical-models-3",
+    "href": "part-3-slides.html#statistical-models-3",
     "title": "Introduction to Statistics",
-    "section": "Comparing categorical outcomes",
-    "text": "Comparing categorical outcomes\n\n\n\n\n\nSpecies\nTotal\nFemale penguins\nMale penguins\n\n\n\n\nAdelie\n146\n73 (50%)\n73 (50%)\n\n\nGentoo\n119\n58 (48.74%)\n61 (51.26%)\n\n\n\n\n\nRelative difference: 48.74% \\(\\div\\) 50% = 0.97\nThere were 0.97 times the percentage of female penguins in the Gentoo group than the Adelie penguin group\nLess than 1: a reduction"
+    "section": "Statistical models",
+    "text": "Statistical models\nModels aim to explain complex process in a simple way.\nStatistical models explain these processes using a mathematical equation:\n\\(g\\)(Y) = \\(\\alpha\\) + \\(\\beta_1\\)\\(X_1\\) + \\(\\dots\\) + \\(\\beta_n\\)\\(X_n\\)\nModel equations generally consist of outcome(s), predictor(s) and coefficients"
   },
   {
-    "objectID": "part-1-slides.html#comparing-numeric-outcomes",
-    "href": "part-1-slides.html#comparing-numeric-outcomes",
+    "objectID": "part-3-slides.html#statistical-vs-machine-learning-models",
+    "href": "part-3-slides.html#statistical-vs-machine-learning-models",
     "title": "Introduction to Statistics",
-    "section": "Comparing numeric outcomes",
-    "text": "Comparing numeric outcomes\nCompare measures of centre/average (mean or median) between groups\nMost appropriate depends on distribution of sample in each group\nRequires a histogram per group\n\nThe most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed."
+    "section": "Statistical vs machine learning models",
+    "text": "Statistical vs machine learning models\n\n\nMachine learning models (MLM) are very powerful when making predictions.\nHowever, the way they get these predictions is often shrouded in mystery\nModels are not interpretable"
   },
   {
-    "objectID": "part-1-slides.html#comparing-numeric-outcomes-1",
-    "href": "part-1-slides.html#comparing-numeric-outcomes-1",
+    "objectID": "part-3-slides.html#statistical-vs-machine-learning-models-1",
+    "href": "part-3-slides.html#statistical-vs-machine-learning-models-1",
     "title": "Introduction to Statistics",
-    "section": "Comparing numeric outcomes",
-    "text": "Comparing numeric outcomes"
+    "section": "Statistical vs machine learning models",
+    "text": "Statistical vs machine learning models\n\n\nStatistical models are based on probabilistic assumptions\nMakes them stricter but interpretable\nStatistical models are better at explaining and understanding processes"
   },
   {
-    "objectID": "part-1-slides.html#comparing-numeric-outcomes-2",
-    "href": "part-1-slides.html#comparing-numeric-outcomes-2",
+    "objectID": "part-3-slides.html#regression-models",
+    "href": "part-3-slides.html#regression-models",
     "title": "Introduction to Statistics",
-    "section": "Comparing numeric outcomes",
-    "text": "Comparing numeric outcomes\nNeither the female nor the male group have a normal distribution → compare medians.\nMedian body mass of female penguins: 3650g\nMedian body mass of male penguins: 4300g\nAverage difference in body mass: -650g\nFemale penguins were 650g lighter on average compared to male penguins in this sample"
+    "section": "Regression models",
+    "text": "Regression models\nCommon statistical model are regression models.\nAlso known as linear models, generalised linear models or GLMs\nChoice of regression type depends on the type of outcome variable(s).\nAll aim to fit a linear equation to a transformation of the outcome (\\(g(Y)\\))"
   },
   {
-    "objectID": "part-1-slides.html#comparing-variables-over-time",
-    "href": "part-1-slides.html#comparing-variables-over-time",
+    "objectID": "part-3-slides.html#regression-models-1",
+    "href": "part-3-slides.html#regression-models-1",
     "title": "Introduction to Statistics",
-    "section": "Comparing variables over time",
-    "text": "Comparing variables over time\nVisualised using line graph\nCommon comparisons: absolute difference, relative difference, or percentage change\nChoice depends on intention, interpretation differs\n\nWhen dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change."
+    "section": "Regression models",
+    "text": "Regression models\n\n\n\n\n\nOutcome type\nRegression\nTransformation\n\n\n\n\nContinuous\nLinear\nIdentity\n\n\nCount/rate\nPoisson\nLog\n\n\nBinary\nLogistic\nLogit\n\n\nOrdinal\nOrdinal logistic\nLogit\n\n\nNominal\nMultinomial\nLogit"
   },
   {
-    "objectID": "part-1-slides.html#section-7",
-    "href": "part-1-slides.html#section-7",
+    "objectID": "part-3-slides.html#linear-regression",
+    "href": "part-3-slides.html#linear-regression",
     "title": "Introduction to Statistics",
-    "section": "",
-    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 and 2020."
+    "section": "Linear regression",
+    "text": "Linear regression\nThe simplest statistical modelling approach is a linear model.\nThis is because coefficient estimates are related to the outcome itself:\n\\(Y = \\alpha + \\beta_1X_1 + \\dots\\)\nWhen \\(X_1\\) is the only predictor and a continuous variable, linear regression fits a straight line to the data"
   },
   {
-    "objectID": "part-1-slides.html#section-8",
-    "href": "part-1-slides.html#section-8",
+    "objectID": "part-3-slides.html#linear-regression-1",
+    "href": "part-3-slides.html#linear-regression-1",
     "title": "Introduction to Statistics",
-    "section": "",
-    "text": "Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 (1,841,000 and 2020 1,239,000.)"
+    "section": "Linear regression",
+    "text": "Linear regression\nLet’s fit a model to explore the relationship between penguin’s body mass and flipper length."
   },
   {
-    "objectID": "part-1-slides.html#comparing-variables-over-time-1",
-    "href": "part-1-slides.html#comparing-variables-over-time-1",
+    "objectID": "part-3-slides.html#linear-regression-2",
+    "href": "part-3-slides.html#linear-regression-2",
     "title": "Introduction to Statistics",
-    "section": "Comparing variables over time",
-    "text": "Comparing variables over time\nAbsolute difference: 1,841,000 - 1,239,000 = 602,000\nThere were 602,000 less violent crimes reported in 2020 compared to 2010\nRelative difference: 1,841,000 ÷ 1,239,000 = 1.486\nThere were 1.486 times more violent crimes reported in 2010 compared to 2020\n\nThe absolute difference is found by subtracting the number of violent crimes recorded in 2020, 1,239,000, by the number in 2010, 1,841,000. There were 602,000 ;ess violent crimes reported in 2020 compared to 2010.\nThe relative difference is found by dividing one count by the other. In this example, the relative difference (1,841,000 / 1,239,000) is 1.486. This means that there were 1.486 times more violent crimes reported in 2020 compared to 2010."
+    "section": "Linear regression",
+    "text": "Linear regression\nLet’s fit a model to explore the relationship between penguin’s body mass and flipper length.\nHere, the outcome is body mass and the predictor is flipper length:\nBody mass = \\(\\alpha\\) + \\(\\beta \\times\\) flipper length\n\n\n\n\\(\\alpha\\) = intercept\nPredicted outcome where predictors = 0\n\n\n\n\\(\\beta\\) = slope\nExpected change in outcome for a unit increase in predictor"
   },
   {
-    "objectID": "part-1-slides.html#comparing-variables-over-time-2",
-    "href": "part-1-slides.html#comparing-variables-over-time-2",
+    "objectID": "part-3-slides.html#linear-regression-3",
+    "href": "part-3-slides.html#linear-regression-3",
     "title": "Introduction to Statistics",
-    "section": "Comparing variables over time",
-    "text": "Comparing variables over time\nThe percentage change can also be found by converting the relative difference\nCompare relative difference to no difference: 1.486 - 1 = 0.486\nConvert the proportion change to percentage: 0.486 x 100%\n= 48.6%\nThere were 48.6% more violent crimes reported in 2010 than 2020\n\nThe percentage change can be found by comparing the relative difference to the null value of 1 (no relative difference). When comparing 2010 to 2020, the relative difference was 0.486 above 1, giving the proportion increase. This can be multiplied by 100 to give a percentage increase of 48.6%. Therefore, there were 48.6% more violent crimes reported in 2010 compared to 2020."
+    "section": "Linear regression",
+    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length\n\n\nCoefficient estimates95% confidence intervalp-valueIntercept-5,780.83[-6382.36, -5179.3]&lt;0.001Flipper length49.69[46.7, 52.67]&lt;0.001"
   },
   {
-    "objectID": "part-1-slides.html#comparing-variables-over-time-3",
-    "href": "part-1-slides.html#comparing-variables-over-time-3",
+    "objectID": "part-3-slides.html#linear-regression-4",
+    "href": "part-3-slides.html#linear-regression-4",
     "title": "Introduction to Statistics",
-    "section": "Comparing variables over time",
-    "text": "Comparing variables over time\nPercentage reduction found in similar way\nRelative difference: 1,239,000 ÷ 1,841,000 = 0.673\nCompare to no difference: 1 - 0.673 = 0.327 (32.7%)\nThere were 32.7% fewer violent crimes reported in 2020 than 2010\n\nThe relative difference can also be found by comparing 2020 to 2010 if we want to give the relative or percentage decrease in violent crime. The relative difference (1,239,000 / 1,841,000) is 0.673, so there were 0.673 times the number of crimes reported in 2020 than 2010. This result is not intuitive, so converting the difference into a percentage decrease can make the value easier to interpret. As with an increase, we first find the difference between the relative difference and the null (1 - 0.673). This gives a proportion decrease of 0.327 or a percentage decrease of 32.7%. Therefore, there were 32.7% fewer violent crimes reported in 2020 compared to 2010."
+    "section": "Linear regression",
+    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length"
   },
   {
-    "objectID": "part-1-slides.html#relationship-between-numeric-variables",
-    "href": "part-1-slides.html#relationship-between-numeric-variables",
+    "objectID": "part-3-slides.html#linear-regression-5",
+    "href": "part-3-slides.html#linear-regression-5",
     "title": "Introduction to Statistics",
-    "section": "Relationship between numeric variables",
-    "text": "Relationship between numeric variables\nScatterplot used to visualise trends\nStrength of relationship quantified using correlation coefficients\nChoice of coefficients depends on if trend is linear or not\n\nLinear trend: Pearson’s correlation coefficient\nNonlinear trend: Spearman’s correlation coefficient\n\n\nCorrelation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?\nThe Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary."
+    "section": "Linear regression",
+    "text": "Linear regression\nBody mass = -5780.83 + 49.69 \\(\\times\\) flipper length\n\nIntercept = -5780.83\n\nPenguins with flipper length of 0mm had a predicted body mass of -5780.83g\n\nSlope = 49.69\n\nFor every unit increase in flipper length (1mm), body mass was expected to increase by 49.69g"
   },
   {
-    "objectID": "part-1-slides.html#correlation-coefficients",
-    "href": "part-1-slides.html#correlation-coefficients",
+    "objectID": "part-3-slides.html#linear-regression-6",
+    "href": "part-3-slides.html#linear-regression-6",
     "title": "Introduction to Statistics",
-    "section": "Correlation coefficients",
-    "text": "Correlation coefficients\nTake value between -1 and 1\nCorrelation of 0 means no association\nCloser coefficient is to +1/-1, the stronger the positive/negative association is\n\nCorrelation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is."
+    "section": "Linear regression",
+    "text": "Linear regression\nConfidence intervals give a range of values the coefficients are compatible with.\nIn this sample, the average increase in body mass for every 1mm increase in flipper length was 49.69g\nBut at the population level, we are 95% confident that this increase could lie between 46.7g and 52.67g"
   },
   {
-    "objectID": "part-1-slides.html#section-9",
-    "href": "part-1-slides.html#section-9",
+    "objectID": "part-3-slides.html#linear-regression-7",
+    "href": "part-3-slides.html#linear-regression-7",
     "title": "Introduction to Statistics",
-    "section": "",
-    "text": "A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:"
+    "section": "Linear regression",
+    "text": "Linear regression\np-values test the null hypothesis of no association: \\(\\beta\\) = 0\nThese p-values are both too small to be printed in their entirety, therefore the coefficients are statistically significant\nFor intercept, this has no real use.\nFor the slope, we have shown a significant association between flipper length and body mass"
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Statistics and software resources",
-    "section": "",
-    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
-  },
-  {
-    "objectID": "resources.html#statistics-with-r",
-    "href": "resources.html#statistics-with-r",
-    "title": "Statistics and software resources",
-    "section": "",
-    "text": "R is a very powerful statistical software with a huge (very helpful!) online community. Because of this, there are lots of free resources to learn R so that you can apply the methods shown in this module.\nHere are a list of free resources that are available when getting to grips with R:\n\nR for data science: comprehensive introduction to R for data analysis, including worked examples and exercises for more practice\nR for the rest of us: A stats-free introduction to R coding (they also have tons of useful tips posted on their blog)\nIntroduction to R with Tidyverse: materials from a short course I teach going from absolute beginner to summarising, visualising and reporting data\nRegressions with R: materials from my Regressions with R short course with worked examples of linear and poisson regression\n\n\n\nSome Datacamp courses covering R and statistics:\n\nIntroduction to Statistics with R\nIntroduction to regressions in R\nHypothesis testing in R\nGLMs in R\nIntermediate regression in R\nHierarchical and mixed models in R: Where observations are not independent\nGAMs in R: For modelling nonlinear relationships"
-  },
-  {
-    "objectID": "resources.html#statistics-with-python",
-    "href": "resources.html#statistics-with-python",
-    "title": "Statistics and software resources",
-    "section": "Statistics with Python",
-    "text": "Statistics with Python\nPython is fast becoming one of the most popular coding language and a go-to for data science. Python tends to be used more for machine learning than statistics, but can do everything we covered in the module. It is also a freely available software and has a growing number of free resources available to help learn.\n\nPython for Data Analysis: Comprehensive ebook introducing the python language\nPython for data science: Python’s answer to R4DS, introduction to coding in python\n\n\nDatacamp courses\n\nIntroduction to statistics with python\nExploratory data analysis with python\nIntroduction to data science with python\nHypothesis testing in python\nIntroduction to regression with python\nIntroduction to linear models with python\nGLMs with python"
-  },
-  {
-    "objectID": "part-2-slides.html#central-limit-theorem-11",
-    "href": "part-2-slides.html#central-limit-theorem-11",
+    "objectID": "part-3-slides.html#multiple-regression",
+    "href": "part-3-slides.html#multiple-regression",
     "title": "Introduction to Statistics",
-    "section": "Central limit theorem",
-    "text": "Central limit theorem"
+    "section": "Multiple regression",
+    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders\nConfounders = background variables that are related to both the outcome and predictor variable(s)\nConfounders can create false associations or hide true associations if not properly accounted for"
   },
   {
-    "objectID": "part-2-slides.html#central-limit-theorem-12",
-    "href": "part-2-slides.html#central-limit-theorem-12",
+    "objectID": "part-3-slides.html#multiple-regression-1",
+    "href": "part-3-slides.html#multiple-regression-1",
     "title": "Introduction to Statistics",
-    "section": "Central limit theorem",
-    "text": "Central limit theorem"
+    "section": "Multiple regression",
+    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders"
   },
   {
-    "objectID": "part-2-slides.html#central-limit-theorem-13",
-    "href": "part-2-slides.html#central-limit-theorem-13",
+    "objectID": "part-3-slides.html#multiple-regression-2",
+    "href": "part-3-slides.html#multiple-regression-2",
     "title": "Introduction to Statistics",
-    "section": "Central limit theorem",
-    "text": "Central limit theorem"
+    "section": "Multiple regression",
+    "text": "Multiple regression\nOne of the benefits of using a regression is that we can take account of confounders"
   },
   {
-    "objectID": "part-2-slides.html#central-limit-theorem-14",
-    "href": "part-2-slides.html#central-limit-theorem-14",
+    "objectID": "part-3-slides.html#multiple-regression-3",
+    "href": "part-3-slides.html#multiple-regression-3",
     "title": "Introduction to Statistics",
-    "section": "Central limit theorem",
-    "text": "Central limit theorem"
+    "section": "Multiple regression",
+    "text": "Multiple regression\nLet’s extend the previous model to account for the sex of penguins:"
   },
   {
-    "objectID": "part-2-slides.html#central-limit-theorem-15",
-    "href": "part-2-slides.html#central-limit-theorem-15",
+    "objectID": "part-3-slides.html#multiple-regression-4",
+    "href": "part-3-slides.html#multiple-regression-4",
     "title": "Introduction to Statistics",
-    "section": "Central limit theorem",
-    "text": "Central limit theorem"
+    "section": "Multiple regression",
+    "text": "Multiple regression\nLet’s extend the previous model to account for the sex of penguins:\nBody mass = \\(\\alpha\\) + \\(\\beta_1 \\times\\) flipper length + \\(\\beta_2 \\times\\) male\nCategorical variables are added as dummy variables\n\n\nmale = 1 if sex = male\n\nmale = 0 if sex = female"
+  },
+  {
+    "objectID": "part-3-slides.html#multiple-regression-5",
+    "href": "part-3-slides.html#multiple-regression-5",
+    "title": "Introduction to Statistics",
+    "section": "Multiple regression",
+    "text": "Multiple regression\nBody mass = -5410.3 + 46.98 \\(\\times\\) flipper length + 347.85 \\(\\times\\) male\n\n\nCoefficient estimates95% confidence intervalp-valueIntercept-5,410.30[-5972.52, -4848.09]&lt;0.001Flipper length46.98[44.15, 49.82]&lt;0.001Male347.85[268.49, 427.21]&lt;0.001"
+  },
+  {
+    "objectID": "part-3-slides.html#multiple-regression-6",
+    "href": "part-3-slides.html#multiple-regression-6",
+    "title": "Introduction to Statistics",
+    "section": "Multiple regression",
+    "text": "Multiple regression\nBody mass = -5410.3 + 46.98 \\(\\times\\) flipper length + 347.85 \\(\\times\\) male\nCoefficients now represent expected change in outcome for unit increase in predictor after adjusting for other predictors\nThere is a significant positive association between flipper length and body mass after adjusting for differences between sexes"
+  },
+  {
+    "objectID": "part-3-slides.html#model-evaluation",
+    "href": "part-3-slides.html#model-evaluation",
+    "title": "Introduction to Statistics",
+    "section": "Model evaluation",
+    "text": "Model evaluation\nThere are going to be many potential models to answer our research question…how do we choose the best one??\n\nConsider the intention of the model\nUse common sense and prior knowledge\nAim to find the most parsimonious"
+  },
+  {
+    "objectID": "part-3-slides.html#model-evaluation-1",
+    "href": "part-3-slides.html#model-evaluation-1",
+    "title": "Introduction to Statistics",
+    "section": "Model evaluation",
+    "text": "Model evaluation\nModel evaluation can involve comparisons of model fitting statistics.\nR-squared value: proportion of the outcome explained by the model\nAdjusted R-squared penalises the R-squared value based on the number of predictors included in the model"
+  },
+  {
+    "objectID": "part-3-slides.html#model-evaluation-2",
+    "href": "part-3-slides.html#model-evaluation-2",
+    "title": "Introduction to Statistics",
+    "section": "Model evaluation",
+    "text": "Model evaluation\nAdjusted R-squared value for flipper-only model: 0.76\nAdjusted R-squared value for flipper + sex model: 0.8\nAdding sex still increased the adjusted R-squared value, indicating its addition was worthwhile"
+  },
+  {
+    "objectID": "part-3-slides.html#model-evaluation-3",
+    "href": "part-3-slides.html#model-evaluation-3",
+    "title": "Introduction to Statistics",
+    "section": "Model evaluation",
+    "text": "Model evaluation\nPrediction metrics are another family of useful model evaluation tools\nThey compare the observed outcome with the fitted model predictions.\n\nRMSE: root mean squared error \\(\\sqrt{\\frac{1}{n}\\sum{(y_i - \\hat{y}_i)^2}}\\)\nMAE: mean absolute error \\(\\frac{1}{n}\\sum|y_i - \\hat{y}_i|\\)\n\nUseful as they provide a measure of fit in context"
+  },
+  {
+    "objectID": "part-3-slides.html#model-evaluation-4",
+    "href": "part-3-slides.html#model-evaluation-4",
+    "title": "Introduction to Statistics",
+    "section": "Model evaluation",
+    "text": "Model evaluation\n\n\n\n\n\nModel\nRMSE\nMAE\n\n\n\n\nFlipper only\n393.12\n313.00\n\n\nFlipper + sex\n354.28\n283.25\n\n\n\n\n\nAdding sex into the model reduced performance metrics. This means it improved prediction.\nIf both prediction errors are large (in context of the problem), consider trying to improve them in some way"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics",
+    "href": "part-3-slides.html#model-diagnostics",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nLinear regression is a parametric method: it has assumptions that must be checked\n\nLinearity: can present the outcome as a linear combination of predictors\nIndependent predictors: no multicollinearity present\nNormally distributed residuals\nEqual variance of residuals AKA homoskedasticity"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnistics",
+    "href": "part-3-slides.html#model-diagnistics",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnistics",
+    "text": "Model diagnistics\nPredictors must be independent of one another.\nCorrelation can be accounted for to some degree, and dependency can exist between &gt; 2 variables\nVariance inflation factor (VIF): Measure of multicollinearity\n\\(VIF_i = \\frac{1}{1 - R_i^2}\\) for each predictor"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-1",
+    "href": "part-3-slides.html#model-diagnostics-1",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nVIF = 10 → \\(R^2 = 0.9\\): 90% of the variation in that predictor is explained by other predictors\nMulticollinearity leads to unstable coefficient estimates and invalid inferential statistics\nWhen there is evidence of multicollinearity (VIF &gt; 5-ish), remove the offending variable(s)!"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-2",
+    "href": "part-3-slides.html#model-diagnostics-2",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nResiduals = model error terms: observed outcome - predicted outcome\nUsed to check final three assumptions:\n\nLinearity: plot residuals against each predictor\nNormal distribution: plot a histogram of residuals\nEqual variance: plot residuals against the predicted outcome"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-3",
+    "href": "part-3-slides.html#model-diagnostics-3",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nLinearity: check residual vs. predictor plots for patterns"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-4",
+    "href": "part-3-slides.html#model-diagnostics-4",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nLinearity: check residual vs. predictor plots for patterns"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-5",
+    "href": "part-3-slides.html#model-diagnostics-5",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nNormally distribution residuals"
+  },
+  {
+    "objectID": "part-3-slides.html#model-diagnostics-6",
+    "href": "part-3-slides.html#model-diagnostics-6",
+    "title": "Introduction to Statistics",
+    "section": "Model diagnostics",
+    "text": "Model diagnostics\nHomoskedasticity: check residual vs. prediction plots for patterns"
+  },
+  {
+    "objectID": "part-3-slides.html#generalised-linear-models",
+    "href": "part-3-slides.html#generalised-linear-models",
+    "title": "Introduction to Statistics",
+    "section": "Generalised linear models",
+    "text": "Generalised linear models\nWhen the outcome variable is not continuous, another regression model must be chosen.\nEstimated coefficients relate to a transformed version of the outcome.\nFor example, a fitted poisson model (of counts) looks like this:\n\\(log(Y) = \\alpha + \\beta_1X_1 + \\beta_2X_2 + \\dots\\)\nCoefficients (\\(\\alpha\\), \\(\\beta_1\\), \\(\\beta_2\\)) relate to the log of the outcome."
+  },
+  {
+    "objectID": "part-3-slides.html#generalised-linear-models-1",
+    "href": "part-3-slides.html#generalised-linear-models-1",
+    "title": "Introduction to Statistics",
+    "section": "Generalised linear models",
+    "text": "Generalised linear models\nTo interpret coefficients, they must be back-transformed to relate to the original outcome.\nFor example, in the poisson case, we apply the exponential function (the opposite of the log) to the equation\nThis makes interpretation of other regression models slightly more difficult but not impossible!"
+  },
+  {
+    "objectID": "part-3-slides.html#generalised-linear-models-2",
+    "href": "part-3-slides.html#generalised-linear-models-2",
+    "title": "Introduction to Statistics",
+    "section": "Generalised linear models",
+    "text": "Generalised linear models\nStatistical models are based on probabilistic assumptions.\nThese assumptions must be true for results for be valid\nDifferent regression types have different assumptions but all share these two:\n1. Observations must be independent of one another\n2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a linear equation"
+  },
+  {
+    "objectID": "part-3-slides.html#beyond-glms",
+    "href": "part-3-slides.html#beyond-glms",
+    "title": "Introduction to Statistics",
+    "section": "Beyond GLMs",
+    "text": "Beyond GLMs\nWhen either of these assumptions are not valid, we must consider other models\nMixed models (or GLMM, multilevel models, random effect models) account for dependency structures in data:\n\n\n\nSpatial data\nTemporal data\n\n\n\nData on clusters (e.g. households)"
+  },
+  {
+    "objectID": "part-3-slides.html#beyond-glms-1",
+    "href": "part-3-slides.html#beyond-glms-1",
+    "title": "Introduction to Statistics",
+    "section": "Beyond GLMs",
+    "text": "Beyond GLMs\nWhen either of these assumptions are not valid, we must consider other models\nAdditive models (GAMs) are useful when modelling non-linear relationships\nAllow smooth functions of predictors, \\(s(X)\\), to be entered into a model:\ng(Y) = \\(\\alpha + \\beta_1X_1 + \\dots + s(X_j)\\)"
+  },
+  {
+    "objectID": "part-3-slides.html#final-thoughts",
+    "href": "part-3-slides.html#final-thoughts",
+    "title": "Introduction to Statistics",
+    "section": "Final thoughts",
+    "text": "Final thoughts\n\nStatistics is a huge topic\nDo not underestimate planning stage: research questions, biases and exploratory work\nComplex analysis can not overcome bad data\nDo not make inferential statements about sample estimates and do not make causal statements unless performing causal analysis"
+  },
+  {
+    "objectID": "part-3-slides.html#final-thoughts-1",
+    "href": "part-3-slides.html#final-thoughts-1",
+    "title": "Introduction to Statistics",
+    "section": "Final thoughts",
+    "text": "Final thoughts\n\nChoose analysis methods based on the research question rather than the available data\nModels should be built to address this question and using common sense/background knowledge not based on p-values\nIf a method requires assumptions to be met, check these before communicating results"
+  },
+  {
+    "objectID": "part-3-slides.html#final-thoughts-2",
+    "href": "part-3-slides.html#final-thoughts-2",
+    "title": "Introduction to Statistics",
+    "section": "Final thoughts",
+    "text": "Final thoughts\n\nMany free statistical software packages available\nR is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources\nPython is a favourite of data scientists and has a rapidly growing community\nExcel will do basic stats but is limited and prone to issues!"
   }
 ]

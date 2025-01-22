@@ -324,10 +324,6 @@
 
   <script src="site_libs/countdown-0.4.0/countdown.js"></script>
 
-  <link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-
-  <script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -335,7 +331,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Introduction to Statistics</h1>
-  <p class="subtitle">Part 2: Inferential statistics and modelling</p>
+  <p class="subtitle">Part 2: Exploring trends and going beyond the sample</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -346,36 +342,477 @@ Sophie Lee
 </div>
 
 </section>
-<section>
 <section id="section" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Recap of Part 1</p>
+</div>
+</section>
+
+<section id="before-the-analysis" class="title-slide slide level1 center">
+<h1>Before the analysis</h1>
+<ul>
+<li class="fragment">How to formulate a <strong>research question</strong>
+<ul>
+<li class="fragment"><strong>P</strong>opulation</li>
+<li class="fragment"><strong>I</strong>ntervention</li>
+<li class="fragment"><strong>C</strong>omparison</li>
+<li class="fragment"><strong>O</strong>utcome</li>
+</ul></li>
+<li class="fragment">Need a <strong>random sample</strong> from the target population</li>
+<li class="fragment">Outcome must be <strong>measurable</strong> and <strong>relevant</strong></li>
+</ul>
+</section>
+
+<section id="before-the-analysis-1" class="title-slide slide level1 center">
+<h1>Before the analysis</h1>
+<ul>
+<li class="fragment">Consider <strong>biases</strong>
+<ul>
+<li class="fragment">Lead to <strong>invalid</strong> results</li>
+<li class="fragment">Unable to make inferences and answer the research question</li>
+</ul></li>
+<li class="fragment">Be aware of <strong>missing data</strong>
+<ul>
+<li class="fragment">Some missing data can lead to <strong>biases</strong></li>
+<li class="fragment">Even where they don’t reduces sample size and <strong>power</strong></li>
+<li class="fragment">Think of potential reasons and be <strong>transparent</strong></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="summary-statistics" class="title-slide slide level1 center">
+<h1>Summary statistics</h1>
+<ul>
+<li class="fragment">Quantify aspects of the <strong>sample</strong></li>
+<li class="fragment">Not used to answer research question</li>
+<li class="fragment">Summaries of categorical variables include <strong>proportion</strong>, <strong>percentage</strong> and <strong>rate</strong>
+<ul>
+<li class="fragment">Choice of summary up to you but have different <strong>interpretations</strong></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="summary-statistics-1" class="title-slide slide level1 center">
+<h1>Summary statistics</h1>
+<ul>
+<li class="fragment">Summaries of numeric variables quantify the <strong>centre</strong> and <strong>spread</strong> of a sample</li>
+<li class="fragment">Choice of summary depends on the <strong>distribution</strong> of the sample</li>
+</ul>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="summary-statistics-2" class="title-slide slide level1 center">
+<h1>Summary statistics</h1>
+<ul>
+<li class="fragment">Measure of centre is given by the <strong>mean</strong> (if normally distributed) or <strong>median</strong></li>
+<li class="fragment">Measure of spread is given by the <strong>SD</strong> (if normally distributed) or <strong>IQR</strong></li>
+<li class="fragment">Distribution checked using a <strong>histogram</strong> or, if we don’t have the data, estimating the <strong>range</strong></li>
+</ul>
+</section>
+
+<section id="normal-distribution" class="title-slide slide level1 center">
+<h1>Normal distribution</h1>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section id="normal-distribution-1" class="title-slide slide level1 center">
+<h1>Normal distribution</h1>
+
+<img data-src="part-2-slides_files/figure-revealjs/normal-sd-95-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+
+<section>
+<section id="section-1" class="title-slide slide level1 chapter-theme center">
+<h1></h1>
+<div class="r-fit-text">
+<p>Quantifying differences and</p>
+<p>trends in a sample.</p>
+</div>
+</section>
+<section id="quantifying-differences-and-trends" class="slide level2">
+<h2>Quantifying differences and trends</h2>
+<p>Most appropriate choice depends on <span class="answer">intention</span>, <span class="answer">type</span> of outcome, <span class="answer">nature</span> of the relationship</p>
+<ul>
+<li class="fragment">Comparison of variable between groups</li>
+<li class="fragment">Investigating trends over time</li>
+<li class="fragment">Relationship between numeric variables</li>
+</ul>
+<aside class="notes">
+<p>Often, our research question will involve a comparison between groups, investigating trends over time, or investigating a relationship between two numeric variables. There are multiple approaches we can use to compare groups but the correct choice will depend on the outcome of interest and the type of relationship we are interested in. This section will describe the most common comparative statistics, their interpretations, and the reasons we may choose to use one approach over another.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-categorical-outcomes" class="slide level2">
+<h2>Comparing categorical outcomes</h2>
+<p>Compare summary statistics (proportions, percentages, or rates) between groups</p>
+<p><span class="fragment"><span class="answer">Absolute difference:</span> Subtract values</span></p>
+<p><span class="fragment"><span class="answer">Relative difference:</span> Divide values</span></p>
+<aside class="notes">
+<p>When comparing a categorical variable between groups, we are often comparing the summary measures that were introduced in the previous section: proportions, percentages, and rates. These summaries are either compared using the absolute difference or the relative difference.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-categorical-outcomes-1" class="slide level2">
+<h2>Comparing categorical outcomes</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Female penguins</th>
+<th style="text-align: right;">Male penguins</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">146</td>
+<td style="text-align: right;">73 (50%)</td>
+<td style="text-align: right;">73 (50%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">58 (48.74%)</td>
+<td style="text-align: right;">61 (51.26%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span class="fragment"><span class="answer">Absolute difference:</span> 50% - 48.74%</span> <span class="fragment">= 1.26%</span></p>
+<p><span class="fragment">The absolute difference between Adelie and Gentoo penguins is 1.26 <span class="answer">percentage points.</span></span></p>
+</section>
+<section id="comparing-categorical-outcomes-2" class="slide level2">
+<h2>Comparing categorical outcomes</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Female penguins</th>
+<th style="text-align: right;">Male penguins</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">146</td>
+<td style="text-align: right;">73 (50%)</td>
+<td style="text-align: right;">73 (50%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">58 (48.74%)</td>
+<td style="text-align: right;">61 (51.26%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span class="fragment"><span class="answer">Relative difference:</span> 50% <span class="math inline">\(\div\)</span> 48.74%</span> <span class="fragment">= 1.03</span></p>
+<p><span class="fragment">There were 1.03 <span class="answer">times</span> more female penguins in the Adelie group than the Gentoo penguin group</span></p>
+<p><span class="fragment"><span class="answer">No difference</span> would = 1</span></p>
+</section>
+<section id="comparing-categorical-outcomes-3" class="slide level2">
+<h2>Comparing categorical outcomes</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Total</th>
+<th style="text-align: right;">Female penguins</th>
+<th style="text-align: right;">Male penguins</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">146</td>
+<td style="text-align: right;">73 (50%)</td>
+<td style="text-align: right;">73 (50%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">119</td>
+<td style="text-align: right;">58 (48.74%)</td>
+<td style="text-align: right;">61 (51.26%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span class="fragment"><span class="answer">Relative difference:</span> 48.74% <span class="math inline">\(\div\)</span> 50%</span> <span class="fragment">= 0.97</span></p>
+<p><span class="fragment">There were 0.97 <span class="answer">times</span> the percentage of female penguins in the Gentoo group than the Adelie penguin group</span></p>
+<p><span class="fragment">Less than 1: <span class="answer">a reduction</span></span></p>
+</section>
+<section id="comparing-numeric-outcomes" class="slide level2">
+<h2>Comparing numeric outcomes</h2>
+<p>Compare measures of centre/average (mean or median) between groups</p>
+<p><span class="fragment">Most appropriate depends on <span class="answer">distribution</span> of sample in each group</span></p>
+<p><span class="fragment">Requires a histogram <span class="answer">per group</span></span></p>
+<aside class="notes">
+<p>The most appropriate method to compare a numeric variable between groups will once again depend on the distribution of the variable. A comparison can either be made using the difference in means, where both groups have a normally distributed sample, or difference in medians, where the samples are skewed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-numeric-outcomes-1" class="slide level2">
+<h2>Comparing numeric outcomes</h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/histogram-body-sex-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="comparing-numeric-outcomes-2" class="slide level2">
+<h2>Comparing numeric outcomes</h2>
+<p>Neither the female nor the male group have a normal distribution <span class="fragment">→ compare <span class="answer">medians</span>.</span></p>
+<p><span class="fragment">Median body mass of female penguins: <span class="answer">3650g</span></span></p>
+<p><span class="fragment">Median body mass of male penguins: <span class="answer">4300g</span></span></p>
+<p><span class="fragment">Average difference in body mass: <span class="answer">-650g</span></span></p>
+<p><span class="fragment">Female penguins were <span class="answer">650g</span> lighter on average compared to male penguins in this sample</span></p>
+</section>
+<section id="comparing-variables-over-time" class="slide level2">
+<h2>Comparing variables over time</h2>
+<p>Visualised using line graph</p>
+<p><span class="fragment">Common comparisons: <span class="answer">absolute difference, relative difference, or percentage change</span></span></p>
+<p><span class="fragment">Choice depends on intention, interpretation differs</span></p>
+<aside class="notes">
+<p>When dealing with temporal data, it is important to quantify differences across time as well as visualising them using a line graph. Comparison across time is typically given as an absolute difference between time points, as a relative difference, or this is commonly converted into a percentage change.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p>Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 and 2020.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/crime-line-circle-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p>Recall the line graph given in an earlier section showing the reduction in the number of violent crimes recorded between 2010 and 2020: This difference can be quantified by comparing the number of violent crimes recorded in 2010 (1,841,000 and 2020 1,239,000.)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-variables-over-time-1" class="slide level2">
+<h2>Comparing variables over time</h2>
+<p><strong>Absolute difference:</strong> 1,841,000 - 1,239,000 <span class="fragment answer">= 602,000</span></p>
+<p><span class="fragment">There were <span class="answer">602,000 less violent crimes</span> reported in 2020 compared to 2010</span></p>
+<p><span class="fragment"><strong>Relative difference:</strong> 1,841,000 ÷ 1,239,000</span> <span class="fragment answer">= 1.486</span></p>
+<p><span class="fragment">There were <span class="answer">1.486 times more violent crimes</span> reported in 2010 compared to 2020</span></p>
+<aside class="notes">
+<p>The absolute difference is found by subtracting the number of violent crimes recorded in 2020, 1,239,000, by the number in 2010, 1,841,000. There were 602,000 ;ess violent crimes reported in 2020 compared to 2010.</p>
+<p>The relative difference is found by dividing one count by the other. In this example, the relative difference (1,841,000 / 1,239,000) is 1.486. This means that there were 1.486 times more violent crimes reported in 2020 compared to 2010.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-variables-over-time-2" class="slide level2">
+<h2>Comparing variables over time</h2>
+<p>The percentage change can also be found by converting the relative difference</p>
+<p><span class="fragment"><strong>Compare relative difference to no difference:</strong></span> <span class="fragment">1.486 - 1</span> <span class="fragment answer">= 0.486</span></p>
+<p><span class="fragment"><strong>Convert the proportion change to percentage:</strong></span> <span class="fragment">0.486 x 100%</span></p>
+<p><span class="fragment answer">= 48.6%</span></p>
+<p><span class="fragment">There were <span class="answer">48.6% more violent crimes</span> reported in 2010 than 2020</span></p>
+<aside class="notes">
+<p>The percentage change can be found by comparing the relative difference to the null value of 1 (no relative difference). When comparing 2010 to 2020, the relative difference was 0.486 above 1, giving the proportion increase. This can be multiplied by 100 to give a percentage increase of 48.6%. Therefore, there were 48.6% more violent crimes reported in 2010 compared to 2020.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="comparing-variables-over-time-3" class="slide level2">
+<h2>Comparing variables over time</h2>
+<p>Percentage reduction found in similar way</p>
+<p><span class="fragment"><strong>Relative difference:</strong> 1,239,000 ÷ 1,841,000</span> <span class="fragment answer">= 0.673</span></p>
+<p><span class="fragment"><strong>Compare to no difference:</strong></span> <span class="fragment">1 - 0.673</span> <span class="fragment answer">= 0.327 (32.7%)</span></p>
+<p><span class="fragment">There were <span class="answer">32.7% fewer violent crimes</span> reported in 2020 than 2010</span></p>
+<aside class="notes">
+<p>The relative difference can also be found by comparing 2020 to 2010 if we want to give the relative or percentage decrease in violent crime. The relative difference (1,239,000 / 1,841,000) is 0.673, so there were 0.673 times the number of crimes reported in 2020 than 2010. This result is not intuitive, so converting the difference into a percentage decrease can make the value easier to interpret. As with an increase, we first find the difference between the relative difference and the null (1 - 0.673). This gives a proportion decrease of 0.327 or a percentage decrease of 32.7%. Therefore, there were 32.7% fewer violent crimes reported in 2020 compared to 2010.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="relationship-between-numeric-variables" class="slide level2">
+<h2>Relationship between numeric variables</h2>
+<p>Scatterplot used to visualise trends</p>
+<p><span class="fragment">Strength of relationship quantified using <span class="answer">correlation coefficients</span></span></p>
+<p><span class="fragment">Choice of coefficients depends on if trend is linear or not</span></p>
+<ul>
+<li class="fragment"><strong>Linear trend:</strong> Pearson’s correlation coefficient</li>
+<li class="fragment"><strong>Nonlinear trend:</strong> Spearman’s correlation coefficient</li>
+</ul>
+<aside class="notes">
+<p>Correlation coefficients are summary statistics that describe the strength and direction of a relationship between two numeric variables. There are different types of correlation coefficients that exist, the choice of which depends on the nature of the trend it is measuring: is it linear or nonlinear?</p>
+<p>The Pearson’s correlation coefficient measures the association between numeric variables if we assume it is linear. It essentially measures how close points lie to the line of best fit added to a scatterplot. The alternative to Pearson’s correlation is Spearman’s correlation coefficient, this measures the general trend upwards or downwards, whether or not this is linear. As with medians and IQRs, Spearman’s correlation coefficient uses less of the data than Pearson’s so we only use it where necessary.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="correlation-coefficients" class="slide level2">
+<h2>Correlation coefficients</h2>
+<p>Take value between <span class="answer">-1</span> and <span class="answer">1</span></p>
+<p><span class="fragment">Correlation of 0 means <strong>no association</strong></span></p>
+<p><span class="fragment">Closer coefficient is to +1/-1, the stronger the <strong>positive/negative association</strong> is</span></p>
+<aside class="notes">
+<p>Correlation coefficients take a value between -1 and 1. A value of 0 represents no association, values of +/- 1 represent perfect association (a straight or curved line depending on the choice of statistic). Generally, a correlation coefficient will lie between 0 and +/- 1 where the further the value gets from 0, the stronger the relationship is.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
+<p>A correlation coefficient is said to show a positive association if the value is above 0. This means as one variable increases, the other also tends to increase:</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-pos-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-neg1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-neg-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-nocorr-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+
+<img data-src="part-2-slides_files/figure-revealjs/correlation-spearman-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<section>
+<section id="section-10" class="title-slide slide level1 chapter-theme center">
 <h1></h1>
 <div class="r-fit-text">
 <p>Beyond the sample</p>
 </div>
-</section>
-<section id="course-content" class="slide level2">
-<h2>Course content</h2>
-<h3 id="part-2-friday-1st-november-2024">Part 2: Friday 1st November, 2024</h3>
-<ul>
-<li class="fragment">Inferential statistics
-<ul>
-<li class="fragment">Central limit theorem</li>
-<li class="fragment">p-values and confidence intervals: how to interpret and communicate results</li>
-<li class="fragment">Where do these values come from?</li>
-</ul></li>
-</ul>
-</section>
-<section id="course-content-1" class="slide level2">
-<h2>Course content</h2>
-<h3 id="part-2-friday-1st-november-2024-1">Part 2: Friday 1st November, 2024</h3>
-<ul>
-<li class="fragment">Statistical modelling
-<ul>
-<li class="fragment">What are models and why are they useful to data analytics?</li>
-<li class="fragment">How to choose an appropriate model based on the research question</li>
-<li class="fragment">Model outputs and their interpretations</li>
-</ul></li>
-</ul>
 </section>
 <section id="what-are-inferential-statistics" class="slide level2">
 <h2>What are inferential statistics?</h2>
@@ -484,55 +921,55 @@ Sophie Lee
 <section id="central-limit-theorem-2" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-4-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-19-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-3" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-4" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-5" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-22-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-6" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-7" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-9-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-8" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-10-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-25-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-9" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-11-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-10" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-12-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-11" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-13-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-12" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-29-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-13" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-30-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-14" class="slide level2">
 <h2>Central limit theorem</h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-31-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
 <section id="central-limit-theorem-15" class="slide level2">
 <h2>Central limit theorem</h2>
 
@@ -557,7 +994,7 @@ Sophie Lee
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-1" class="slide level2">
+<section id="section-11" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
@@ -622,7 +1059,7 @@ Sophie Lee
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-12" class="slide level2">
 <h2></h2>
 
 <img data-src="part-2-slides_files/figure-revealjs/conf-int-95-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
@@ -791,495 +1228,48 @@ Sophie Lee
 <p><span class="fragment">If a p-value is <span class="answer">above 0.05</span>, the sample estimate is <span class="answer">less than 1.96 SEs away</span>. This means it will be <span class="answer">within the 95% confidence interval</span></span></p>
 <p><span class="fragment">If the null hypothesis is <span class="answer">outside the 99% confidence interval</span>, it is <span class="answer">over 2.576 SEs away</span> from the sample estimate so <span class="answer">p &lt; 0.01</span></span></p>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-13" class="slide level2">
 <h2></h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-26-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-4" class="slide level2">
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-41-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-14" class="slide level2">
 <h2></h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-27-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-5" class="slide level2">
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-42-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-15" class="slide level2">
 <h2></h2>
 
-<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-28-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
+<img data-src="part-2-slides_files/figure-revealjs/unnamed-chunk-43-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section></section>
 <section>
-<section id="section-6" class="title-slide slide level1 chapter-theme center">
+<section id="section-16" class="title-slide slide level1 chapter-theme center">
 <h1></h1>
 <div class="r-fit-text">
 <p>Exercise 3:</p>
 <p>Inferential statistics</p>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-17" class="slide level2">
 <h2></h2>
 
 <img data-src="img/only_connect_table.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-8" class="slide level2">
+<section id="section-18" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_267225f5" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:100px;">
+<div class="countdown" id="timer_2d48f80a" data-update-every="1" tabindex="0" style="top:0;right:0;font-size:100px;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 
-<img data-src="img/only_connect_figs.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
-<section>
-<section id="section-9" class="title-slide slide level1 chapter-theme center">
-<h1></h1>
-<div class="r-fit-text">
-<p>Statistical modelling</p>
-</div>
-</section>
-<section id="inferential-statistics" class="slide level2">
-<h2>Inferential statistics</h2>
-<p>Now we know how to <span class="answer">interpret</span> and <span class="answer">communicate</span> inferential statistics…<span class="fragment">how do we calculate them?</span></p>
-<p><span class="fragment">Almost all parameters that we can estimate from a sample can be presented with inferential statistics.</span></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Mean</li>
-<li class="fragment">Proportion/percentage</li>
-<li class="fragment">Correlation coefficients</li>
-</ul>
-</div><div class="column" data-wideth="50%">
-<ul>
-<li class="fragment">Difference in means</li>
-<li class="fragment">Difference in proportions</li>
-<li class="fragment"><span class="answer">Model coefficients</span></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="statistical-models" class="slide level2">
-<h2>Statistical models</h2>
-<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
-<p><span class="fragment">Statistical models explain these processes using a <span class="answer">mathematical equation:</span></span></p>
-<p><span class="fragment"><span class="math inline">\(g\)</span>(Y) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_nX_n\)</span></span></p>
-<p><span class="fragment">Model equations generally consist of</span></p>
-</section>
-<section id="statistical-models-1" class="slide level2">
-<h2>Statistical models</h2>
-<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
-<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
-<p><span class="math inline">\(g\)</span>(<span class="answer">Y</span>) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_nX_n\)</span></p>
-<p>Model equations generally consist of <span class="answer">outcome(s)</span>,</p>
-</section>
-<section id="statistical-models-2" class="slide level2">
-<h2>Statistical models</h2>
-<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
-<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
-<p><span class="math inline">\(g\)</span>(Y) = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1\)</span><span class="answer"><span class="math inline">\(X_1\)</span></span> + <span class="math inline">\(\dots\)</span> + <span class="math inline">\(\beta_n\)</span><span class="answer"><span class="math inline">\(X_n\)</span></span></p>
-<p>Model equations generally consist of outcome(s), <span class="answer">predictor(s)</span></p>
-</section>
-<section id="statistical-models-3" class="slide level2">
-<h2>Statistical models</h2>
-<p><span class="answer">Models</span> aim to explain complex process in a simple way.</p>
-<p>Statistical models explain these processes using a <span class="answer">mathematical equation:</span></p>
-<p><span class="math inline">\(g\)</span>(Y) = <span class="answer"><span class="math inline">\(\alpha\)</span></span> + <span class="answer"><span class="math inline">\(\beta_1\)</span></span><span class="math inline">\(X_1\)</span> + <span class="math inline">\(\dots\)</span> + <span class="answer"><span class="math inline">\(\beta_n\)</span></span><span class="math inline">\(X_n\)</span></p>
-<p>Model equations generally consist of outcome(s), predictor(s) and <span class="answer">coefficients</span></p>
-</section>
-<section id="statistical-vs-machine-learning-models" class="slide level2">
-<h2>Statistical vs machine learning models</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Machine learning models (MLM) are very powerful when making <span class="answer">predictions</span>.</p>
-<p><span class="fragment" data-fragment-index="1">However, the way they get these predictions is often shrouded in mystery</span></p>
-<p><span class="fragment" data-fragment-index="2">Models are not <span class="answer">interpretable</span></span></p>
-</div><div class="column fragment" data-fragment-index="1" style="width:40%;">
-<p><img data-src="img/mystery.png"></p>
-</div>
-</div>
-</section>
-<section id="statistical-vs-machine-learning-models-1" class="slide level2">
-<h2>Statistical vs machine learning models</h2>
-<div class="columns">
-<div class="column" style="width:60%;">
-<p>Statistical models are based on <span class="answer">probabilistic assumptions</span></p>
-<p><span class="fragment">Makes them stricter but <span class="answer">interpretable</span></span></p>
-<p><span class="fragment">Statistical models are better at <span class="answer">explaining</span> and <span class="answer">understanding</span> processes</span></p>
-</div><div class="column" style="width:40%;">
-<p><img data-src="img/boxing.jpg"></p>
-</div>
-</div>
-</section>
-<section id="regression-models" class="slide level2">
-<h2>Regression models</h2>
-<p>Common statistical model are <span class="answer">regression models</span>.</p>
-<p><span class="fragment">Also known as <span class="answer fragment">linear models,</span> <span class="answer fragment">generalised linear models</span> <span class="answer fragment">or GLMs</span></span></p>
-<p><span class="fragment">Choice of regression type depends on the <span class="answer">type</span> of outcome variable(s).</span></p>
-<p><span class="fragment">All aim to fit a linear equation to a <span class="answer">transformation</span> of the outcome (<span class="math inline">\(g(Y)\)</span>)</span></p>
-</section>
-<section id="regression-models-1" class="slide level2">
-<h2>Regression models</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Outcome type</th>
-<th style="text-align: left;">Regression</th>
-<th style="text-align: left;">Transformation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Continuous</td>
-<td style="text-align: left;">Linear</td>
-<td style="text-align: left;">Identity</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Count/rate</td>
-<td style="text-align: left;">Poisson</td>
-<td style="text-align: left;">Log</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Binary</td>
-<td style="text-align: left;">Logistic</td>
-<td style="text-align: left;">Logit</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Ordinal</td>
-<td style="text-align: left;">Ordinal logistic</td>
-<td style="text-align: left;">Logit</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Nominal</td>
-<td style="text-align: left;">Multinomial</td>
-<td style="text-align: left;">Logit</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="linear-regression" class="slide level2">
-<h2>Linear regression</h2>
-<p>The simplest statistical modelling approach is a linear model.</p>
-<p><span class="fragment">This is because coefficient estimates are related to the outcome itself:</span></p>
-<p><span class="fragment"><span class="math inline">\(Y = \alpha + \beta_1X_1 + \dots\)</span></span></p>
-<p><span class="fragment">When <span class="math inline">\(X_1\)</span> is the only predictor and a continuous variable, linear regression fits a straight line to the data</span></p>
-</section>
-<section id="linear-regression-1" class="slide level2">
-<h2>Linear regression</h2>
-<p>Let’s fit a model to explore the relationship between penguin’s body mass and flipper length.</p>
 
-<img data-src="part-2-slides_files/figure-revealjs/linear-reg-scatter-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="linear-regression-2" class="slide level2">
-<h2>Linear regression</h2>
-<p>Let’s fit a model to explore the relationship between penguin’s body mass and flipper length.</p>
-<p><span class="fragment">Here, the outcome is <span class="answer">body mass</span> and the predictor is <span class="answer">flipper length</span>:</span></p>
-<p><span class="fragment">Body mass = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta \times\)</span> flipper length</span></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment"><span class="math inline">\(\alpha\)</span> = intercept</li>
-<li class="fragment">Predicted outcome where predictors = 0</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment"><span class="math inline">\(\beta\)</span> = slope</li>
-<li class="fragment">Expected change in outcome for a unit increase in predictor</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="linear-regression-3" class="slide level2">
-<h2>Linear regression</h2>
-<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="tabwid"><style>.cl-dc7405c2{}.cl-dc59c7ac{font-family:'Arial';font-size:60pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-dc59c7d4{font-family:'Arial';font-size:48pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-dc629b3e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dc629b52{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-dc629b5c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.2;background-color:transparent;}.cl-dc629b66{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.2;background-color:transparent;}.cl-dc62fdd6{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fdea{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fdf4{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fdfe{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe08{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe12{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe1c{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe1d{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe26{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe30{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe31{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-dc62fe3a{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-dc7405c2"><thead><tr style="overflow-wrap:break-word;"><th class="cl-dc62fdd6"><p class="cl-dc629b3e"><span class="cl-dc59c7ac"></span></p></th><th class="cl-dc62fdea"><p class="cl-dc629b52"><span class="cl-dc59c7ac">Coefficient estimates</span></p></th><th class="cl-dc62fdf4"><p class="cl-dc629b52"><span class="cl-dc59c7ac">95% confidence </span><br><span class="cl-dc59c7ac">interval</span></p></th><th class="cl-dc62fdfe"><p class="cl-dc629b52"><span class="cl-dc59c7ac">p-value</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-dc62fe08"><p class="cl-dc629b5c"><span class="cl-dc59c7d4">Intercept</span></p></td><td class="cl-dc62fe12"><p class="cl-dc629b66"><span class="cl-dc59c7d4">-5,780.83</span></p></td><td class="cl-dc62fe1c"><p class="cl-dc629b66"><span class="cl-dc59c7d4">[-6382.36, -5179.3]</span></p></td><td class="cl-dc62fe1d"><p class="cl-dc629b66"><span class="cl-dc59c7d4">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-dc62fe26"><p class="cl-dc629b5c"><span class="cl-dc59c7d4">Flipper length</span></p></td><td class="cl-dc62fe30"><p class="cl-dc629b66"><span class="cl-dc59c7d4">49.69</span></p></td><td class="cl-dc62fe31"><p class="cl-dc629b66"><span class="cl-dc59c7d4">[46.7, 52.67]</span></p></td><td class="cl-dc62fe3a"><p class="cl-dc629b66"><span class="cl-dc59c7d4">&lt;0.001</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-</section>
-<section id="linear-regression-4" class="slide level2">
-<h2>Linear regression</h2>
-<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/line-of-best-fit-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="linear-regression-5" class="slide level2">
-<h2>Linear regression</h2>
-<p>Body mass = -5780.83 + 49.69 <span class="math inline">\(\times\)</span> flipper length</p>
-<ul>
-<li class="fragment">Intercept = -5780.83</li>
-</ul>
-<p><span class="fragment">Penguins with flipper length of 0mm had a predicted body mass of <span class="answer">-5780.83g</span></span></p>
-<ul>
-<li class="fragment">Slope = 49.69</li>
-</ul>
-<p><span class="fragment">For every unit increase in flipper length (1mm), body mass was expected to increase by <span class="answer">49.69g</span></span></p>
-</section>
-<section id="linear-regression-6" class="slide level2">
-<h2>Linear regression</h2>
-<p>Confidence intervals give a range of values the coefficients are <span class="answer">compatible with.</span></p>
-<p><span class="fragment">In this sample, the average increase in body mass for every 1mm increase in flipper length was <span class="answer">49.69g</span></span></p>
-<p><span class="fragment">But at the <span class="answer">population level</span>, we are 95% confident that this increase could lie between <span class="answer">46.7g</span> and <span class="answer">52.67g</span></span></p>
-</section>
-<section id="linear-regression-7" class="slide level2">
-<h2>Linear regression</h2>
-<p>p-values test the null hypothesis of <span class="answer">no association</span>: <span class="math inline">\(\beta\)</span> = 0</p>
-<p><span class="fragment">These p-values are both too small to be printed in their entirety, therefore the coefficients are <span class="answer">statistically significant</span></span></p>
-<p><span class="fragment">For intercept, this has no real use.</span></p>
-<p><span class="fragment">For the slope, we have shown a <span class="answer">significant association</span> between flipper length and body mass</span></p>
-</section>
-<section id="multiple-regression" class="slide level2">
-<h2>Multiple regression</h2>
-<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
-<p><span class="fragment">Confounders = background variables that are related to both the outcome and predictor variable(s)</span></p>
-<p><span class="fragment">Confounders can <span class="answer">create</span> false associations or <span class="answer">hide</span> true associations if not properly accounted for</span></p>
-</section>
-<section id="multiple-regression-1" class="slide level2">
-<h2>Multiple regression</h2>
-<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
-
-<img data-src="part-2-slides_files/figure-revealjs/confounder1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="multiple-regression-2" class="slide level2">
-<h2>Multiple regression</h2>
-<p>One of the benefits of using a regression is that we can take account of <span class="answer">confounders</span></p>
-
-<img data-src="part-2-slides_files/figure-revealjs/confounder2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="multiple-regression-3" class="slide level2">
-<h2>Multiple regression</h2>
-<p>Let’s extend the previous model to account for the sex of penguins:</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/flipper-sex-hist-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="multiple-regression-4" class="slide level2">
-<h2>Multiple regression</h2>
-<p>Let’s extend the previous model to account for the sex of penguins:</p>
-<p><span class="fragment">Body mass = <span class="math inline">\(\alpha\)</span> + <span class="math inline">\(\beta_1 \times\)</span> flipper length + <span class="math inline">\(\beta_2 \times\)</span> male</span></p>
-<p><span class="fragment">Categorical variables are added as <span class="answer">dummy variables</span></span></p>
-<div class="columns">
-<div class="column fragment" style="width:50%;">
-<p><span class="answer">male = 1</span> if sex = male</p>
-</div><div class="column fragment" style="width:50%;">
-<p><span class="answer">male = 0</span> if sex = female</p>
-</div>
-</div>
-</section>
-<section id="multiple-regression-5" class="slide level2">
-<h2>Multiple regression</h2>
-<p>Body mass = -5410.3 + 46.98 <span class="math inline">\(\times\)</span> flipper length + 347.85 <span class="math inline">\(\times\)</span> male</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="tabwid"><style>.cl-deaa5382{}.cl-de91699e{font-family:'Arial';font-size:60pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-de9169bc{font-family:'Arial';font-size:48pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(34, 34, 34, 1.00);background-color:transparent;}.cl-de9ac520{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-de9ac53e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-de9ac548{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.6;background-color:transparent;}.cl-de9ac549{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1.6;background-color:transparent;}.cl-de9bdfa0{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfbe{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfbf{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfc8{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfd2{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfdc{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdfe6{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdff0{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdffa{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9bdffb{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be004{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be00e{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be00f{width:0.787in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be018{width:1.181in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be022{width:6.815in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-de9be023{width:1.969in;background-color:rgba(253, 221, 182, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-deaa5382"><thead><tr style="overflow-wrap:break-word;"><th class="cl-de9bdfa0"><p class="cl-de9ac520"><span class="cl-de91699e"></span></p></th><th class="cl-de9bdfbe"><p class="cl-de9ac53e"><span class="cl-de91699e">Coefficient estimates</span></p></th><th class="cl-de9bdfbf"><p class="cl-de9ac53e"><span class="cl-de91699e">95% confidence </span><br><span class="cl-de91699e">interval</span></p></th><th class="cl-de9bdfc8"><p class="cl-de9ac53e"><span class="cl-de91699e">p-value</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-de9bdfd2"><p class="cl-de9ac548"><span class="cl-de9169bc">Intercept</span></p></td><td class="cl-de9bdfdc"><p class="cl-de9ac549"><span class="cl-de9169bc">-5,410.30</span></p></td><td class="cl-de9bdfe6"><p class="cl-de9ac549"><span class="cl-de9169bc">[-5972.52, -4848.09]</span></p></td><td class="cl-de9bdff0"><p class="cl-de9ac549"><span class="cl-de9169bc">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-de9bdffa"><p class="cl-de9ac548"><span class="cl-de9169bc">Flipper length</span></p></td><td class="cl-de9bdffb"><p class="cl-de9ac549"><span class="cl-de9169bc">46.98</span></p></td><td class="cl-de9be004"><p class="cl-de9ac549"><span class="cl-de9169bc">[44.15, 49.82]</span></p></td><td class="cl-de9be00e"><p class="cl-de9ac549"><span class="cl-de9169bc">&lt;0.001</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-de9be00f"><p class="cl-de9ac548"><span class="cl-de9169bc">Male</span></p></td><td class="cl-de9be018"><p class="cl-de9ac549"><span class="cl-de9169bc">347.85</span></p></td><td class="cl-de9be022"><p class="cl-de9ac549"><span class="cl-de9169bc">[268.49, 427.21]</span></p></td><td class="cl-de9be023"><p class="cl-de9ac549"><span class="cl-de9169bc">&lt;0.001</span></p></td></tr></tbody></table></div>
-</div>
-</div>
-</section>
-<section id="multiple-regression-6" class="slide level2">
-<h2>Multiple regression</h2>
-<p>Body mass = -5410.3 + 46.98 <span class="math inline">\(\times\)</span> flipper length + 347.85 <span class="math inline">\(\times\)</span> male</p>
-<p><span class="fragment">Coefficients now represent expected change in outcome for unit increase in predictor <span class="answer fragment">after adjusting for other predictors</span></span></p>
-<p><span class="fragment">There is a <span class="answer">significant positive</span> association between flipper length and body mass</span> <span class="fragment">after adjusting for differences between sexes</span></p>
-</section>
-<section id="model-evaluation" class="slide level2">
-<h2>Model evaluation</h2>
-<p>There are going to be many potential models to answer our research question…<span class="fragment">how do we choose the best one??</span></p>
-<ul>
-<li class="fragment">Consider the <span class="answer">intention</span> of the model</li>
-<li class="fragment">Use <span class="answer">common sense</span> and prior knowledge</li>
-<li class="fragment">Aim to find the most <span class="answer">parsimonious</span></li>
-</ul>
-</section>
-<section id="model-evaluation-1" class="slide level2">
-<h2>Model evaluation</h2>
-<p>Model evaluation can involve comparisons of model fitting statistics.</p>
-<p><span class="fragment"><span class="answer">R-squared</span> value: proportion of the outcome explained by the model</span></p>
-<p><span class="fragment"><span class="answer">Adjusted R-squared</span> penalises the R-squared value based on the number of predictors included in the model</span></p>
-</section>
-<section id="model-evaluation-2" class="slide level2">
-<h2>Model evaluation</h2>
-<p>Adjusted R-squared value for flipper-only model: <span class="answer fragment">0.76</span></p>
-<p><span class="fragment">Adjusted R-squared value for flipper + sex model: <span class="answer fragment">0.8</span></span></p>
-<p><span class="fragment">Adding sex still increased the adjusted R-squared value, indicating its addition was <span class="answer">worthwhile</span></span></p>
-</section>
-<section id="model-evaluation-3" class="slide level2">
-<h2>Model evaluation</h2>
-<p><span class="answer">Prediction metrics</span> are another family of useful model evaluation tools</p>
-<p><span class="fragment">They compare the observed outcome with the fitted model predictions.</span></p>
-<ul>
-<li class="fragment">RMSE: root mean squared error <span class="fragment"><span class="math inline">\(\sqrt{\frac{1}{n}\sum{(y_i - \hat{y}_i)^2}}\)</span></span></li>
-<li class="fragment">MAE: mean absolute error <span class="fragment"><span class="math inline">\(\frac{1}{n}\sum|y_i - \hat{y}_i|\)</span></span></li>
-</ul>
-<p><span class="fragment">Useful as they provide a measure of fit <span class="answer">in context</span></span></p>
-</section>
-<section id="model-evaluation-4" class="slide level2">
-<h2>Model evaluation</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Model</th>
-<th style="text-align: right;">RMSE</th>
-<th style="text-align: right;">MAE</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Flipper only</td>
-<td style="text-align: right;">393.12</td>
-<td style="text-align: right;">313.00</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Flipper + sex</td>
-<td style="text-align: right;">354.28</td>
-<td style="text-align: right;">283.25</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p><span class="fragment">Adding sex into the model <span class="answer">reduced</span> performance metrics. This means it <span class="answer">improved</span> prediction.</span></p>
-<p><span class="fragment">If both prediction errors are large (in context of the problem), consider trying to improve them in some way</span></p>
-</section>
-<section id="model-diagnostics" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Linear regression is a <span class="answer">parametric</span> method<span class="fragment">: it has assumptions that must be checked</span></p>
-<ul>
-<li class="fragment"><strong>L</strong>inearity: <span class="fragment">can present the outcome as a linear combination of predictors</span></li>
-<li class="fragment"><strong>I</strong>ndependent predictors: <span class="fragment">no multicollinearity present</span></li>
-<li class="fragment"><strong>N</strong>ormally distributed residuals</li>
-<li class="fragment"><strong>E</strong>qual variance of residuals <span class="fragment">AKA homoskedasticity</span></li>
-</ul>
-</section>
-<section id="model-diagnistics" class="slide level2">
-<h2>Model diagnistics</h2>
-<p>Predictors must be <span class="answer">independent</span> of one another.</p>
-<p><span class="fragment">Correlation can be accounted for to some degree, and dependency can exist between &gt; 2 variables</span></p>
-<p><span class="fragment"><span class="answer">Variance inflation factor</span> (VIF): Measure of multicollinearity</span></p>
-<p><span class="fragment"><span class="math inline">\(VIF_i = \frac{1}{1 - R_i^2}\)</span> for each predictor</span></p>
-</section>
-<section id="model-diagnostics-1" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>VIF = 10 → <span class="math inline">\(R^2 = 0.9\)</span><span class="fragment">: 90% of the variation in that predictor is explained by other predictors</span></p>
-<p><span class="fragment">Multicollinearity leads to unstable coefficient estimates and invalid inferential statistics</span></p>
-<p><span class="fragment">When there is evidence of multicollinearity (VIF &gt; 5-ish), <span class="answer">remove the offending variable(s)!</span></span></p>
-</section>
-<section id="model-diagnostics-2" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Residuals = model error terms: <span class="fragment">observed outcome - predicted outcome</span></p>
-<p><span class="fragment">Used to check final three assumptions:</span></p>
-<ul>
-<li class="fragment">Linearity: plot residuals against each predictor</li>
-<li class="fragment">Normal distribution: plot a histogram of residuals</li>
-<li class="fragment">Equal variance: plot residuals against the predicted outcome</li>
-</ul>
-</section>
-<section id="model-diagnostics-3" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Linearity: check residual vs.&nbsp;predictor plots for patterns</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/resid-flipper-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="model-diagnostics-4" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Linearity: check residual vs.&nbsp;predictor plots for patterns</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/resid-sex-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="model-diagnostics-5" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Normally distribution residuals</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/residual-hist-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="model-diagnostics-6" class="slide level2">
-<h2>Model diagnostics</h2>
-<p>Homoskedasticity: check residual vs.&nbsp;prediction plots for patterns</p>
-
-<img data-src="part-2-slides_files/figure-revealjs/resid-pred-plot-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="generalised-linear-models" class="slide level2">
-<h2>Generalised linear models</h2>
-<p>When the outcome variable is not continuous, another regression model must be chosen.</p>
-<p><span class="fragment">Estimated coefficients relate to a <span class="answer">transformed</span> version of the outcome.</span></p>
-<p><span class="fragment">For example, a fitted poisson model (of counts) looks like this:</span></p>
-<p><span class="fragment"><span class="math inline">\(log(Y) = \alpha + \beta_1X_1 + \beta_2X_2 + \dots\)</span></span></p>
-<p><span class="fragment">Coefficients (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>) relate to the <span class="answer">log</span> of the outcome.</span></p>
-</section>
-<section id="generalised-linear-models-1" class="slide level2">
-<h2>Generalised linear models</h2>
-<p>To interpret coefficients, they must be <span class="answer">back-transformed</span> to relate to the original outcome.</p>
-<p><span class="fragment">For example, in the poisson case, we apply the <span class="answer">exponential function</span> (the opposite of the log) to the equation</span></p>
-<p><span class="fragment">This makes interpretation of other regression models slightly more difficult <span class="answer">but not impossible!</span></span></p>
-</section>
-<section id="generalised-linear-models-2" class="slide level2">
-<h2>Generalised linear models</h2>
-<p>Statistical models are based on probabilistic assumptions.</p>
-<p><span class="fragment answer">These assumptions must be true for results for be valid</span></p>
-<p><span class="fragment">Different regression types have different assumptions but all share these two:</span></p>
-<p><span class="fragment">1. Observations must be <span class="answer">independent</span> of one another</span></p>
-<p><span class="fragment">2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a <span class="answer">linear equation</span></span></p>
-</section>
-<section id="beyond-glms" class="slide level2">
-<h2>Beyond GLMs</h2>
-<p>When either of these assumptions are not valid, we must consider <span class="answer">other models</span></p>
-<p><span class="fragment"><span class="answer">Mixed models</span> (or GLMM, multilevel models, random effect models) account for dependency structures in data:</span></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Spatial data</li>
-<li class="fragment">Temporal data</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li class="fragment">Data on clusters (e.g.&nbsp;households)</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="beyond-glms-1" class="slide level2">
-<h2>Beyond GLMs</h2>
-<p>When either of these assumptions are not valid, we must consider <span class="answer">other models</span></p>
-<p><span class="fragment"><span class="answer">Additive models</span> (GAMs) are useful when modelling non-linear relationships</span></p>
-<p><span class="fragment">Allow smooth functions of predictors, <span class="answer"><span class="math inline">\(s(X)\)</span></span>, to be entered into a model:</span></p>
-<p><span class="fragment">g(Y) = <span class="math inline">\(\alpha + \beta_1X_1 + \dots + s(X_j)\)</span></span></p>
-</section></section>
-<section>
-<section id="section-10" class="title-slide slide level1 chapter-theme center">
-<h1></h1>
-<div class="r-fit-text">
-<p>Final thoughts</p>
-</div>
-</section>
-<section id="final-thoughts" class="slide level2">
-<h2>Final thoughts</h2>
-<ul>
-<li class="fragment"><p>Statistics is a <span class="answer">huge</span> topic</p></li>
-<li class="fragment"><p>Do not underestimate planning stage: research questions, biases and exploratory work</p></li>
-<li class="fragment"><p>Complex analysis <span class="answer">can not</span> overcome bad data</p></li>
-<li class="fragment"><p>Do not make inferential statements about sample estimates and do not make <span class="answer">causal</span> statements unless performing causal analysis</p></li>
-</ul>
-</section>
-<section id="final-thoughts-1" class="slide level2">
-<h2>Final thoughts</h2>
-<ul>
-<li class="fragment"><p>Choose analysis methods based on the <span class="answer">research question</span> rather than the available data</p></li>
-<li class="fragment"><p>Models should be built to address this question and using common sense/background knowledge <span class="answer">not based on p-values</span></p></li>
-<li class="fragment"><p>If a method requires assumptions to be met, check these <span class="answer">before</span> communicating results</p></li>
-</ul>
-</section>
-<section id="final-thoughts-2" class="slide level2">
-<h2>Final thoughts</h2>
-<ul>
-<li class="fragment"><p>Many <span class="answer">free</span> statistical software packages available</p></li>
-<li class="fragment"><p><span class="answer">R</span> is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources</p></li>
-<li class="fragment"><p><span class="answer">Python</span> is a favourite of data scientists and has a rapidly growing community</p></li>
-<li class="fragment"><p><span class="answer">Excel</span> will do basic stats but is limited and prone to issues!</p></li>
-</ul>
-</section></section>
-<section id="section-11" class="title-slide slide level1 chapter-theme center">
-<h1></h1>
-<div class="r-fit-text">
-<p>Thank you for listening!</p>
-</div>
-
-<div class="quarto-auto-generated-content">
+<img data-src="img/only_connect_figs.png" class="quarto-figure quarto-figure-center r-stretch"><div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

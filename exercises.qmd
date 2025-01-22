@@ -15,7 +15,8 @@ format:
 #| label: setup
 #| include: false
 
-pacman::p_load(tidyverse, flextable, kableExtra, ggforce)
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce, palmerpenguins, 
+               car, Metrics)
 
 
 ```
@@ -57,3 +58,44 @@ Comment on the way in which these results have been presented. Are the results c
 ![](img/only_connect_table.png)
 
 ![](img/only_connect_figs.png)
+
+
+
+## Exercise 4
+Below are outputs from 4 models aiming to answer the research question: was body mass of penguins related to flipper length. 
+
+Using model comparisons and checking the diagnostic tests, which model would you choose to use to answer this question and what would your answer be?
+
+```{r}
+#| label: models
+
+lm_flipper <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
+lm_flipper_sex <- lm(body_mass_g ~ flipper_length_mm + sex, data = penguins)
+lm_flipper_sex_bill <- lm(body_mass_g ~ flipper_length_mm + sex + bill_depth_mm, data = penguins)
+lm_bill_sex<- lm(body_mass_g ~ sex + bill_depth_mm, data = penguins)
+
+model_output <- function(model){
+  broom::tidy(model, conf.int = T) %>% 
+    mutate(across(is.numeric, ~round(., 2)),
+           con.int = paste0("[", conf.low, ", ", conf.high, "]"),
+           pvalue = ifelse(p.value == 0, "<0.01", p.value)) %>% 
+    select(term, estimate, con.int, pvalue) %>% 
+    kable(col.names = c("", "Coefficient", "95% CI", "p"))
+}
+
+models <- list(lm_flipper, lm_flipper_sex, lm_flipper_sex_bill, lm_bill_sex)
+
+map(models, model_output)
+
+evaluations <- function(model) {
+  tibble(terms = attr(model$model, "term.labels"),
+         adj.r = summary(model)$adj.r.squared,
+         rmse = rmse(model$model$body_mass_g, predict(model)),
+         mae = mae(model$model$body_mass_g, predict(model))) %>% 
+    kable()
+}
+map(models, evaluations)
+
+```
+
+

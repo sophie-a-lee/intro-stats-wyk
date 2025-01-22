@@ -1,0 +1,626 @@
+---
+title: "Introduction to Statistics"
+subtitle: "Part 3: Inferential statistics and modelling" 
+author: Sophie Lee
+format: 
+  revealjs:
+    incremental: true
+    slide-number: true
+    theme: custom.scss
+    width: 1920
+    height: 1080
+knitr:
+  opts_chunk: 
+    fig.align: center
+    message: false
+    dev: png
+    dev.args: { bg: "transparent" }
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, flextable, kableExtra, ggforce, palmerpenguins,
+               ggdag)
+
+# Theme for output
+theme_stats_thinking <- function() {
+  theme_minimal() +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 15),
+        axis.line = element_line(colour = "grey30"),
+        panel.grid.major = element_line(colour = "grey50"),
+        panel.grid.minor = element_line(colour = "grey75"),
+        panel.background = element_blank(),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 12))
+}
+```
+
+
+
+
+#  {.chapter-theme}
+
+::: r-fit-text
+Statistical modelling
+:::
+
+## Inferential statistics
+Now we know how to [interpret]{.answer} and [communicate]{.answer} inferential statistics...[how do we calculate them?]{.fragment}
+
+[Almost all parameters that we can estimate from a sample can be presented with inferential statistics.]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- Mean
+- Proportion/percentage
+- Correlation coefficients
+:::
+:::{.column wideth="50%"}
+- Difference in means
+- Difference in proportions
+- [Model coefficients]{.answer}
+:::
+:::
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+[Statistical models explain these processes using a [mathematical equation:]{.answer}]{.fragment}
+
+[$g$(Y) = $\alpha$ + $\beta_1X_1$ + $\dots$ + $\beta_nX_n$]{.fragment}
+
+[Model equations generally consist of]{.fragment} 
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$([Y]{.answer}) = $\alpha$ + $\beta_1X_1$ + $\dots$ + $\beta_nX_n$
+
+Model equations generally consist of [outcome(s)]{.answer},
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$(Y) = $\alpha$ + $\beta_1$[$X_1$]{.answer} + $\dots$ + $\beta_n$[$X_n$]{.answer}
+
+Model equations generally consist of outcome(s), [predictor(s)]{.answer} 
+
+## Statistical models
+[Models]{.answer} aim to explain complex process in a simple way.
+
+Statistical models explain these processes using a [mathematical equation:]{.answer}
+
+$g$(Y) = [$\alpha$]{.answer} + [$\beta_1$]{.answer}$X_1$ + $\dots$ + [$\beta_n$]{.answer}$X_n$
+
+Model equations generally consist of outcome(s), predictor(s) and [coefficients]{.answer}
+
+## Statistical vs machine learning models
+::: columns
+:::{.column width="60%"}
+Machine learning models (MLM) are very powerful when making [predictions]{.answer}.
+
+[However, the way they get these predictions is often shrouded in mystery]{.fragment fragment-index=1}
+
+[Models are not [interpretable]{.answer}]{.fragment fragment-index=2}
+:::
+:::{.column width="40%" .fragment fragment-index=1}
+![](img/mystery.png)
+:::
+:::
+
+## Statistical vs machine learning models
+::: columns
+:::{.column width="60%"}
+Statistical models are based on [probabilistic assumptions]{.answer} 
+
+[Makes them stricter but [interpretable]{.answer}]{.fragment}
+
+[Statistical models are better at [explaining]{.answer} and [understanding]{.answer} processes]{.fragment}
+:::
+:::{.column width="40%"}
+![](img/boxing.jpg)
+:::
+:::
+
+## Regression models
+Common statistical model are [regression models]{.answer}.
+
+[Also known as [linear models,]{.answer .fragment} [generalised linear models]{.answer .fragment} [or GLMs]{.answer .fragment}]{.fragment}
+
+[Choice of regression type depends on the [type]{.answer} of outcome variable(s).]{.fragment}
+
+[All aim to fit a linear equation to a [transformation]{.answer} of the outcome ($g(Y)$)]{.fragment}
+
+## Regression models
+```{r}
+#| label: regression-type-table
+
+tibble(outcome_type = c("Continuous", "Count/rate", "Binary", "Ordinal",
+                        "Nominal"),
+       reg_type = c("Linear", "Poisson", "Logistic", "Ordinal logistic",
+                    "Multinomial"),
+       transformation = c("Identity", "Log", rep("Logit", 3))) %>% 
+  kable(col.names = c("Outcome type", "Regression", "Transformation"))
+```
+
+## Linear regression
+The simplest statistical modelling approach is a linear model.
+
+[This is because coefficient estimates are related to the outcome itself:]{.fragment}
+
+[$Y = \alpha + \beta_1X_1 + \dots$]{.fragment}
+
+[When $X_1$ is the only predictor and a continuous variable, linear regression fits a straight line to the data]{.fragment}
+
+## Linear regression
+Let's fit a model to explore the relationship between penguin's body mass and flipper length.
+
+```{r}
+#| label: linear-reg-scatter
+
+body_flipper_hist <- ggplot(data = na.omit(penguins)) + 
+  geom_point(aes(x = flipper_length_mm, y = body_mass_g)) +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)") +
+  theme_stats_thinking()
+
+body_flipper_hist
+```
+
+## Linear regression
+Let's fit a model to explore the relationship between penguin's body mass and flipper length.
+
+[Here, the outcome is [body mass]{.answer} and the predictor is [flipper length]{.answer}:]{.fragment}
+
+[Body mass = $\alpha$ + $\beta \times$ flipper length]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- $\alpha$ = intercept
+- Predicted outcome where predictors = 0
+:::
+:::{.column width="50%"}
+- $\beta$ = slope
+- Expected change in outcome for a unit increase in predictor
+:::
+:::
+
+## Linear regression
+```{r}
+#| label: simple-lin-reg
+
+lm_flipper <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
+```
+
+
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+
+```{r}
+#| label: simple-reg-output
+
+lm_flipper_output <- broom::tidy(lm_flipper, conf.int = TRUE) %>% 
+  mutate(across(where(is.numeric), ~round(., 2)), 
+         term2 = c("Intercept", "Flipper length"),
+         conf.int = paste0("[", conf.low, ", ", conf.high, "]"),
+         pvalue = ifelse(p.value == 0, "<0.001", p.value)) 
+
+
+lm_flipper_output %>% 
+  select(term2, estimate, conf.int, pvalue) %>% 
+  flextable() %>% 
+  set_header_labels(term2 = "", 
+                    estimate = "Coefficient estimates", 
+                    conf.int = "95% confidence \ninterval",
+                    pvalue = "p-value") %>% 
+  bold(part = "header") %>% 
+  bg(part = "all", bg = "#fdddb6") %>% 
+  color(part = "all", color = "#222222") %>% 
+  fontsize(size = 60, part = "header") %>% 
+  fontsize(size = 48, part = "body") %>% 
+  autofit() %>% 
+  line_spacing(space = 1.2, part = "body") %>% 
+  align(j = 2:4, align = "right", part = "all") %>% 
+  width(j = 1, width = 2, unit = "cm") %>% 
+  width(j = 2, width = 3, unit = "cm") %>% 
+  width(j = 4, width = 5, unit = "cm") 
+```
+
+## Linear regression
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+
+```{r}
+#| label: line-of-best-fit
+
+body_flipper_hist +
+  geom_abline(intercept = coef(lm_flipper)[1],
+              slope = coef(lm_flipper)[2], colour = "#9a3416", lwd = 2)
+```
+
+## Linear regression
+Body mass = `{r} round(coef(lm_flipper)[1], 2)` + `{r} round(coef(lm_flipper)[2], 2)` $\times$ flipper length
+ 
+ - Intercept = `{r} round(coef(lm_flipper)[1], 2)`
+ 
+ [Penguins with flipper length of 0mm had a predicted body mass of [`{r} round(coef(lm_flipper)[1], 2)`g]{.answer}]{.fragment}
+
+- Slope = `{r} round(coef(lm_flipper)[2], 2)`
+
+[For every unit increase in flipper length (1mm), body mass was expected to increase by [`{r} round(coef(lm_flipper)[2], 2)`g]{.answer}]{.fragment}
+
+## Linear regression
+Confidence intervals give a range of values the coefficients are [compatible with.]{.answer}
+
+[In this sample, the average increase in body mass for every 1mm increase in flipper length was [`{r} round(coef(lm_flipper)[2], 2)`g]{.answer}]{.fragment}
+
+[But at the [population level]{.answer}, we are 95% confident that this increase could lie between [`{r} lm_flipper_output$conf.low[2]`g]{.answer} and [`{r} lm_flipper_output$conf.high[2]`g]{.answer}]{.fragment}
+
+## Linear regression
+p-values test the null hypothesis of [no association]{.answer}: $\beta$ = 0
+
+[These p-values are both too small to be printed in their entirety, therefore the coefficients are [statistically significant]{.answer}]{.fragment}
+
+[For intercept, this has no real use.]{.fragment} 
+
+[For the slope, we have shown a [significant association]{.answer} between flipper length and body mass]{.fragment}
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+[Confounders = background variables that are related to both the outcome and predictor variable(s)]{.fragment}
+
+[Confounders can [create]{.answer} false associations or [hide]{.answer} true associations if not properly accounted for]{.fragment}
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+```{r}
+#| label: confounder1
+
+coords_dag <- list(x = c(cancer = 2,
+                         smoking = 1,
+                         coffee = 0),
+                   y = c(cancer = 0,
+                         smoking = 1,
+                         coffee = 0))
+
+dagify(cancer ~ coffee,
+       outcome = "cancer",
+       exposure = "coffee",
+       labels = c("cancer" = "Lung cancer", 
+                  "coffee" = "Coffee"),
+       coords = coords_dag) %>% 
+  ggdag(text = FALSE, use_labels = "label") +
+  theme_dag()
+```
+
+
+## Multiple regression
+One of the benefits of using a regression is that we can take account of [confounders]{.answer}
+
+
+```{r}
+#| label: confounder2
+
+confounder_triangle(x = "Coffee", y = "Lung cancer", z = "Smoking") %>%
+  ggdag(text = FALSE, use_labels = "label") +
+  theme_dag()
+```
+
+## Multiple regression
+Let's extend the previous model to account for the sex of penguins:
+
+```{r}
+#| label: flipper-sex-hist
+
+ggplot(data = na.omit(penguins)) +
+  geom_point(aes(x = flipper_length_mm, y = body_mass_g,
+                 colour = sex)) + 
+  scale_colour_brewer(name = "Sex", palette = "Dark2") +
+  labs(x = "Flipper length (mm)", y = "Body mass (g)") +
+  theme_stats_thinking()
+```
+
+## Multiple regression
+Let's extend the previous model to account for the sex of penguins:
+
+[Body mass = $\alpha$ + $\beta_1 \times$ flipper length + $\beta_2 \times$ male]{.fragment}
+
+[Categorical variables are added as [dummy variables]{.answer}]{.fragment}
+
+::: columns
+:::{.column width="50%" .fragment}
+[male = 1]{.answer} if sex = male 
+:::
+:::{.column width="50%" .fragment}
+[male = 0]{.answer} if sex = female
+:::
+:::
+
+```{r}
+#| label: lm-flipper-sex
+#| out-width: "1800px"
+
+lm_flipper_sex <- lm(body_mass_g ~ flipper_length_mm + sex,
+                     data = penguins)
+
+lm_flipper_sex_tidy <- broom::tidy(lm_flipper_sex, conf.int = TRUE) %>% 
+  mutate(across(where(is.numeric), ~round(., 2)),
+         term2 = c("Intercept", "Flipper length", "Male"),
+         conf.int = paste0("[", conf.low, ", ", conf.high, "]"),
+         pval = ifelse(p.value == 0, "<0.001", p.value))
+```
+
+## Multiple regression
+Body mass = `{r} lm_flipper_sex_tidy$estimate[1]` + `{r} lm_flipper_sex_tidy$estimate[2]` $\times$ flipper length + `{r} lm_flipper_sex_tidy$estimate[3]` $\times$ male
+
+```{r}
+#| label: multiple-reg-table
+
+lm_flipper_sex_tidy %>% 
+  select(term2, estimate, conf.int, pval) %>% 
+  flextable() %>% 
+  set_header_labels(term2 = "", 
+                    estimate = "Coefficient estimates", 
+                    conf.int = "95% confidence \ninterval",
+                    pval = "p-value") %>% 
+  bold(part = "header") %>% 
+  bg(part = "all", bg = "#fdddb6") %>% 
+  color(part = "all", color = "#222222") %>% 
+  fontsize(size = 60, part = "header") %>% 
+  fontsize(size = 48, part = "body") %>% 
+  autofit() %>% 
+  line_spacing(space = 1.6, part = "body") %>% 
+  align(j = 2:4, align = "right", part = "all") %>% 
+  width(j = 1, width = 2, unit = "cm") %>% 
+  width(j = 2, width = 3, unit = "cm") %>% 
+  width(j = 4, width = 5, unit = "cm") 
+  
+```
+
+## Multiple regression
+Body mass = `{r} lm_flipper_sex_tidy$estimate[1]` + `{r} lm_flipper_sex_tidy$estimate[2]` $\times$ flipper length + `{r} lm_flipper_sex_tidy$estimate[3]` $\times$ male
+
+[Coefficients now represent expected change in outcome for unit increase in predictor [after adjusting for other predictors]{.answer .fragment}]{.fragment}
+
+[There is a [significant positive]{.answer} association between flipper length and body mass]{.fragment} [after adjusting for differences between sexes]{.fragment}
+
+## Model evaluation
+There are going to be many potential models to answer our research question...[how do we choose the best one??]{.fragment}
+
+- Consider the [intention]{.answer} of the model
+- Use [common sense]{.answer} and prior knowledge
+- Aim to find the most [parsimonious]{.answer}
+
+## Model evaluation
+Model evaluation can involve comparisons of model fitting statistics.
+
+[[R-squared]{.answer} value: proportion of the outcome explained by the model]{.fragment}
+
+[[Adjusted R-squared]{.answer} penalises the R-squared value based on the number of predictors included in the model]{.fragment}
+
+
+
+## Model evaluation
+Adjusted R-squared value for flipper-only model: [`{r} round(summary(lm_flipper)$adj.r.squared, 2)`]{.answer .fragment}
+
+[Adjusted R-squared value for flipper + sex model: [`{r} round(summary(lm_flipper_sex)$adj.r.squared, 2)`]{.answer .fragment}]{.fragment}
+
+[Adding sex still increased the adjusted R-squared value, indicating its addition was [worthwhile]{.answer}]{.fragment}
+
+## Model evaluation
+[Prediction metrics]{.answer} are another family of useful model evaluation tools
+
+[They compare the observed outcome with the fitted model predictions.]{.fragment}
+
+- RMSE: root mean squared error [$\sqrt{\frac{1}{n}\sum{(y_i - \hat{y}_i)^2}}$]{.fragment}
+- MAE: mean absolute error [$\frac{1}{n}\sum|y_i - \hat{y}_i|$]{.fragment}
+
+[Useful as they provide a measure of fit [in context]{.answer}]{.fragment}
+
+## Model evaluation
+```{r}
+#| label: prediction-metrics
+
+tibble(Model = c("Flipper only", "Flipper + sex"),
+       RMSE = c(Metrics::rmse(lm_flipper$model$body_mass_g,
+                              predict(lm_flipper)),
+                Metrics::rmse(lm_flipper_sex$model$body_mass_g,
+                              predict(lm_flipper_sex))),
+       MAE = c(Metrics::mae(lm_flipper$model$body_mass_g,
+                            predict(lm_flipper)),
+               Metrics::mae(lm_flipper_sex$model$body_mass_g,
+                            predict(lm_flipper_sex)))) %>% 
+  mutate(across(where(is.numeric), ~round(., 2))) %>% 
+  kable()
+```
+
+[Adding sex into the model [reduced]{.answer} performance metrics. This means  it [improved]{.answer} prediction.]{.fragment}
+
+[If both prediction errors are large (in context of the problem), consider trying to improve them in some way]{.fragment}
+
+## Model diagnostics
+Linear regression is a [parametric]{.answer} method[: it has assumptions that must be checked]{.fragment}
+
+- **L**inearity: [can present the outcome as a linear combination of predictors]{.fragment}
+- **I**ndependent predictors: [no multicollinearity present]{.fragment}
+- **N**ormally distributed residuals
+- **E**qual variance of residuals [AKA homoskedasticity]{.fragment}
+
+## Model diagnistics
+Predictors must be [independent]{.answer} of one another.
+
+[Correlation can be accounted for to some degree, and dependency can exist between > 2 variables]{.fragment}
+
+[[Variance inflation factor]{.answer} (VIF): Measure of multicollinearity]{.fragment}
+
+[$VIF_i = \frac{1}{1 - R_i^2}$ for each predictor]{.fragment}
+
+## Model diagnostics
+VIF = 10 &rarr; $R^2 = 0.9$[: 90% of the variation in that predictor is explained by other predictors]{.fragment}
+
+[Multicollinearity leads to unstable coefficient estimates and invalid inferential statistics]{.fragment}
+
+[When there is evidence of multicollinearity (VIF > 5-ish), [remove the offending variable(s)!]{.answer}]{.fragment}
+
+## Model diagnostics
+Residuals = model error terms: [observed outcome - predicted outcome]{.fragment}
+
+[Used to check final three assumptions:]{.fragment}
+
+- Linearity: plot residuals against each predictor
+- Normal distribution: plot a histogram of residuals
+- Equal variance: plot residuals against the predicted outcome
+
+## Model diagnostics
+Linearity: check residual vs. predictor plots for patterns
+
+```{r}
+#| label: resid-flipper-plot
+
+penguin_resid <- lm_flipper_sex$model %>% 
+  mutate(residual = resid(lm_flipper_sex),
+         prediction = predict(lm_flipper_sex))
+
+ggplot(data = penguin_resid) +
+  geom_point(aes(x = flipper_length_mm, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Flipper length (mm)", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Model diagnostics
+Linearity: check residual vs. predictor plots for patterns
+
+```{r}
+#| label: resid-sex-plot
+
+ggplot(data = penguin_resid) +
+  geom_jitter(aes(x = sex, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Sex", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Model diagnostics
+Normally distribution residuals
+
+```{r}
+#| label: residual-hist
+
+ggplot(data = penguin_resid) +
+  geom_histogram(aes(x = residual)) +
+  geom_vline(xintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Residuals") +
+  theme_stats_thinking()
+```
+
+
+## Model diagnostics
+Homoskedasticity: check residual vs. prediction plots for patterns
+
+```{r}
+#| label: resid-pred-plot
+
+ggplot(data = penguin_resid) +
+  geom_point(aes(x = prediction, y = residual)) +
+  geom_hline(yintercept = 0, colour = "#9a3416", lwd = 1) + 
+  labs(x = "Predicted body mass (g)", y = "Residuals") +
+  theme_stats_thinking()
+```
+
+## Generalised linear models
+When the outcome variable is not continuous, another regression model must be chosen. 
+
+[Estimated coefficients relate to a [transformed]{.answer} version of the outcome.]{.fragment}
+
+[For example, a fitted poisson model (of counts) looks like this:]{.fragment}
+
+[$log(Y) = \alpha + \beta_1X_1 + \beta_2X_2 + \dots$]{.fragment}
+
+[Coefficients ($\alpha$, $\beta_1$, $\beta_2$) relate to the [log]{.answer} of the outcome.]{.fragment}
+
+## Generalised linear models
+To interpret coefficients, they must be [back-transformed]{.answer} to relate to the original outcome.
+
+[For example, in the poisson case, we apply the [exponential function]{.answer} (the opposite of the log) to the equation]{.fragment}
+
+[This makes interpretation of other regression models slightly more difficult [but not impossible!]{.answer}]{.fragment}
+
+## Generalised linear models
+Statistical models are based on probabilistic assumptions.
+
+[These assumptions must be true for results for be valid]{.fragment .answer}
+
+[Different regression types have different assumptions but all share these two:]{.fragment}
+
+[1. Observations must be [independent]{.answer} of one another]{.fragment}
+
+[2. It must be possible to represent the relationship between the (transformed) outcome and predictors using a [linear equation]{.answer}]{.fragment}
+
+## Beyond GLMs
+When either of these assumptions are not valid, we must consider [other models]{.answer}
+
+[[Mixed models]{.answer} (or GLMM, multilevel models, random effect models) account for dependency structures in data:]{.fragment}
+
+::: columns
+:::{.column width="50%"}
+- Spatial data
+- Temporal data
+:::
+:::{.column width="50%"}
+- Data on clusters (e.g. households)
+:::
+:::
+
+## Beyond GLMs
+When either of these assumptions are not valid, we must consider [other models]{.answer}
+
+[[Additive models]{.answer} (GAMs) are useful when modelling non-linear relationships]{.fragment}
+
+[Allow smooth functions of predictors, [$s(X)$]{.answer}, to be entered into a model:]{.fragment}
+
+[g(Y) = $\alpha + \beta_1X_1 + \dots + s(X_j)$]{.fragment}
+
+# {.chapter-theme}
+
+::: r-fit-text
+Final thoughts
+:::
+
+## Final thoughts
+- Statistics is a [huge]{.answer} topic 
+
+- Do not underestimate planning stage: research questions, biases and exploratory work
+
+- Complex analysis [can not]{.answer} overcome bad data
+
+- Do not make inferential statements about sample estimates and do not make [causal]{.answer} statements unless performing causal analysis
+
+## Final thoughts
+- Choose analysis methods based on the [research question]{.answer} rather than the available data
+
+- Models should be built to address this question and using common sense/background knowledge [not based on p-values]{.answer}
+
+- If a method requires assumptions to be met, check these [before]{.answer} communicating results
+
+## Final thoughts
+- Many [free]{.answer} statistical software packages available
+
+- [R]{.answer} is a favourite of statisticians (me included!) and has a huge online community to help learn and TONS of free resources
+
+- [Python]{.answer} is a favourite of data scientists and has a rapidly growing community
+
+- [Excel]{.answer} will do basic stats but is limited and prone to issues!
+
+# {.chapter-theme}
+
+
+:::r-fit-text
+Thank you for listening!
+:::
