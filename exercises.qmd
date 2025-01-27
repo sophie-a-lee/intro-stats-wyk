@@ -67,7 +67,9 @@ Below are outputs from 4 models aiming to answer the research question: was body
 Using model comparisons and checking the diagnostic tests, which model would you choose to use to answer this question and what would your answer be?
 
 ```{r}
-#| label: models
+#| label: models-functions
+#| echo: false
+#| warning: false
 
 lm_flipper <- lm(body_mass_g ~ flipper_length_mm, data = penguins)
 lm_flipper_sex <- lm(body_mass_g ~ flipper_length_mm + sex, data = penguins)
@@ -80,12 +82,14 @@ model_output <- function(model){
            con.int = paste0("[", conf.low, ", ", conf.high, "]"),
            pvalue = ifelse(p.value == 0, "<0.01", p.value)) %>% 
     select(term, estimate, con.int, pvalue) %>% 
-    kable(col.names = c("", "Coefficient", "95% CI", "p"))
+    kable(col.names = c("", "Coefficient", "95% CI", "p"),
+          align = "lrrr")
 }
 
-models <- list(lm_flipper, lm_flipper_sex, lm_flipper_sex_bill, lm_bill_sex)
+# models <- list(lm_flipper, lm_flipper_sex, lm_flipper_sex_bill, lm_bill_sex)
+# 
+# map(models, model_output)
 
-map(models, model_output)
 
 evaluations <- function(model) {
   tibble(terms = attr(model$model, "term.labels"),
@@ -94,8 +98,182 @@ evaluations <- function(model) {
          mae = mae(model$model$body_mass_g, predict(model))) %>% 
     kable()
 }
-map(models, evaluations)
 
 ```
 
+## Model 1
 
+Flipper length only
+
+```{r}
+#| label: model1-output
+#| echo: false
+#| warning: false
+
+model_output(lm_flipper)
+
+evaluations(lm_flipper)
+
+model1_res <- lm_flipper$model %>% 
+  mutate(residuals = residuals(lm_flipper),
+         predicted_outcome = fitted(lm_flipper))
+
+ggplot(data = model1_res,
+       aes(x = residuals)) +
+  geom_histogram(colour = "black") +
+  theme_classic(base_size = 12)
+
+ggplot(data = model1_res,
+       aes(x = flipper_length_mm,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model1_res,
+       aes(x = predicted_outcome,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+  
+```
+
+## Model 2
+
+Flipper length + sex
+
+```{r}
+#| label: model2-output
+#| echo: false
+#| warning: false
+
+model_output(lm_flipper_sex)
+
+evaluations(lm_flipper_sex)
+
+print("VIF:")
+car::vif(lm_flipper_sex)
+
+model2_res <- lm_flipper_sex$model %>% 
+  mutate(residuals = residuals(lm_flipper_sex),
+         predicted_outcome = fitted(lm_flipper_sex))
+
+ggplot(data = model2_res,
+       aes(x = residuals)) +
+  geom_histogram(colour = "black") +
+  theme_classic(base_size = 12)
+
+ggplot(data = model2_res,
+       aes(x = flipper_length_mm,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model2_res,
+       aes(x = sex,
+           y = residuals)) +
+  geom_jitter() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model2_res,
+       aes(x = predicted_outcome,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+  
+```
+
+## Model 3
+
+Flipper length + sex + bill depth
+
+```{r}
+#| label: model3-output
+#| echo: false
+#| warning: false
+
+model_output(lm_flipper_sex_bill)
+
+evaluations(lm_flipper_sex_bill)
+
+print("VIF:")
+car::vif(lm_flipper_sex_bill)
+
+model3_res <- lm_flipper_sex_bill$model %>% 
+  mutate(residuals = residuals(lm_flipper_sex_bill),
+         predicted_outcome = fitted(lm_flipper_sex_bill))
+
+ggplot(data = model3_res,
+       aes(x = residuals)) +
+  geom_histogram(colour = "black") +
+  theme_classic(base_size = 12)
+
+ggplot(data = model3_res,
+       aes(x = flipper_length_mm,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model3_res,
+       aes(x = sex,
+           y = residuals)) +
+  geom_jitter() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model3_res,
+       aes(x = bill_depth_mm,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model3_res,
+       aes(x = predicted_outcome,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+  
+```
+
+## Model 4
+
+Bill depth + sex
+
+```{r}
+#| label: model4-output
+#| echo: false
+#| warning: false
+
+model_output(lm_bill_sex)
+
+evaluations(lm_bill_sex)
+
+print("VIF:")
+car::vif(lm_bill_sex)
+
+model4_res <- lm_bill_sex$model %>% 
+  mutate(residuals = residuals(lm_flipper_sex_bill),
+         predicted_outcome = fitted(lm_flipper_sex_bill))
+
+ggplot(data = model4_res,
+       aes(x = residuals)) +
+  geom_histogram(colour = "black") +
+  theme_classic(base_size = 12)
+
+ggplot(data = model4_res,
+       aes(x = sex,
+           y = residuals)) +
+  geom_jitter() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model4_res,
+       aes(x = bill_depth_mm,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+
+ggplot(data = model4_res,
+       aes(x = predicted_outcome,
+           y = residuals)) +
+  geom_point() +
+  theme_classic(base_size = 12)
+  
+```

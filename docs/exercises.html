@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -212,109 +178,361 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
 <p>Below are outputs from 4 models aiming to answer the research question: was body mass of penguins related to flipper length.</p>
 <p>Using model comparisons and checking the diagnostic tests, which model would you choose to use to answer this question and what would your answer be?</p>
+</section>
+<section id="model-1" class="level2">
+<h2 class="anchored" data-anchor-id="model-1">Model 1</h2>
+<p>Flipper length only</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>lm_flipper <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm, <span class="at">data =</span> penguins)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lm_flipper_sex <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm <span class="sc">+</span> sex, <span class="at">data =</span> penguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>lm_flipper_sex_bill <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> flipper_length_mm <span class="sc">+</span> sex <span class="sc">+</span> bill_depth_mm, <span class="at">data =</span> penguins)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>lm_bill_sex<span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> sex <span class="sc">+</span> bill_depth_mm, <span class="at">data =</span> penguins)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>model_output <span class="ot">&lt;-</span> <span class="cf">function</span>(model){</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>(model, <span class="at">conf.int =</span> T) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(is.numeric, <span class="sc">~</span><span class="fu">round</span>(., <span class="dv">2</span>)),</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">con.int =</span> <span class="fu">paste0</span>(<span class="st">"["</span>, conf.low, <span class="st">", "</span>, conf.high, <span class="st">"]"</span>),</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">pvalue =</span> <span class="fu">ifelse</span>(p.value <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"&lt;0.01"</span>, p.value)) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(term, estimate, con.int, pvalue) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"Coefficient"</span>, <span class="st">"95% CI"</span>, <span class="st">"p"</span>))</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">list</span>(lm_flipper, lm_flipper_sex, lm_flipper_sex_bill, lm_bill_sex)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(models, model_output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `mutate()`.
-ℹ In argument: `across(is.numeric, ~round(., 2))`.
-Caused by warning:
-! Use of bare predicate functions was deprecated in tidyselect 1.1.0.
-ℹ Please use wrap predicates in `where()` instead.
-  # Was:
-  data %&gt;% select(is.numeric)
-
-  # Now:
-  data %&gt;% select(where(is.numeric))</code></pre>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Coefficient</th>
+<th style="text-align: right;">95% CI</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-5780.83</td>
+<td style="text-align: right;">[-6382.36, -5179.3]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">49.69</td>
+<td style="text-align: right;">[46.7, 52.67]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">adj.r</th>
+<th style="text-align: right;">rmse</th>
+<th style="text-align: right;">mae</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.7582837</td>
+<td style="text-align: right;">393.1236</td>
+<td style="text-align: right;">313.0018</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model1-output-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model1-output-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model1-output-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-2" class="level2">
+<h2 class="anchored" data-anchor-id="model-2">Model 2</h2>
+<p>Flipper length + sex</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Coefficient</th>
+<th style="text-align: right;">95% CI</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-5410.30</td>
+<td style="text-align: right;">[-5972.52, -4848.09]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">46.98</td>
+<td style="text-align: right;">[44.15, 49.82]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexmale</td>
+<td style="text-align: right;">347.85</td>
+<td style="text-align: right;">[268.49, 427.21]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">adj.r</th>
+<th style="text-align: right;">rmse</th>
+<th style="text-align: right;">mae</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.8046607</td>
+<td style="text-align: right;">354.2762</td>
+<td style="text-align: right;">283.245</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-
-
-|                  | Coefficient|95% CI              |p     |
-|:-----------------|-----------:|:-------------------|:-----|
-|(Intercept)       |    -5780.83|[-6382.36, -5179.3] |&lt;0.01 |
-|flipper_length_mm |       49.69|[46.7, 52.67]       |&lt;0.01 |
-
-[[2]]
-
-
-|                  | Coefficient|95% CI               |p     |
-|:-----------------|-----------:|:--------------------|:-----|
-|(Intercept)       |    -5410.30|[-5972.52, -4848.09] |&lt;0.01 |
-|flipper_length_mm |       46.98|[44.15, 49.82]       |&lt;0.01 |
-|sexmale           |      347.85|[268.49, 427.21]     |&lt;0.01 |
-
-[[3]]
-
-
-|                  | Coefficient|95% CI               |p     |
-|:-----------------|-----------:|:--------------------|:-----|
-|(Intercept)       |    -2246.83|[-3476.89, -1016.77] |&lt;0.01 |
-|flipper_length_mm |       38.19|[34.09, 42.29]       |&lt;0.01 |
-|sexmale           |      538.08|[437.14, 639.02]     |&lt;0.01 |
-|bill_depth_mm     |      -86.95|[-117.35, -56.54]    |&lt;0.01 |
-
-[[4]]
-
-
-|              | Coefficient|95% CI             |p     |
-|:-------------|-----------:|:------------------|:-----|
-|(Intercept)   |     8779.10|[8304.42, 9253.79] |&lt;0.01 |
-|sexmale       |     1122.13|[1009.87, 1234.4]  |&lt;0.01 |
-|bill_depth_mm |     -299.34|[-327.89, -270.8]  |&lt;0.01 |</code></pre>
+<pre><code>[1] "VIF:"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>evaluations <span class="ot">&lt;-</span> <span class="cf">function</span>(model) {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">terms =</span> <span class="fu">attr</span>(model<span class="sc">$</span>model, <span class="st">"term.labels"</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">adj.r =</span> <span class="fu">summary</span>(model)<span class="sc">$</span>adj.r.squared,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">rmse =</span> <span class="fu">rmse</span>(model<span class="sc">$</span>model<span class="sc">$</span>body_mass_g, <span class="fu">predict</span>(model)),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">mae =</span> <span class="fu">mae</span>(model<span class="sc">$</span>model<span class="sc">$</span>body_mass_g, <span class="fu">predict</span>(model))) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable</span>()</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(models, evaluations)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-
-
-|     adj.r|     rmse|      mae|
-|---------:|--------:|--------:|
-| 0.7582837| 393.1236| 313.0018|
-
-[[2]]
-
-
-|     adj.r|     rmse|     mae|
-|---------:|--------:|-------:|
-| 0.8046607| 354.2762| 283.245|
-
-[[3]]
-
-
-|     adj.r|     rmse|      mae|
-|---------:|--------:|--------:|
-| 0.8212593| 338.3763| 276.4011|
-
-[[4]]
-
-
-|     adj.r|     rmse|      mae|
-|---------:|--------:|--------:|
-| 0.6399402| 480.9883| 383.8665|</code></pre>
+<pre><code>flipper_length_mm               sex 
+         1.069646          1.069646 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model2-output-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model2-output-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model2-output-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model2-output-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-3" class="level2">
+<h2 class="anchored" data-anchor-id="model-3">Model 3</h2>
+<p>Flipper length + sex + bill depth</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Coefficient</th>
+<th style="text-align: right;">95% CI</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-2246.83</td>
+<td style="text-align: right;">[-3476.89, -1016.77]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">38.19</td>
+<td style="text-align: right;">[34.09, 42.29]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexmale</td>
+<td style="text-align: right;">538.08</td>
+<td style="text-align: right;">[437.14, 639.02]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: right;">-86.95</td>
+<td style="text-align: right;">[-117.35, -56.54]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">adj.r</th>
+<th style="text-align: right;">rmse</th>
+<th style="text-align: right;">mae</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.8212593</td>
+<td style="text-align: right;">338.3763</td>
+<td style="text-align: right;">276.4011</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "VIF:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>flipper_length_mm               sex     bill_depth_mm 
+         2.444470          1.891038          2.653895 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model3-output-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model3-output-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model3-output-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model3-output-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model3-output-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-4" class="level2">
+<h2 class="anchored" data-anchor-id="model-4">Model 4</h2>
+<p>Bill depth + sex</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Coefficient</th>
+<th style="text-align: right;">95% CI</th>
+<th style="text-align: right;">p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">8779.10</td>
+<td style="text-align: right;">[8304.42, 9253.79]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sexmale</td>
+<td style="text-align: right;">1122.13</td>
+<td style="text-align: right;">[1009.87, 1234.4]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: right;">-299.34</td>
+<td style="text-align: right;">[-327.89, -270.8]</td>
+<td style="text-align: right;">&lt;0.01</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">adj.r</th>
+<th style="text-align: right;">rmse</th>
+<th style="text-align: right;">mae</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.6399402</td>
+<td style="text-align: right;">480.9883</td>
+<td style="text-align: right;">383.8665</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "VIF:"</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          sex bill_depth_mm 
+     1.161286      1.161286 </code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model4-output-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model4-output-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model4-output-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="exercises_files/figure-html/model4-output-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 

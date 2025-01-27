@@ -38,7 +38,456 @@ theme_stats_thinking <- function() {
 }
 ```
 
+# {.chapter-theme}
 
+::: r-fit-text
+Recap 
+::: 
+
+# Before the analysis
+- Formulate an appropriate research question
+  - Clear, concise, **answerable**
+- Consider any **biases** and **missing data**
+- Important to know before data collection/analysis, influence our statistical analysis plan
+
+# Summary statistics
+- Categorical variables are summarised using **proportion**, **percentage** and **rate**
+- Differences between groups can be presented as the **absolute** or **relative** difference
+  - Choice depends on context and research question
+  - Most important part is ensuring correct interpretation
+  
+# Summary statistics
+- Numeric variables are summarised based on their **centre** or **spread**
+  - Choice of summary depends on the **distribution** of the variable
+  
+# 
+```{r}
+#|label: normal-density
+
+
+normal_data <- tibble(x = seq(-4, 4, length=100),
+                      y = dnorm(x))
+
+normal_curve <- ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  theme_void() 
+
+normal_curve
+```
+
+# Summary statistics
+- Numeric variables are summarised based on their **centre** or **spread**
+  - Choice of summary depends on the **distribution** of the variable
+  - **Normal distribution**: mean and SD
+  - **Not normal**: median and IQR
+
+# Summary statistics
+- Difference in numeric outcome between two groups is given as difference between anerage
+  - If **both groups** are normally distributed, difference in means
+  - If **at least one**  not normal, difference in medians
+  
+# Quantify trends
+- To measure association between two numeric variables, use **correlation coefficients**
+  - **Pearson** correlation if trend is linear
+  - **Spearman** correlation if nonlineare
+
+# Inferential statistics
+- Make inferences about the target population based on a sample
+- Most common choices are **p-value** and **confidence interval**
+- Both are based on the **central limit theorem**
+
+## Central limit theorem
+
+```{r}
+#| label: normal-curve
+
+normal_data <- tibble(x = seq(-4, 4, length=100),
+                      y = dnorm(x))
+
+normal_curve <- ggplot(normal_data) +
+  geom_density(aes(x = x, y = y), stat = "identity",
+               fill = "thistle") +
+  theme_void() 
+
+normal_curve
+```
+
+## Central limit theorem
+
+```{r}
+#| label: random-samples
+
+df_arrow <- tibble(y = rep(c(.1, 0), 8),
+                   x = rep(runif(8, min = -4, max = 4), each = 2))
+
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[13], y = df_arrow$y[13], 
+                   xend = df_arrow$x[14], yend = df_arrow$y[14]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = df_arrow$x[1], y = df_arrow$y[1], 
+                   xend = df_arrow$x[2], yend = df_arrow$y[2]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[3], y = df_arrow$y[3], 
+                   xend = df_arrow$x[4], yend = df_arrow$y[4]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[5], y = df_arrow$y[5], 
+                   xend = df_arrow$x[6], yend = df_arrow$y[6]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[7], y = df_arrow$y[7], 
+                   xend = df_arrow$x[8], yend = df_arrow$y[8]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[9], y = df_arrow$y[9], 
+                   xend = df_arrow$x[10], yend = df_arrow$y[10]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[11], y = df_arrow$y[11], 
+                   xend = df_arrow$x[12], yend = df_arrow$y[12]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[13], y = df_arrow$y[13], 
+                   xend = df_arrow$x[14], yend = df_arrow$y[14]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2) +
+    geom_segment(aes(x = df_arrow$x[15], y = df_arrow$y[15], 
+                   xend = df_arrow$x[16], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "#9a3416", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = mean(df_arrow$x), y = df_arrow$y[15], 
+                   xend = mean(df_arrow$x), yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+rand_means <- c(mean(df_arrow$x), mean(runif(8, min = -4, max = 4)),
+                mean(runif(8, min = -4, max = 4)),
+                mean(runif(8, min = -4, max = 4)),
+                mean(runif(8, min = -4, max = 4)))
+
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = rand_means[1], y = df_arrow$y[15], 
+                   xend = rand_means[1], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[2], y = df_arrow$y[15], 
+                   xend = rand_means[2], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = rand_means[1], y = df_arrow$y[15], 
+                   xend = rand_means[1], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[2], y = df_arrow$y[15], 
+                   xend = rand_means[2], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = rand_means[1], y = df_arrow$y[15], 
+                   xend = rand_means[1], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[2], y = df_arrow$y[15], 
+                   xend = rand_means[2], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) + 
+  geom_segment(aes(x = rand_means[3], y = df_arrow$y[15], 
+                   xend = rand_means[3], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = rand_means[1], y = df_arrow$y[15], 
+                   xend = rand_means[1], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[2], y = df_arrow$y[15], 
+                   xend = rand_means[2], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) + 
+  geom_segment(aes(x = rand_means[3], y = df_arrow$y[15], 
+                   xend = rand_means[3], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[4], y = df_arrow$y[15], 
+                   xend = rand_means[4], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+```{r}
+# Create random draws for arrows
+normal_curve +
+  geom_segment(aes(x = rand_means[1], y = df_arrow$y[15], 
+                   xend = rand_means[1], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[2], y = df_arrow$y[15], 
+                   xend = rand_means[2], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) + 
+  geom_segment(aes(x = rand_means[3], y = df_arrow$y[15], 
+                   xend = rand_means[3], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[4], y = df_arrow$y[15], 
+                   xend = rand_means[4], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2) +
+  geom_segment(aes(x = rand_means[5], y = df_arrow$y[15], 
+                   xend = rand_means[5], yend = df_arrow$y[16]),
+               arrow = arrow(length = unit(.3, "cm")), 
+               colour = "black", lwd = 2)
+```
+
+## Central limit theorem
+
+```{r}
+#| label: sd-to-se
+
+normal_data %>% 
+  mutate(se = dnorm(x, sd = y/sqrt(16))) %>% 
+  pivot_longer(y:se,
+               names_to = "measure",
+               values_to = "values") %>% 
+  mutate(measure = factor(measure, levels = c("y", "se"),
+                          labels = c("SD", "SE"))) %>% 
+  ggplot() +
+  geom_density(aes(x = x, y = values), stat = "identity",
+               fill = "thistle") +
+  facet_grid(rows = vars(measure)) +
+  theme_stats_thinking() +
+  theme(strip.text = element_text(size = 12, colour = "#ebe8e3"),
+        strip.background = element_rect(fill = "#1f2e32"))
+
+```
+
+# Confidence interval
+
+```{r}
+#| label: conf-int-95
+
+normal_sd <- mutate(normal_data,
+                    y1 = c(rep(0, 37), y[38:63], rep(0, 37)),
+                    y2 = c(rep(0, 25), y[26:75], rep(0, 25)))
+
+conf_int95 <- ggplot(data = normal_sd) + 
+  geom_density(aes(x = x, y = y2), linewidth = 1,
+               stat = "identity", fill = "#efc3e6") +
+  geom_line(aes(x = x, y = y), linewidth = 1,
+                stat = "identity") +
+  geom_hline(yintercept = 0, linewidth = 1) +
+  scale_x_continuous(breaks = -3:3, 
+                     labels = c("-3se", "-2se", "-1se", "Sample \nestimate",
+                                "+1se", "+2se", "+3se")) +
+  annotate("text", x = 0, y = 0.2, label = "95%", size = 7) +
+  theme_void() +
+  theme(axis.text.x = element_text(size = 15))
+
+conf_int95
+```  
+  
+# Confidence interval 
+- A range of values the true population parameter is compatible with
+- Based on sample estimate, measure of precision (SE) and confidence level
+  - 95% confidence interval: $\bar{x} \pm 1.96 \times se(\bar{x})$
+  - 95% **confident** that the true population mean lies within that range
+
+# p-value
+- Assume some **null hypothesis** is true
+  - No difference/no association depending on context
+  - How likely is it that we have this extreme (or more) sample estimate if the null hypothesis were true
+  - Smaller p-value $\rightarrow$ more **significant**
+  - $p < 0.05 \rightarrow$ significant at a **5% level**
 
 
 #  {.chapter-theme}
@@ -533,6 +982,23 @@ ggplot(data = penguin_resid) +
   labs(x = "Predicted body mass (g)", y = "Residuals") +
   theme_stats_thinking()
 ```
+
+# {.chapter-theme}
+
+::: r-fit-text
+Exercise 4: modelling
+::: 
+
+# Exercise 4
+- **Research question**: Is there an association between flipper length and body mass in penguins in the antarctic?
+  - There are a number of models we could consider to answer this research question
+  - Using the model outputs given in the exercise sheet, which should we use to answer this question? 
+
+# {.chapter-theme}
+
+::: r-fit-text
+Beyond continuous outcomes
+::: 
 
 ## Generalised linear models
 When the outcome variable is not continuous, another regression model must be chosen. 
